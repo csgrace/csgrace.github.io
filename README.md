@@ -18,8 +18,8 @@ I'm Grace, an enthusiastic undergraduate exploring the fascinating world of comp
 - **Motion Detection via Communication Signals** | [Motion-detection-via-communication-signals](https://github.com/csgrace/Motion-detection-via-communication-signals)  
   Signal processing project for EE205.♟️
 
-- **Database Principles** | [Database_principle](https://github.com/csgrace/Database_principle)  ☕️
-  Full-stack Java & Vue project for CS307 database course.
+- **Database Principles** | [Database_principle](https://github.com/csgrace/Database_principle)  
+  Full-stack Java & Vue project for CS307 database course.☕️
 
 - **Digital Logic** | [Digital-Logic](https://github.com/csgrace/Digital-Logic)  
   Digital logic circuits with VHDL, Verilog, and formal proof tools.🎮
