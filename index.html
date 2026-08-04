@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grace — Personal Website</title>
+  <title data-i18n-title="nav.home">Grace — Personal Website</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -13,15 +13,18 @@
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">Grace</a>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="leadership.html">Experience</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="about.html" data-i18n="nav.about">About</a></li>
+        <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="leadership.html" data-i18n="nav.experience">Experience</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
-      <button class="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-right">
+        <button id="lang-switch" class="lang-switch">中文</button>
+        <button class="hamburger" data-i18n="menu.label" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -30,32 +33,32 @@
     <div class="container">
       <div class="hero fade-in">
         <div class="hero-avatar">👩‍💻</div>
-        <h1>Hi, I'm Grace!</h1>
-        <p class="subtitle">Computer Science & Engineering Undergraduate @ SUSTech</p>
-        <p class="uni">AI · Sports · Leadership · Building things that matter</p>
+        <h1 data-i18n="hero.greeting">Hi, I'm Grace!</h1>
+        <p class="subtitle" data-i18n="hero.subtitle">Computer Science & Engineering Undergraduate @ SUSTech</p>
+        <p class="uni" data-i18n="hero.tagline">AI · Sports · Leadership · Building things that matter</p>
       </div>
 
       <!-- Quick Nav Cards -->
       <div class="quick-nav fade-in">
         <a href="about.html" class="quick-card">
           <div class="icon">🙋</div>
-          <h3>About Me</h3>
-          <p>Education, skills & interests</p>
+          <h3 data-i18n="quick.about">About Me</h3>
+          <p data-i18n="quick.about.desc">Education, skills & interests</p>
         </a>
         <a href="projects.html" class="quick-card">
           <div class="icon">🚀</div>
-          <h3>Projects</h3>
-          <p>AI, full-stack & hardware</p>
+          <h3 data-i18n="quick.projects">Projects</h3>
+          <p data-i18n="quick.projects.desc">AI, full-stack & hardware</p>
         </a>
         <a href="leadership.html" class="quick-card">
           <div class="icon">🏆</div>
-          <h3>Experience</h3>
-          <p>Leadership, sports & awards</p>
+          <h3 data-i18n="quick.experience">Experience</h3>
+          <p data-i18n="quick.experience.desc">Leadership, sports & awards</p>
         </a>
         <a href="contact.html" class="quick-card">
           <div class="icon">📬</div>
-          <h3>Contact</h3>
-          <p>Let's get in touch!</p>
+          <h3 data-i18n="quick.contact">Contact</h3>
+          <p data-i18n="quick.contact.desc">Let's get in touch!</p>
         </a>
       </div>
     </div>
@@ -63,9 +66,10 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <p>made by csgrace · 2026</p>
+    <p data-i18n="footer.text">made by csgrace · 2026</p>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

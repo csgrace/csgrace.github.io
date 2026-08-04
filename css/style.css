@@ -135,6 +135,33 @@ img {
   padding: 8px;
 }
 
+/* Lang Switch Button */
+.lang-switch {
+  background: var(--bg-alt);
+  border: 1.5px solid rgba(0,0,0,0.1);
+  color: var(--text);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+  font-family: inherit;
+  margin-left: 12px;
+}
+
+.lang-switch:hover {
+  background: var(--coral);
+  color: var(--white);
+  border-color: var(--coral);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .hamburger span {
   display: block;
   width: 24px;

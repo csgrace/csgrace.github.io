@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — Grace</title>
+  <title data-i18n-title="contact.title">Contact — Grace</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -13,15 +13,18 @@
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">Grace</a>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="leadership.html">Experience</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="about.html" data-i18n="nav.about">About</a></li>
+        <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="leadership.html" data-i18n="nav.experience">Experience</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
-      <button class="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-right">
+        <button id="lang-switch" class="lang-switch">中文</button>
+        <button class="hamburger" data-i18n="menu.label" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -30,35 +33,35 @@
     <div class="container">
 
       <div class="section-header fade-in">
-        <h1>Let's Connect!</h1>
+        <h1 data-i18n="contact.title">Let's Connect!</h1>
         <div class="accent" style="background: var(--pink);"></div>
-        <p>I'm always open to new opportunities, collaborations, and conversations. Feel free to reach out!</p>
+        <p data-i18n="contact.header.desc">I'm always open to new opportunities, collaborations, and conversations. Feel free to reach out!</p>
       </div>
 
       <div class="contact-grid">
 
         <a href="mailto:12311043@mail.sustech.edu.cn" class="contact-card fade-in">
           <div class="icon">📧</div>
-          <h3>University Email</h3>
+          <h3 data-i18n="contact.email.uni">University Email</h3>
           <p>12311043@mail.sustech.edu.cn</p>
         </a>
 
         <a href="mailto:yuqingwei508@gmail.com" class="contact-card fade-in">
           <div class="icon">💌</div>
-          <h3>Personal Email</h3>
+          <h3 data-i18n="contact.email.personal">Personal Email</h3>
           <p>yuqingwei508@gmail.com</p>
         </a>
 
         <a href="https://github.com/csgrace" target="_blank" class="contact-card fade-in">
           <div class="icon">🐙</div>
-          <h3>GitHub</h3>
+          <h3 data-i18n="contact.github">GitHub</h3>
           <p>github.com/csgrace</p>
         </a>
 
         <div class="contact-card fade-in">
           <div class="icon">📍</div>
-          <h3>Location</h3>
-          <p>Shenzhen, China</p>
+          <h3 data-i18n="contact.location">Location</h3>
+          <p data-i18n="contact.location.text">Shenzhen, China</p>
         </div>
 
       </div>
@@ -67,9 +70,10 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <p>made by csgrace · 2026</p>
+    <p data-i18n="footer.text">made by csgrace · 2026</p>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
