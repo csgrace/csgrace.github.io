@@ -13,17 +13,17 @@
     --blue-bg: #F2F5FB; --dark: #2D3436; --gray: #636E72;
   }
 
-  /* Password gate */
-  #pw-gate{position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#F2F5FB,#E8EDF8,#F0F2F8);display:flex;align-items:center;justify-content:center;font-family:inherit}
+  /* Password modal overlay */
+  #pw-gate{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;font-family:inherit;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
   #pw-gate.hidden{display:none}
-  .pw-box{background:#fff;border-radius:16px;padding:48px 40px;box-shadow:0 8px 40px rgba(59,100,201,0.1),0 2px 8px rgba(0,0,0,0.04);text-align:center;max-width:400px;width:90%}
-  .pw-box h2{color:var(--blue);font-size:1.3rem;margin-bottom:6px}
-  .pw-box p{color:var(--gray);font-size:0.85rem;margin-bottom:24px}
-  .pw-box input{width:100%;padding:12px 16px;border:2px solid #e0e0e0;border-radius:10px;font-size:1rem;text-align:center;outline:none;transition:border .2s;font-family:inherit;letter-spacing:2px}
-  .pw-box input:focus{border-color:var(--blue)}
-  .pw-box .pw-btn{margin-top:16px;width:100%;padding:12px;border-radius:10px;background:var(--blue);color:#fff;border:none;font-size:1rem;font-weight:700;cursor:pointer;transition:all .2s;font-family:inherit}
+  .pw-box{background:#fff;border-radius:12px;padding:40px 36px 32px;box-shadow:0 16px 48px rgba(0,0,0,0.15);text-align:center;width:360px;max-width:92vw}
+  .pw-box h2{color:var(--blue);font-size:1.15rem;font-weight:700;margin-bottom:6px}
+  .pw-box .pw-sub{color:var(--gray);font-size:0.82rem;margin-bottom:22px}
+  .pw-box input{display:block;width:240px;margin:0 auto;padding:11px 14px;border:1.5px solid #d8dce4;border-radius:8px;font-size:0.95rem;text-align:center;outline:none;transition:border .2s;font-family:inherit;letter-spacing:1px}
+  .pw-box input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(59,100,201,0.08)}
+  .pw-box .pw-btn{display:block;width:240px;margin:14px auto 0;padding:11px;border-radius:8px;background:var(--blue);color:#fff;border:none;font-size:0.95rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:inherit}
   .pw-box .pw-btn:hover{background:#2E4FA8}
-  .pw-box .pw-err{color:#e74c3c;font-size:0.8rem;margin-top:10px;display:none}
+  .pw-box .pw-err{color:#e74c3c;font-size:0.78rem;margin-top:10px;display:none}
 
   /* Reveal overrides */
   .reveal{font-family:'Segoe UI',system-ui,'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif}
@@ -82,7 +82,7 @@
 <div id="pw-gate">
   <div class="pw-box">
     <h2>演示文稿</h2>
-    <p>请输入密码以查看内容</p>
+    <p class="pw-sub">请输入密码以查看内容</p>
     <input type="password" id="pw-input" placeholder="输入密码" autofocus>
     <button class="pw-btn" onclick="checkPw()">确认</button>
     <p class="pw-err" id="pw-err">密码错误，请重试</p>
