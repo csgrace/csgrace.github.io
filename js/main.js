@@ -1,5 +1,5 @@
 // ============================================
-// Grace's Personal Website — Scripts
+// Yuqing Wei's Personal Website — Main Scripts
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -20,13 +20,26 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
       navLinks.classList.toggle('show');
     });
-    // Close menu on link click
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('show');
       });
     });
   }
+
+  // --- Tab switching ---
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.getAttribute('data-tab');
+      tabButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      tabPanels.forEach(p => {
+        p.classList.toggle('active', p.getAttribute('data-tab') === tab);
+      });
+    });
+  });
 
   // --- Scroll fade-in animation ---
   const fadeEls = document.querySelectorAll('.fade-in');

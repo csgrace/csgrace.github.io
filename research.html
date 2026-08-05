@@ -36,121 +36,261 @@
         <p data-i18n="rw.header.desc">Academic research, industry experience, and publications.</p>
       </div>
 
-      <!-- Academic Research -->
-      <div class="research-section fade-in">
-        <h2>🔬 <span data-i18n="rw.research_title">Academic Research</span></h2>
+      <!-- Tab Navigation -->
+      <div class="tab-nav fade-in">
+        <button class="tab-btn active" data-tab="research" data-i18n="tab.research">Academic Research</button>
+        <button class="tab-btn" data-tab="work" data-i18n="tab.work">Work Experience</button>
+        <button class="tab-btn" data-tab="github" data-i18n="tab.github">GitHub Projects</button>
+      </div>
 
-        <div class="research-entry">
-          <div class="entry-header">
-            <h3 data-i18n="rw.campus.title">AI Agent Smart Campus Assistant</h3>
-            <div class="entry-meta">
-              <span class="date" data-i18n="rw.campus.date">Mar. 2026 – Jun. 2026</span>
-              <span class="role" data-i18n="rw.campus.role">Core Developer</span>
+      <!-- ============ TAB 1: Academic Research ============ -->
+      <div class="tab-panel active" data-tab="research">
+        <div class="research-section fade-in">
+          <h2>🔬 <span data-i18n="rw.research_title">Academic Research</span></h2>
+
+          <div class="research-entry">
+            <div class="entry-header">
+              <h3 data-i18n="rw.campus.title">AI Agent Smart Campus Assistant</h3>
+              <div class="entry-meta">
+                <span class="date" data-i18n="rw.campus.date">Mar. 2026 – Jun. 2026</span>
+                <span class="role" data-i18n="rw.campus.role">Core Developer</span>
+              </div>
             </div>
+            <ul>
+              <li data-i18n="rw.campus.d1">Developed a LangChain-based RAG assistant that builds a complete data pipeline—ingesting, chunking, embedding, and indexing campus documents, with optimized retrieval and citation-backed LLM generation—to deliver reliable answers from unstructured institutional data.</li>
+              <li data-i18n="rw.campus.d2">Optimized the RAG pipeline through data chunking, contextual enhancement, and retrieval workflow tuning, cutting average response latency to under 3 seconds while improving retrieval accuracy.</li>
+              <li data-i18n="rw.campus.d3">Built a course planning module that ingests curriculum requirements and student credit records to generate personalized semester plans with graduation tracking and credit conflict detection, reducing manual advising effort.</li>
+            </ul>
           </div>
-          <ul>
-            <li data-i18n="rw.campus.d1">Developed a LangChain-based RAG assistant that builds a complete data pipeline—ingesting, chunking, embedding, and indexing campus documents, with optimized retrieval and citation-backed LLM generation—to deliver reliable answers from unstructured institutional data.</li>
-            <li data-i18n="rw.campus.d2">Optimized the RAG pipeline through data chunking, contextual enhancement, and retrieval workflow tuning, cutting average response latency to under 3 seconds while improving retrieval accuracy.</li>
-            <li data-i18n="rw.campus.d3">Built a course planning module that ingests curriculum requirements and student credit records to generate personalized semester plans with graduation tracking and credit conflict detection, reducing manual advising effort.</li>
-          </ul>
+
+          <div class="research-entry">
+            <div class="entry-header">
+              <h3 data-i18n="rw.parrotao.title">ParroTAO Training Analysis Platform</h3>
+              <div class="entry-meta">
+                <span class="date" data-i18n="rw.parrotao.date">Nov. 2025 – Present</span>
+                <span class="role" data-i18n="rw.parrotao.role">Project Leader (Provincial Key Undergraduate Innovation Program)</span>
+              </div>
+            </div>
+            <ul>
+              <li data-i18n="rw.parrotao.d1">Led project coordination and product iteration for ParroTAO training analysis platform, driving improvement through internal testing, user feedback collection, and feature optimization. The platform has completed internal testing and is preparing for evaluation with university running teams and coaches.</li>
+              <li data-i18n="rw.parrotao.d2">Designed the front-end architecture and developed key modules—team management, training task coordination, interactive visualization dashboards that fuse training logs with physiological data for performance analytics, and AI-assisted analysis interfaces.</li>
+              <li data-i18n="rw.parrotao.d3">Developed and maintained the integrated project website combining the running community and platform information to support product demonstration and user engagement.</li>
+            </ul>
+          </div>
+
+          <div class="research-entry">
+            <div class="entry-header">
+              <h3 data-i18n="rw.nus.title">NUS School of Computing — AIoT Summer Program</h3>
+              <div class="entry-meta">
+                <span class="date" data-i18n="rw.nus.date">May – Jul. 2025</span>
+                <span class="role" data-i18n="rw.nus.role">Front-end Lead</span>
+                <span class="award" data-i18n="rw.nus.award">Award: First Prize</span>
+              </div>
+            </div>
+            <ul>
+              <li data-i18n="rw.nus.d1">Led front-end development of an intelligent health management system, designing the system architecture and implementing core functional modules including GPS-based exercise tracking with route visualization, hydration logging, dietary data analysis, sedentary reminders, and personalized settings.</li>
+              <li data-i18n="rw.nus.d2">Prioritized user-centric design and interaction experience through iterative usability refinements, ensuring intuitive navigation and accessibility. The system earned First Prize in the program.</li>
+            </ul>
+          </div>
+
+          <div class="research-entry">
+            <div class="entry-header">
+              <h3 data-i18n="rw.nco.title">General Neural Combinatorial Optimization Model Project</h3>
+              <div class="entry-meta">
+                <span class="date" data-i18n="rw.nco.date">Nov. 2025 – Present</span>
+                <span class="role" data-i18n="rw.nco.role">Research Group Member</span>
+              </div>
+            </div>
+            <ul>
+              <li data-i18n="rw.nco.d1">Reproduced Transformer-based neural combinatorial optimization models (Pointer Network, Sym-NCO) within EasyCO, converting raw routing data into unified graph-based representations and implementing reinforcement learning training pipelines for benchmark evaluation.</li>
+              <li data-i18n="rw.nco.d2">Evaluated reproduced models on standard benchmark datasets (TSP, CVRP), performing quantitative comparison against reported results to validate implementation correctness, and benchmarked model performance across different problem scales.</li>
+            </ul>
+          </div>
+
+          <div class="research-entry">
+            <div class="entry-header">
+              <h3 data-i18n="rw.cambridge.title">University of Cambridge, Department of Engineering</h3>
+              <div class="entry-meta">
+                <span class="date" data-i18n="rw.cambridge.date">Jan. – Feb. 2026</span>
+                <span class="role" data-i18n="rw.cambridge.role">Group Leader, System Design and Engineering Thinking Winter Course</span>
+              </div>
+            </div>
+            <ul>
+              <li data-i18n="rw.cambridge.d1">Analyzed stakeholder needs and interactions among students, educators, and AI learning systems, identifying pain points and deriving functional requirements for the BCI solution.</li>
+              <li data-i18n="rw.cambridge.d2">Visualized system interactions and data/information flows via rich pictures and flowcharts, mapping user-system feedback loops and data exchanges to clarify dependencies and refine the learning solution.</li>
+              <li data-i18n="rw.cambridge.d3">Performed reliability and safety analysis using FMEA and Bowtie, identifying failure modes including signal misinterpretation, usability issues, and data privacy risks, and proposing mitigation strategies.</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="research-entry">
-          <div class="entry-header">
-            <h3 data-i18n="rw.parrotao.title">ParroTAO Training Analysis Platform</h3>
-            <div class="entry-meta">
-              <span class="date" data-i18n="rw.parrotao.date">Nov. 2025 – Present</span>
-              <span class="role" data-i18n="rw.parrotao.role">Project Leader (Provincial Key Undergraduate Innovation Program)</span>
-            </div>
-          </div>
-          <ul>
-            <li data-i18n="rw.parrotao.d1">Led project coordination and product iteration for ParroTAO training analysis platform, driving improvement through internal testing, user feedback collection, and feature optimization. The platform has completed internal testing and is preparing for evaluation with university running teams and coaches.</li>
-            <li data-i18n="rw.parrotao.d2">Designed the front-end architecture and developed key modules—team management, training task coordination, interactive visualization dashboards that fuse training logs with physiological data for performance analytics, and AI-assisted analysis interfaces.</li>
-            <li data-i18n="rw.parrotao.d3">Developed and maintained the integrated project website combining the running community and platform information to support product demonstration and user engagement.</li>
-          </ul>
-        </div>
+        <!-- Publications -->
+        <div class="research-section fade-in">
+          <h2>📄 <span data-i18n="rw.pub_title">Publications & Patents</span></h2>
 
-        <div class="research-entry">
-          <div class="entry-header">
-            <h3 data-i18n="rw.nus.title">NUS School of Computing — AIoT Summer Program</h3>
-            <div class="entry-meta">
-              <span class="date" data-i18n="rw.nus.date">May – Jul. 2025</span>
-              <span class="role" data-i18n="rw.nus.role">Front-end Lead</span>
-              <span class="award" data-i18n="rw.nus.award">Award: First Prize</span>
-            </div>
+          <div class="pub-entry">
+            <div class="pub-venue" data-i18n="rw.pub1.venue">ISSRE Accept</div>
+            <h3 data-i18n="rw.pub1.title">LLM-Based Invariant Testing for Software Functional Bugs</h3>
+            <div class="pub-role" data-i18n="rw.pub1.role">Co-author</div>
+            <div class="pub-desc" data-i18n="rw.pub1.desc">Proposed LISA, an LLM-based invariant testing framework that leverages execution trace data (API n-gram feedback) to iteratively generate test oracles (API sequences and invariants), improving functional bug detection beyond fuzzing methods.</div>
           </div>
-          <ul>
-            <li data-i18n="rw.nus.d1">Led front-end development of an intelligent health management system, designing the system architecture and implementing core functional modules including GPS-based exercise tracking with route visualization, hydration logging, dietary data analysis, sedentary reminders, and personalized settings.</li>
-            <li data-i18n="rw.nus.d2">Prioritized user-centric design and interaction experience through iterative usability refinements, ensuring intuitive navigation and accessibility. The system earned First Prize in the program.</li>
-          </ul>
-        </div>
 
-        <div class="research-entry">
-          <div class="entry-header">
-            <h3 data-i18n="rw.nco.title">General Neural Combinatorial Optimization Model Project</h3>
-            <div class="entry-meta">
-              <span class="date" data-i18n="rw.nco.date">Nov. 2025 – Present</span>
-              <span class="role" data-i18n="rw.nco.role">Research Group Member</span>
-            </div>
+          <div class="pub-entry">
+            <div class="pub-venue" data-i18n="rw.pub2.venue">Under Review — Patent Application No. 2026104381429</div>
+            <h3 data-i18n="rw.pub2.title">A Training Plan Generation Method, System, Terminal, and Medium Based on LLM Multi-Agent Collaboration</h3>
+            <div class="pub-role" data-i18n="rw.pub2.role">Co-inventor</div>
+            <div class="pub-desc" data-i18n="rw.pub2.desc">Proposed a training plan generation method via LLM multi-agent collaboration, covering system architecture, terminal, and storage, which ingests user profile and historical performance data to deliver personalized, science-based training plans aligned with individual goals.</div>
           </div>
-          <ul>
-            <li data-i18n="rw.nco.d1">Reproduced Transformer-based neural combinatorial optimization models (Pointer Network, Sym-NCO) within EasyCO, converting raw routing data into unified graph-based representations and implementing reinforcement learning training pipelines for benchmark evaluation.</li>
-            <li data-i18n="rw.nco.d2">Evaluated reproduced models on standard benchmark datasets (TSP, CVRP), performing quantitative comparison against reported results to validate implementation correctness, and benchmarked model performance across different problem scales.</li>
-          </ul>
-        </div>
-
-        <div class="research-entry">
-          <div class="entry-header">
-            <h3 data-i18n="rw.cambridge.title">University of Cambridge, Department of Engineering</h3>
-            <div class="entry-meta">
-              <span class="date" data-i18n="rw.cambridge.date">Jan. – Feb. 2026</span>
-              <span class="role" data-i18n="rw.cambridge.role">Group Leader, System Design and Engineering Thinking Winter Course</span>
-            </div>
-          </div>
-          <ul>
-            <li data-i18n="rw.cambridge.d1">Analyzed stakeholder needs and interactions among students, educators, and AI learning systems, identifying pain points and deriving functional requirements for the BCI solution.</li>
-            <li data-i18n="rw.cambridge.d2">Visualized system interactions and data/information flows via rich pictures and flowcharts, mapping user-system feedback loops and data exchanges to clarify dependencies and refine the learning solution.</li>
-            <li data-i18n="rw.cambridge.d3">Performed reliability and safety analysis using FMEA and Bowtie, identifying failure modes including signal misinterpretation, usability issues, and data privacy risks, and proposing mitigation strategies.</li>
-          </ul>
         </div>
       </div>
 
-      <!-- Work Experience -->
-      <div class="research-section fade-in">
-        <h2>💼 <span data-i18n="rw.work_title">Work Experience</span></h2>
+      <!-- ============ TAB 2: Work Experience ============ -->
+      <div class="tab-panel" data-tab="work">
+        <div class="research-section fade-in">
+          <h2>💼 <span data-i18n="rw.work_title">Work Experience</span></h2>
 
-        <div class="research-entry">
-          <div class="entry-header">
-            <h3 data-i18n="rw.meituan.title">Meituan · Leading Tech Retail · Fortune 500</h3>
-            <div class="entry-meta">
-              <span class="date" data-i18n="rw.meituan.date">Jun. 2026 – Sep. 2026</span>
-              <span class="role" data-i18n="rw.meituan.role">Agent Training Assistant</span>
+          <div class="research-entry">
+            <div class="entry-header">
+              <h3 data-i18n="rw.meituan.title">Meituan · Leading Tech Retail · Fortune 500</h3>
+              <div class="entry-meta">
+                <span class="date" data-i18n="rw.meituan.date">Jun. 2026 – Sep. 2026</span>
+                <span class="role" data-i18n="rw.meituan.role">Agent Training Assistant</span>
+              </div>
             </div>
+            <ul>
+              <li data-i18n="rw.meituan.d1">Optimized AI Agents via prompt engineering, knowledge base design, and skill tuning, using interaction data analysis to evaluate and improve task quality and decision reliability in complex business settings.</li>
+              <li data-i18n="rw.meituan.d2">Developed an Agent evolution dashboard to track iteration effects, conducting performance evaluation and data-driven behavioral analysis to enable overall optimization of agent behaviors.</li>
+              <li data-i18n="rw.meituan.d3">Collaborated with teams to define roles and assign permissions via RBAC, mapping roles to Agent trainers, sub-agent deployers, and end-users to clarify responsibilities and enforce security.</li>
+            </ul>
           </div>
-          <ul>
-            <li data-i18n="rw.meituan.d1">Optimized AI Agents via prompt engineering, knowledge base design, and skill tuning, using interaction data analysis to evaluate and improve task quality and decision reliability in complex business settings.</li>
-            <li data-i18n="rw.meituan.d2">Developed an Agent evolution dashboard to track iteration effects, conducting performance evaluation and data-driven behavioral analysis to enable overall optimization of agent behaviors.</li>
-            <li data-i18n="rw.meituan.d3">Collaborated with teams to define roles and assign permissions via RBAC, mapping roles to Agent trainers, sub-agent deployers, and end-users to clarify responsibilities and enforce security.</li>
-          </ul>
+        </div>
+
+        <!-- Publications in work tab too -->
+        <div class="research-section fade-in">
+          <h2>📄 <span data-i18n="rw.pub_title">Publications & Patents</span></h2>
+
+          <div class="pub-entry">
+            <div class="pub-venue" data-i18n="rw.pub1.venue">ISSRE Accept</div>
+            <h3 data-i18n="rw.pub1.title">LLM-Based Invariant Testing for Software Functional Bugs</h3>
+            <div class="pub-role" data-i18n="rw.pub1.role">Co-author</div>
+            <div class="pub-desc" data-i18n="rw.pub1.desc">Proposed LISA, an LLM-based invariant testing framework that leverages execution trace data (API n-gram feedback) to iteratively generate test oracles (API sequences and invariants), improving functional bug detection beyond fuzzing methods.</div>
+          </div>
+
+          <div class="pub-entry">
+            <div class="pub-venue" data-i18n="rw.pub2.venue">Under Review — Patent Application No. 2026104381429</div>
+            <h3 data-i18n="rw.pub2.title">A Training Plan Generation Method, System, Terminal, and Medium Based on LLM Multi-Agent Collaboration</h3>
+            <div class="pub-role" data-i18n="rw.pub2.role">Co-inventor</div>
+            <div class="pub-desc" data-i18n="rw.pub2.desc">Proposed a training plan generation method via LLM multi-agent collaboration, covering system architecture, terminal, and storage, which ingests user profile and historical performance data to deliver personalized, science-based training plans aligned with individual goals.</div>
+          </div>
         </div>
       </div>
 
-      <!-- Publications & Patents -->
-      <div class="research-section fade-in">
-        <h2>📄 <span data-i18n="rw.pub_title">Publications & Patents</span></h2>
+      <!-- ============ TAB 3: GitHub Projects ============ -->
+      <div class="tab-panel" data-tab="github">
+        <div class="research-section fade-in">
+          <h2>🐙 <span data-i18n="gh.title">GitHub Projects</span></h2>
+          <div class="projects-grid">
 
-        <div class="pub-entry">
-          <div class="pub-venue" data-i18n="rw.pub1.venue">ISSRE Accept</div>
-          <h3 data-i18n="rw.pub1.title">LLM-Based Invariant Testing for Software Functional Bugs</h3>
-          <div class="pub-role" data-i18n="rw.pub1.role">Co-author</div>
-          <div class="pub-desc" data-i18n="rw.pub1.desc">Proposed LISA, an LLM-based invariant testing framework that leverages execution trace data (API n-gram feedback) to iteratively generate test oracles (API sequences and invariants), improving functional bug detection beyond fuzzing methods.</div>
-        </div>
+            <a href="https://github.com/csgrace/NUS-AIOT" target="_blank" class="project-card">
+              <div class="project-card-banner" style="background: linear-gradient(135deg, var(--coral), var(--coral-dark));">🏥</div>
+              <div class="project-card-body">
+                <h3 data-i18n="gh.nusaiot">Smart Health System — NUS AIOT</h3>
+                <p data-i18n="gh.nusaiot.desc">Full-stack intelligent health management system. First Prize at NUS AIoT Summer Workshop.</p>
+                <div class="project-tags"><span class="project-tag">AIoT</span><span class="project-tag">Full-Stack</span><span class="project-tag">Healthcare</span></div>
+                <span class="project-link" style="background:#FFE0E0;color:var(--coral-dark);">🔗 View on GitHub</span>
+              </div>
+            </a>
 
-        <div class="pub-entry">
-          <div class="pub-venue" data-i18n="rw.pub2.venue">Under Review — Patent Application No. 2026104381429</div>
-          <h3 data-i18n="rw.pub2.title">A Training Plan Generation Method, System, Terminal, and Medium Based on LLM Multi-Agent Collaboration</h3>
-          <div class="pub-role" data-i18n="rw.pub2.role">Co-inventor</div>
-          <div class="pub-desc" data-i18n="rw.pub2.desc">Proposed a training plan generation method via LLM multi-agent collaboration, covering system architecture, terminal, and storage, which ingests user profile and historical performance data to deliver personalized, science-based training plans aligned with individual goals.</div>
+            <a href="https://github.com/csgrace/Artificial_Intelligence" target="_blank" class="project-card">
+              <div class="project-card-banner" style="background: linear-gradient(135deg, var(--purple), var(--purple-dark));">🤖</div>
+              <div class="project-card-body">
+                <h3 data-i18n="gh.ai">CS303 — Artificial Intelligence</h3>
+                <p data-i18n="gh.ai.desc">Reversi AI agent, income prediction pipeline, full lecture & lab archive.</p>
+                <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">ML</span><span class="project-tag">AI</span></div>
+                <span class="project-link" style="background:#E8E4FF;color:var(--purple-dark);">🔗 View on GitHub</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/csgrace/Database_principle" target="_blank" class="project-card">
+              <div class="project-card-banner" style="background: linear-gradient(135deg, var(--teal), #00A381);">🗄️</div>
+              <div class="project-card-body">
+                <h3 data-i18n="gh.db">CS307 — Database Principles</h3>
+                <p data-i18n="gh.db.desc">Full-stack Java + Vue project for database course.</p>
+                <div class="project-tags"><span class="project-tag">Java</span><span class="project-tag">Vue.js</span><span class="project-tag">SQL</span></div>
+                <span class="project-link" style="background:#D4F7EE;color:#00A381;">🔗 View on GitHub</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/csgrace/Computer_Networks" target="_blank" class="project-card">
+              <div class="project-card-banner" style="background: linear-gradient(135deg, var(--pink), #E84393);">🌐</div>
+              <div class="project-card-body">
+                <h3 data-i18n="gh.network">CS305 — Computer Networks</h3>
+                <p data-i18n="gh.network.desc">P2P file transfer with reliable data transport + course materials.</p>
+                <div class="project-tags"><span class="project-tag">P2P</span><span class="project-tag">Networking</span></div>
+                <span class="project-link" style="background:#FFE0EC;color:#E84393;">🔗 View on GitHub</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/csgrace/CPU_design" target="_blank" class="project-card">
+              <div class="project-card-banner" style="background: linear-gradient(135deg, var(--blue), #5B9BD5);">💻</div>
+              <div class="project-card-body">
+                <h3 data-i18n="gh.cpu">CS202 — CPU Design</h3>
+                <p data-i18n="gh.cpu.desc">Built a CPU from scratch using VHDL & Verilog.</p>
+                <div class="project-tags"><span class="project-tag">VHDL</span><span class="project-tag">Verilog</span><span class="project-tag">Architecture</span></div>
+                <span class="project-link" style="background:#E0EEFF;color:#5B9BD5;">🔗 View on GitHub</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/csgrace/CS209A" target="_blank" class="project-card">
+              <div class="project-card-banner" style="background: linear-gradient(135deg, var(--yellow), #F0B62D);">☕</div>
+              <div class="project-card-body">
+                <h3 data-i18n="gh.cs209a">CS209A — Computer System Design & Applications A</h3>
+                <p data-i18n="gh.cs209a.desc">JavaFX QQ Farm demo, data analysis dashboard, quizzes & lab exercises.</p>
+                <div class="project-tags"><span class="project-tag">Java</span><span class="project-tag">JavaFX</span></div>
+                <span class="project-link" style="background:#FFF4D6;color:#C8960C;">🔗 View on GitHub</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/csgrace/Digital-Logic" target="_blank" class="project-card">
+              <div class="project-card-banner" style="background: linear-gradient(135deg, var(--coral), var(--coral-light));">🔌</div>
+              <div class="project-card-body">
+                <h3 data-i18n="gh.digital">CS207 — Digital Logic</h3>
+                <p data-i18n="gh.digital.desc">Digital logic circuits with VHDL, Verilog, and formal proof tools.</p>
+                <div class="project-tags"><span class="project-tag">VHDL</span><span class="project-tag">Verilog</span><span class="project-tag">Logic</span></div>
+                <span class="project-link" style="background:#FFE0E0;color:var(--coral-dark);">🔗 View on GitHub</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/csgrace/2048-game" target="_blank" class="project-card">
+              <div class="project-card-banner" style="background: linear-gradient(135deg, var(--purple-light), var(--purple));">🎮</div>
+              <div class="project-card-body">
+                <h3 data-i18n="gh.game2048">CS109 — 2048 Game</h3>
+                <p data-i18n="gh.game2048.desc">Java implementation of the classic 2048 game.</p>
+                <div class="project-tags"><span class="project-tag">Java</span><span class="project-tag">Game</span></div>
+                <span class="project-link" style="background:#E8E4FF;color:var(--purple-dark);">🔗 View on GitHub</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/csgrace/Motion-detection-via-communication-signals" target="_blank" class="project-card">
+              <div class="project-card-banner" style="background: linear-gradient(135deg, var(--teal-light), var(--teal));">📡</div>
+              <div class="project-card-body">
+                <h3 data-i18n="gh.motion">EE205 — Motion Detection</h3>
+                <p data-i18n="gh.motion.desc">Signal processing project for electrical engineering course.</p>
+                <div class="project-tags"><span class="project-tag">MATLAB</span><span class="project-tag">Signal Processing</span></div>
+                <span class="project-link" style="background:#D4F7EE;color:#00A381;">🔗 View on GitHub</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/csgrace/NcatBot" target="_blank" class="project-card">
+              <div class="project-card-banner" style="background: linear-gradient(135deg, var(--pink-light), var(--pink));">🤖</div>
+              <div class="project-card-body">
+                <h3 data-i18n="gh.ncatbot">NcatBot — QQ Bot SDK</h3>
+                <p data-i18n="gh.ncatbot.desc">Fork: NapCat Python SDK for QQ bot development.</p>
+                <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">QQ Bot</span><span class="project-tag">SDK</span></div>
+                <span class="project-link" style="background:#FFE0EC;color:#E84393;">🔗 View on GitHub</span>
+              </div>
+            </a>
+
+          </div>
         </div>
       </div>
 

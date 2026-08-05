@@ -100,6 +100,34 @@ const i18n = {
     "rw.pub2.role": "Co-inventor",
     "rw.pub2.desc": "Proposed a training plan generation method via LLM multi-agent collaboration, covering system architecture, terminal, and storage, which ingests user profile and historical performance data to deliver personalized, science-based training plans aligned with individual goals.",
 
+    // Tabs
+    "tab.research": "Academic Research",
+    "tab.work": "Work Experience",
+    "tab.github": "GitHub Projects",
+
+    // GitHub Projects
+    "gh.title": "GitHub Projects",
+    "gh.nusaiot": "Smart Health System — NUS AIOT",
+    "gh.nusaiot.desc": "Full-stack intelligent health management system. First Prize at NUS AIoT Summer Workshop.",
+    "gh.ai": "CS303 — Artificial Intelligence",
+    "gh.ai.desc": "Reversi AI agent, income prediction pipeline, full lecture & lab archive.",
+    "gh.db": "CS307 — Database Principles",
+    "gh.db.desc": "Full-stack Java + Vue project for database course.",
+    "gh.network": "CS305 — Computer Networks",
+    "gh.network.desc": "P2P file transfer with reliable data transport + course materials.",
+    "gh.cpu": "CS202 — CPU Design",
+    "gh.cpu.desc": "Built a CPU from scratch using VHDL & Verilog.",
+    "gh.cs209a": "CS209A — Computer System Design & Applications A",
+    "gh.cs209a.desc": "JavaFX QQ Farm demo, data analysis dashboard, quizzes & lab exercises.",
+    "gh.digital": "CS207 — Digital Logic",
+    "gh.digital.desc": "Digital logic circuits with VHDL, Verilog, and formal proof tools.",
+    "gh.game2048": "CS109 — 2048 Game",
+    "gh.game2048.desc": "Java implementation of the classic 2048 game.",
+    "gh.motion": "EE205 — Motion Detection via Communication Signals",
+    "gh.motion.desc": "Signal processing project for electrical engineering course.",
+    "gh.ncatbot": "NcatBot — QQ Bot SDK",
+    "gh.ncatbot.desc": "Fork: NapCat Python SDK for QQ bot development.",
+
     // Honors & Leadership
     "hl.title": "Honors & Leadership",
     "hl.header.desc": "Awards, leadership roles, and community engagement.",
@@ -250,6 +278,34 @@ const i18n = {
     "rw.pub2.venue": "审查中 — 专利申请号 2026104381429",
     "rw.pub2.role": "共同发明人",
     "rw.pub2.desc": "提出了一种基于大语言模型多智能体协作的训练计划生成方法，涵盖系统架构、终端及存储介质，通过接入用户画像与历史表现数据，提供与个人目标相匹配的个性化、科学化训练方案。",
+
+    // Tabs
+    "tab.research": "学术研究",
+    "tab.work": "工作经历",
+    "tab.github": "GitHub 项目",
+
+    // GitHub Projects
+    "gh.title": "GitHub 项目",
+    "gh.nusaiot": "智能健康系统 — NUS AIOT",
+    "gh.nusaiot.desc": "全栈智能健康管理系统，荣获 NUS AIoT 暑期工作坊一等奖。",
+    "gh.ai": "CS303 — 人工智能",
+    "gh.ai.desc": "黑白棋 AI 代理、收入预测管道、完整讲义与实验存档。",
+    "gh.db": "CS307 — 数据库原理",
+    "gh.db.desc": "数据库课程的全栈 Java + Vue 项目。",
+    "gh.network": "CS305 — 计算机网络",
+    "gh.network.desc": "P2P 文件传输（可靠数据传输）+ 课程资料。",
+    "gh.cpu": "CS202 — CPU 设计",
+    "gh.cpu.desc": "使用 VHDL 和 Verilog 从零构建 CPU。",
+    "gh.cs209a": "CS209A — 计算机系统设计与应用 A",
+    "gh.cs209a.desc": "JavaFX QQ 农场演示、数据分析仪表盘、测验与实验。",
+    "gh.digital": "CS207 — 数字逻辑",
+    "gh.digital.desc": "数字逻辑电路，使用 VHDL、Verilog 及形式化验证工具。",
+    "gh.game2048": "CS109 — 2048 游戏",
+    "gh.game2048.desc": "经典 2048 游戏的 Java 实现。",
+    "gh.motion": "EE205 — 基于通信信号的运动检测",
+    "gh.motion.desc": "电子工程课程信号处理项目。",
+    "gh.ncatbot": "NcatBot — QQ 机器人 SDK",
+    "gh.ncatbot.desc": "Fork: NapCat Python SDK，用于 QQ 机器人开发。",
 
     // Honors & Leadership
     "hl.title": "荣誉与领导力",
