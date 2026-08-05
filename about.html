@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n-title="about.title">About — Grace</title>
+  <title data-i18n-title="about.title">About — Yuqing Wei</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Grace</a>
+      <a href="index.html" class="nav-logo">Yuqing Wei</a>
       <ul class="nav-links">
         <li><a href="index.html" data-i18n="nav.home">Home</a></li>
         <li><a href="about.html" data-i18n="nav.about">About</a></li>
-        <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
-        <li><a href="leadership.html" data-i18n="nav.experience">Experience</a></li>
+        <li><a href="research.html" data-i18n="nav.research">Research & Work</a></li>
+        <li><a href="leadership.html" data-i18n="nav.experience">Honors & Leadership</a></li>
         <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <div class="nav-right">
@@ -28,14 +27,13 @@
     </div>
   </nav>
 
-  <!-- About Page -->
   <section class="page">
     <div class="container">
 
       <div class="section-header fade-in">
         <h1 data-i18n="about.title">About Me</h1>
         <div class="accent" style="background: var(--coral);"></div>
-        <p data-i18n="about.header.desc">Computer Science & Engineering student with a passion for AI, sports, and building impactful technology.</p>
+        <p data-i18n="about.header.desc">Computer Science & Technology student passionate about AI, systems, and building impactful technology.</p>
       </div>
 
       <div class="about-grid">
@@ -44,16 +42,13 @@
         <div class="about-card fade-in">
           <h2><span class="emoji">🎓</span> <span data-i18n="about.education">Education</span></h2>
           <div class="edu-item">
-            <div class="school" data-i18n="about.edu.sustech">Southern University of Science and Technology (SUSTech)</div>
-            <div class="detail" data-i18n="about.edu.sustech.detail">B.E. in Computer Science and Engineering · 2023 – Present</div>
+            <div class="school" data-i18n="about.edu.school">Southern University of Science and Technology (SUSTech)</div>
+            <div class="detail" data-i18n="about.edu.degree">B.E. in Computer Science and Technology (CSE)</div>
+            <div class="detail" data-i18n="about.edu.date" style="color: var(--purple); font-weight: 600;">Aug. 2023 – Jul. 2027 (Expected)</div>
           </div>
           <div class="edu-item">
-            <div class="school" data-i18n="about.edu.nus">National University of Singapore (NUS)</div>
-            <div class="detail" data-i18n="about.edu.nus.detail">AIoT Summer Workshop · First Prize Winner</div>
-          </div>
-          <div class="edu-item">
-            <div class="school" data-i18n="about.edu.cambridge">University of Cambridge — Winter Course</div>
-            <div class="detail" data-i18n="about.edu.cambridge.detail">Brain-Computer Interface & Medical Device Design</div>
+            <div class="school" data-i18n="about.edu.courses" style="font-size: 0.95rem;">Core courses</div>
+            <div class="detail" data-i18n="about.edu.courses_list" style="margin-top: 4px;">Principles of Database Systems, Artificial Intelligence, Natural Language Processing, Algorithm Design and Analysis, Probability and Statistics for Engineering, Software Engineering, etc.</div>
           </div>
         </div>
 
@@ -61,18 +56,31 @@
         <div class="about-card fade-in">
           <h2><span class="emoji">🛠️</span> <span data-i18n="about.skills">Technical Skills</span></h2>
           <div class="skill-tags">
-            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Python (PyTorch)</span>
             <span class="skill-tag">Java</span>
-            <span class="skill-tag">C/C++</span>
+            <span class="skill-tag">C++</span>
             <span class="skill-tag">JavaScript</span>
             <span class="skill-tag">Vue.js</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">VHDL</span>
+            <span class="skill-tag">MATLAB</span>
             <span class="skill-tag">Verilog</span>
-            <span class="skill-tag">PyTorch</span>
-            <span class="skill-tag">TensorFlow</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Pandas / NumPy</span>
             <span class="skill-tag">Git</span>
-            <span class="skill-tag">JavaFX</span>
+          </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="about-card fade-in">
+          <h2><span class="emoji">🌐</span> <span data-i18n="about.languages">Languages</span></h2>
+          <div class="lang-item">
+            <div class="lang-name" data-i18n="about.lang.en">English — Fluent (IELTS 7.5)</div>
+            <div class="lang-detail" data-i18n="about.lang.en.detail">Listening 9.0, Reading 8.0, Writing 7.0, Speaking 6.5</div>
+          </div>
+          <div class="lang-item">
+            <div class="lang-name" data-i18n="about.lang.zh">Mandarin — Native</div>
+          </div>
+          <div class="lang-item">
+            <div class="lang-name" data-i18n="about.lang.canto">Cantonese — Fluent</div>
           </div>
         </div>
 
@@ -80,26 +88,15 @@
         <div class="about-card fade-in">
           <h2><span class="emoji">🔍</span> <span data-i18n="about.interests">Research Interests</span></h2>
           <div class="skill-tags">
-            <span class="skill-tag">AIoT (AI + IoT)</span>
+            <span class="skill-tag">AIoT</span>
             <span class="skill-tag">Smart Healthcare</span>
             <span class="skill-tag">Deep Learning</span>
             <span class="skill-tag">Reinforcement Learning</span>
             <span class="skill-tag">Combinatorial Optimization</span>
             <span class="skill-tag">Brain-Computer Interface</span>
-            <span class="skill-tag">XAI</span>
             <span class="skill-tag">NLP</span>
+            <span class="skill-tag">XAI</span>
             <span class="skill-tag">Sports Health</span>
-          </div>
-        </div>
-
-        <!-- Currently Learning -->
-        <div class="about-card fade-in">
-          <h2><span class="emoji">🌱</span> <span data-i18n="about.learning">Currently Learning</span></h2>
-          <div class="skill-tags">
-            <span class="skill-tag">Natural Language Processing</span>
-            <span class="skill-tag">Heuristic Algorithms</span>
-            <span class="skill-tag">Software Engineering</span>
-            <span class="skill-tag">Operating Systems</span>
           </div>
         </div>
 
@@ -107,9 +104,8 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
-    <p data-i18n="footer.text">made by csgrace · 2026</p>
+    <p data-i18n="footer.text">Made by Yuqing Wei · 2026</p>
   </footer>
 
   <script src="js/i18n.js"></script>
