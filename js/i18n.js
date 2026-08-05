@@ -180,6 +180,8 @@ const i18n = {
     // Misc
     "menu.label": "Menu",
     "lang.switch": "中文",
+    "presentation.banner": "📽️ View my Interview Presentation →",
+    "presentation.download": "Download PPTX",
   },
 
   zh: {
@@ -359,6 +361,8 @@ const i18n = {
     // Misc
     "menu.label": "菜单",
     "lang.switch": "English",
+    "presentation.banner": "📽️ 查看我的面试展示 PPT →",
+    "presentation.download": "下载 PPTX",
   }
 };
 

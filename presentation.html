@@ -4,87 +4,113 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yuqing Wei — Interview Presentation</title>
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/PptxGenJS@3.12.0/dist/pptxgen.bundle.js"></script>
 <style>
+  :root {
+    --coral: #FF6B6B;
+    --coral-light: #FFF0F0;
+    --purple: #6C5CE7;
+    --purple-light: #F0ECFF;
+    --teal: #00B894;
+    --teal-light: #E6FAF4;
+    --yellow: #FDCB6E;
+    --yellow-light: #FFF9EC;
+    --pink: #FD79A8;
+    --pink-light: #FFF0F5;
+  }
   *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#1a1a2e;overflow:hidden;height:100vh}
+  body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:linear-gradient(135deg,#fef9f4 0%,#fdf2f8 50%,#f0ecff 100%);overflow:hidden;height:100vh}
   .slides{width:100%;height:100vh;position:relative}
   .slide{position:absolute;width:100%;height:100%;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .5s,transform .5s;transform:translateX(60px);pointer-events:none}
   .slide.active{opacity:1;transform:translateX(0);pointer-events:auto}
   .slide.prev{transform:translateX(-60px)}
-  .slide-inner{max-width:900px;width:90%;padding:50px 40px;border-radius:20px;background:#16213e;color:#eee;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative;overflow:hidden}
-  .slide-inner::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,#FF6B6B,#6C5CE7,#00B894,#FDCB6E,#FD79A8)}
-  .slide h1{font-size:2.6rem;font-weight:800;margin-bottom:12px;background:linear-gradient(135deg,#FF6B6B,#6C5CE7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-  .slide h2{font-size:1.6rem;font-weight:700;margin-bottom:20px;color:#A29BFE}
-  .slide h3{font-size:1.2rem;font-weight:700;color:#FF6B6B;margin-bottom:8px}
-  .slide p,.slide li{font-size:1rem;line-height:1.7;color:#b0b8cc;margin-bottom:8px}
+  .slide-inner{max-width:900px;width:90%;padding:50px 44px;border-radius:24px;background:#fff;color:#2D3436;box-shadow:0 8px 40px rgba(108,92,231,0.08),0 2px 8px rgba(0,0,0,0.04);position:relative;overflow:hidden}
+  .slide-inner::before{content:'';position:absolute;top:0;left:0;width:100%;height:5px;background:linear-gradient(90deg,var(--coral),var(--purple),var(--teal),var(--yellow),var(--pink))}
+  .slide h1{font-size:2.6rem;font-weight:800;margin-bottom:12px;background:linear-gradient(135deg,var(--coral),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .slide h2{font-size:1.5rem;font-weight:700;margin-bottom:20px;color:var(--purple)}
+  .slide h3{font-size:1.15rem;font-weight:700;color:var(--coral);margin-bottom:6px}
+  .slide p,.slide li{font-size:1rem;line-height:1.7;color:#555;margin-bottom:8px}
   .slide ul{list-style:disc;padding-left:22px}
-  .slide li{margin-bottom:6px}
-  .slide .tag{display:inline-block;padding:4px 12px;border-radius:12px;font-size:.82rem;font-weight:600;margin:3px;background:rgba(108,92,231,.2);color:#A29BFE}
-  .slide .highlight{color:#FF6B6B;font-weight:700}
-  .slide .date{color:#00B894;font-weight:600;font-size:.88rem}
-  .slide .small{font-size:.88rem;color:#8899aa}
-  .cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-  .card{background:rgba(255,255,255,.04);border-radius:12px;padding:20px;border-left:3px solid #6C5CE7}
-  .card:nth-child(2){border-left-color:#FF6B6B}
-  .card:nth-child(3){border-left-color:#00B894}
-  .card:nth-child(4){border-left-color:#FD79A8}
+  .slide li{margin-bottom:5px}
+  .slide .tag{display:inline-block;padding:5px 14px;border-radius:14px;font-size:.82rem;font-weight:600;margin:3px}
+  .slide .tag:nth-child(5n+1){background:var(--coral-light);color:var(--coral)}
+  .slide .tag:nth-child(5n+2){background:var(--purple-light);color:var(--purple)}
+  .slide .tag:nth-child(5n+3){background:var(--teal-light);color:var(--teal)}
+  .slide .tag:nth-child(5n+4){background:var(--yellow-light);color:#C8960C}
+  .slide .tag:nth-child(5n+5){background:var(--pink-light);color:var(--pink)}
+  .slide .highlight{color:var(--coral);font-weight:700}
+  .slide .date{color:var(--teal);font-weight:600;font-size:.88rem}
+  .slide .small{font-size:.88rem;color:#999}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .card{background:#fafafa;border-radius:14px;padding:18px 20px;border-left:3px solid var(--purple);transition:all .2s}
+  .card:nth-child(4n+2){border-left-color:var(--coral)}
+  .card:nth-child(4n+3){border-left-color:var(--teal)}
+  .card:nth-child(4n+4){border-left-color:var(--pink)}
+  .card:hover{background:#f5f5f5}
 
-  .controls{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:16px;z-index:100}
-  .controls button{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;width:44px;height:44px;border-radius:50%;font-size:1.2rem;cursor:pointer;transition:all .25s}
-  .controls button:hover{background:rgba(108,92,231,.4)}
-  .controls .page-num{color:#8899aa;font-size:.9rem;min-width:70px;text-align:center}
-  .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .25s}
-  .dot.active{background:#6C5CE7;transform:scale(1.4)}
+  .controls{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:14px;z-index:100;background:rgba(255,255,255,.9);padding:8px 20px;border-radius:30px;box-shadow:0 4px 20px rgba(0,0,0,.08);backdrop-filter:blur(8px)}
+  .controls button{background:#fff;border:1.5px solid #e0e0e0;color:#555;width:40px;height:40px;border-radius:50%;font-size:1.1rem;cursor:pointer;transition:all .25s}
+  .controls button:hover{background:var(--purple);color:#fff;border-color:var(--purple)}
+  .controls .page-num{color:#999;font-size:.88rem;min-width:60px;text-align:center}
+  .dot{width:8px;height:8px;border-radius:50%;background:#ddd;cursor:pointer;transition:all .25s}
+  .dot.active{background:var(--purple);transform:scale(1.5)}
   .dots{display:flex;gap:8px}
 
+  .download-btn{position:fixed;top:20px;right:24px;z-index:200;padding:10px 20px;border-radius:24px;background:#fff;color:var(--purple);border:2px solid var(--purple);font-weight:700;font-size:.9rem;cursor:pointer;transition:all .25s;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+  .download-btn:hover{background:var(--purple);color:#fff}
+
+  .ppt-note{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);color:#aaa;font-size:.8rem;z-index:50}
+
   @media (max-width:768px){
-    .slide-inner{padding:30px 24px}
-    .slide h1{font-size:1.8rem}
-    .slide h2{font-size:1.3rem}
+    .slide-inner{padding:28px 20px}
+    .slide h1{font-size:1.7rem}
+    .slide h2{font-size:1.2rem}
     .cols{grid-template-columns:1fr}
+    .download-btn{top:8px;right:8px;padding:8px 14px;font-size:.8rem}
   }
 </style>
 </head>
 <body>
 
+<button class="download-btn" onclick="downloadPPTX()" title="Download as .pptx">📥 Download PPTX</button>
+
 <div class="slides" id="slides">
 
   <!-- Slide 1: Title -->
-  <div class="slide active"><div class="slide-inner" style="text-align:center">
+  <div class="slide active"><div class="slide-inner" style="text-align:center;padding-top:60px;padding-bottom:60px">
     <h1 style="font-size:3rem">Yuqing Wei / 魏宇晴</h1>
-    <p style="font-size:1.3rem;color:#A29BFE;margin-bottom:4px">Computer Science & Technology @ SUSTech</p>
-    <p style="font-size:1rem;color:#8899aa;margin-bottom:24px">B.E. Expected Jul. 2027</p>
+    <p style="font-size:1.3rem;color:var(--purple);margin-bottom:4px">Computer Science & Technology @ SUSTech</p>
+    <p style="font-size:1rem;color:#999;margin-bottom:24px">B.E. Expected Jul. 2027</p>
     <div>
-      <span class="tag">AI</span><span class="tag">Systems</span><span class="tag">Research</span><span class="tag">Full-Stack</span>
+      <span class="tag">AI</span><span class="tag">Systems</span><span class="tag">Research</span><span class="tag">Full-Stack</span><span class="tag">Leadership</span>
     </div>
-    <p style="margin-top:28px;color:#b0b8cc;">📧 12311043@mail.sustech.edu.cn &nbsp;|&nbsp; 🐙 github.com/csgrace</p>
-    <p style="color:#8899aa;font-size:.85rem;margin-top:30px">← → 方向键翻页 &nbsp;|&nbsp; 点击左右按钮</p>
+    <p style="margin-top:28px;color:#777">📧 12311043@mail.sustech.edu.cn &nbsp;|&nbsp; 📱 (+86) 178-2066-0860</p>
+    <p style="color:#aaa;font-size:.85rem;margin-top:30px">← → 方向键翻页 &nbsp;|&nbsp; 点击 Download PPTX 下载</p>
   </div></div>
 
-  <!-- Slide 2: About -->
+  <!-- Slide 2: About Me -->
   <div class="slide"><div class="slide-inner">
     <h2>🙋 About Me</h2>
     <div class="cols">
       <div class="card">
         <h3>🎓 Education</h3>
-        <p><span class="highlight">SUSTech</span> — B.E. in CSE</p>
-        <p class="date">Aug. 2023 – Jul. 2027</p>
+        <p><span class="highlight">SUSTech</span> — B.E. in Computer Science & Technology</p>
+        <p class="date">Aug. 2023 – Jul. 2027 (Expected)</p>
         <p class="small">Core: Database Systems, AI, NLP, Algorithm Design, Software Engineering</p>
       </div>
       <div class="card">
         <h3>🛠️ Technical Skills</h3>
-        <p><span class="tag">Python</span><span class="tag">Java</span><span class="tag">C++</span><span class="tag">JavaScript</span><span class="tag">Vue.js</span></p>
-        <p><span class="tag">PyTorch</span><span class="tag">Pandas</span><span class="tag">MATLAB</span><span class="tag">Verilog</span><span class="tag">SQL</span></p>
+        <p><span class="tag">Python</span><span class="tag">Java</span><span class="tag">C++</span><span class="tag">JavaScript</span><span class="tag">Vue.js</span><span class="tag">PyTorch</span><span class="tag">SQL</span><span class="tag">Git</span></p>
       </div>
       <div class="card">
         <h3>🌐 Languages</h3>
         <p><span class="highlight">English</span> — Fluent (IELTS 7.5)</p>
-        <p class="small">L: 9.0 &nbsp; R: 8.0 &nbsp; W: 7.0 &nbsp; S: 6.5</p>
+        <p class="small">Listening 9.0 · Reading 8.0 · Writing 7.0 · Speaking 6.5</p>
         <p><span class="highlight">Mandarin</span> — Native &nbsp;|&nbsp; <span class="highlight">Cantonese</span> — Fluent</p>
       </div>
       <div class="card">
-        <h3>🔍 Interests</h3>
-        <p>AIoT · Smart Healthcare · DL · RL · Combinatorial Opt. · BCI · NLP · XAI</p>
+        <h3>🔍 Research Interests</h3>
+        <p>AIoT · Smart Healthcare · Deep Learning · Reinforcement Learning · Combinatorial Optimization · BCI · NLP · XAI</p>
       </div>
     </div>
   </div></div>
@@ -92,43 +118,42 @@
   <!-- Slide 3: Research Highlights -->
   <div class="slide"><div class="slide-inner">
     <h2>🔬 Research Highlights</h2>
-    <div class="card" style="margin-bottom:14px">
+    <div class="card" style="margin-bottom:13px">
       <h3>AI Agent Smart Campus Assistant <span class="date">Mar.–Jun. 2026</span></h3>
-      <p>LangChain-based RAG assistant with optimized retrieval pipeline (<span class="highlight">&lt;3s latency</span>), course planning module with graduation tracking.</p>
+      <p>LangChain-based RAG assistant. Optimized pipeline (<span class="highlight">&lt;3s latency</span>). Course planning module with graduation tracking & credit conflict detection.</p>
     </div>
-    <div class="card" style="margin-bottom:14px">
+    <div class="card" style="margin-bottom:13px">
       <h3>ParroTAO Training Platform <span class="date">Nov. 2025 – Present</span></h3>
-      <p><span class="highlight">Project Leader</span> (Provincial Key Undergraduate Innovation Program). Front-end architecture, team management, AI analytics dashboards.</p>
+      <p><span class="highlight">Project Leader</span> (Provincial Key Innovation Program). Front-end architecture, team management, AI analytics dashboards fusing training logs with physiological data.</p>
     </div>
-    <div class="card" style="margin-bottom:14px">
+    <div class="card" style="margin-bottom:13px">
       <h3>NUS AIoT — Smart Health System <span class="date">May–Jul. 2025</span></h3>
       <p>Front-end Lead. GPS tracking, hydration/diet analysis, chatbot. <span class="highlight">🏆 First Prize</span></p>
     </div>
-    <div class="card" style="margin-bottom:14px">
+    <div class="card" style="margin-bottom:13px">
       <h3>Neural Combinatorial Optimization <span class="date">Nov. 2025 – Present</span></h3>
-      <p>Reproduced Pointer Network & Sym-NCO in EasyCO. Benchmarked on TSP/CVRP.</p>
+      <p>Reproduced Pointer Network & Sym-NCO in EasyCO. Benchmarked on TSP/CVRP datasets.</p>
     </div>
   </div></div>
 
-  <!-- Slide 4: Cambridge + Work -->
+  <!-- Slide 4: Work + Publications -->
   <div class="slide"><div class="slide-inner">
-    <h2>💼 Experience</h2>
-    <div class="card" style="margin-bottom:14px">
+    <h2>💼 Experience & Publications</h2>
+    <div class="card" style="margin-bottom:12px">
       <h3>Meituan · Fortune 500 <span class="date">Jun.–Sep. 2026</span></h3>
       <p><span class="highlight">Agent Training Assistant</span> — Prompt engineering, knowledge base design, Agent evolution dashboard, RBAC permission system.</p>
     </div>
-    <div class="card" style="margin-bottom:14px">
+    <div class="card" style="margin-bottom:12px">
       <h3>Cambridge University <span class="date">Jan.–Feb. 2026</span></h3>
-      <p><span class="highlight">Group Leader</span> — BCI system design. Stakeholder analysis, FMEA/Bowtie risk analysis.</p>
+      <p><span class="highlight">Group Leader</span> — BCI system design. Stakeholder analysis, FMEA/Bowtie risk management.</p>
     </div>
-    <h2 style="margin-top:20px">📄 Publications & Patents</h2>
-    <div class="card" style="margin-bottom:8px">
-      <h3>LLM-Based Invariant Testing <span class="date">ISSRE Accept</span></h3>
-      <p>Co-author. LISA framework for automated oracle generation beyond fuzzing.</p>
+    <div class="card" style="margin-bottom:12px">
+      <h3>📄 LLM-Based Invariant Testing <span class="date">ISSRE Accept</span></h3>
+      <p>Co-author. LISA framework: automated oracle generation via execution trace data, beyond fuzzing.</p>
     </div>
     <div class="card">
-      <h3>LLM Multi-Agent Training Plan Generation <span class="date">Patent: 2026104381429</span></h3>
-      <p>Co-inventor. Personalized training plans via LLM collaboration.</p>
+      <h3>📄 LLM Multi-Agent Training Plan Generation <span class="date">Patent: 2026104381429</span></h3>
+      <p>Co-inventor. Personalized, science-based training plans via LLM multi-agent collaboration.</p>
     </div>
   </div></div>
 
@@ -150,47 +175,47 @@
   <!-- Slide 6: Leadership -->
   <div class="slide"><div class="slide-inner">
     <h2>👥 Leadership & Service</h2>
-    <div class="card" style="margin-bottom:14px">
+    <div class="card" style="margin-bottom:13px">
       <h3>🚣 Captain, SUSTech Rowing Team <span class="date">Sep. 2025 – Present</span></h3>
       <p>Organized training & university-wide competition. <span class="highlight">🥇 Gold Medal</span> at Songshan Lake Carnival. 3rd place in Shenzhen Women's Eight.</p>
     </div>
-    <div class="card" style="margin-bottom:14px">
-      <h3>🏓 Captain, Table Tennis Team <span class="date">Sep. 2025 – Present</span></h3>
+    <div class="card" style="margin-bottom:13px">
+      <h3>🏓 Captain, Table Tennis Team, Shuli College <span class="date">Sep. 2025 – Present</span></h3>
       <p>Organized Freshman Tournament. <span class="highlight">🥈 Runner-up</span> at "Zhumeng Cup". Won Outstanding Sports Team Scholarship.</p>
     </div>
     <div class="card">
       <h3>🤝 Community Service <span class="date">2018 – Present</span></h3>
-      <p>Shenzhen Museum young guide (2018–2023). Volunteer at 15th National Games, Cross-Strait Baseball League Finals, GLDC Ballroom Dancing Competition.</p>
+      <p>Shenzhen Museum young guide (2018–2023). Volunteer at: 15th National Games (2025), Cross-Strait Baseball League Finals (2024), GLDC Ballroom Dancing (2024).</p>
     </div>
   </div></div>
 
   <!-- Slide 7: Thank You -->
-  <div class="slide"><div class="slide-inner" style="text-align:center">
+  <div class="slide"><div class="slide-inner" style="text-align:center;padding-top:60px;padding-bottom:60px">
     <h1 style="font-size:3rem">Thank You! 🙏</h1>
-    <p style="font-size:1.3rem;color:#A29BFE;margin-bottom:28px">Yuqing Wei / 魏宇晴</p>
+    <p style="font-size:1.3rem;color:var(--purple);margin-bottom:28px">Yuqing Wei / 魏宇晴</p>
     <div style="margin-bottom:20px">
-      <p style="font-size:1.1rem">📧 12311043@mail.sustech.edu.cn</p>
-      <p style="font-size:1.1rem">📱 (+86) 178-2066-0860</p>
-      <p style="font-size:1.1rem">🐙 <a href="https://github.com/csgrace" style="color:#A29BFE" target="_blank">github.com/csgrace</a></p>
-      <p style="font-size:1.1rem">🌐 <a href="https://csgrace.github.io" style="color:#A29BFE" target="_blank">csgrace.github.io</a></p>
+      <p style="font-size:1.1rem;color:#555">📧 12311043@mail.sustech.edu.cn</p>
+      <p style="font-size:1.1rem;color:#555">📱 (+86) 178-2066-0860</p>
+      <p style="font-size:1.1rem">🐙 <a href="https://github.com/csgrace" style="color:var(--purple)" target="_blank">github.com/csgrace</a></p>
+      <p style="font-size:1.1rem">🌐 <a href="https://csgrace.github.io" style="color:var(--purple)" target="_blank">csgrace.github.io</a></p>
     </div>
-    <p style="color:#8899aa">Questions? I'm happy to answer!</p>
+    <p style="color:#999">I'm happy to answer any questions!</p>
   </div></div>
 
 </div>
 
 <div class="controls">
-  <button onclick="prevSlide()" title="Previous">◀</button>
+  <button onclick="prevSlide()">◀</button>
   <div class="dots" id="dots"></div>
-  <button onclick="nextSlide()" title="Next">▶</button>
+  <button onclick="nextSlide()">▶</button>
 </div>
 
 <script>
+  // --- Slide Navigation ---
   let current = 0;
   const slides = document.querySelectorAll('.slide');
   const dotsContainer = document.getElementById('dots');
 
-  // Create dots
   slides.forEach((_, i) => {
     const dot = document.createElement('span');
     dot.className = 'dot' + (i === 0 ? ' active' : '');
@@ -204,9 +229,7 @@
       if (i < current) s.classList.add('prev');
       if (i === current) s.classList.add('active');
     });
-    document.querySelectorAll('.dot').forEach((d, i) => {
-      d.classList.toggle('active', i === current);
-    });
+    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
   }
 
   function nextSlide() { if (current < slides.length - 1) { current++; update(); } }
@@ -218,13 +241,128 @@
     if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); prevSlide(); }
   });
 
-  // Touch support
   let touchStartX = 0;
   document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; });
   document.addEventListener('touchend', e => {
     const diff = touchStartX - e.changedTouches[0].screenX;
     if (Math.abs(diff) > 50) { diff > 0 ? nextSlide() : prevSlide(); }
   });
+
+  // --- PPTX Download ---
+  function downloadPPTX() {
+    const PptxGenJS = window.PptxGenJS;
+    if (!PptxGenJS) { alert('PptxGenJS is loading, please try again in a moment.'); return; }
+
+    const pptx = new PptxGenJS();
+    pptx.defineLayout({ name:'CUSTOM', width:'13.333', height:'7.5' });
+    pptx.layout = 'CUSTOM';
+
+    const COLOR_PURPLE = '6C5CE7';
+    const COLOR_CORAL = 'FF6B6B';
+    const COLOR_TEAL = '00B894';
+    const COLOR_DARK = '2D3436';
+    const COLOR_GRAY = '636E72';
+
+    // Slide 1: Title
+    let s1 = pptx.addSlide();
+    s1.background = { fill: 'FFFFFF' };
+    s1.addShape(pptx.ShapeType.rect, { x:0, y:0, w:'100%', h:0.06, fill:{type:'solid',color:COLOR_PURPLE} });
+    s1.addText('Yuqing Wei / 魏宇晴', { x:1, y:2, w:'80%', h:1.2, fontSize:44, bold:true, color:COLOR_PURPLE, align:'center' });
+    s1.addText('Computer Science & Technology @ SUSTech\nB.E. Expected Jul. 2027', { x:1, y:3.2, w:'80%', h:0.8, fontSize:18, color:COLOR_GRAY, align:'center' });
+    s1.addText('12311043@mail.sustech.edu.cn  |  (+86) 178-2066-0860  |  github.com/csgrace', { x:1, y:5.5, w:'80%', h:0.5, fontSize:13, color:COLOR_GRAY, align:'center' });
+
+    // Slide 2: About Me
+    let s2 = pptx.addSlide();
+    s2.background = { fill: 'FFFFFF' };
+    s2.addShape(pptx.ShapeType.rect, { x:0, y:0, w:'100%', h:0.06, fill:{type:'solid',color:COLOR_PURPLE} });
+    s2.addText('About Me', { x:0.8, y:0.4, w:8, h:0.8, fontSize:28, bold:true, color:COLOR_PURPLE });
+    s2.addText([
+      { text:'Education\n', options:{fontSize:18, bold:true, color:COLOR_CORAL} },
+      { text:'SUSTech — B.E. in Computer Science & Technology (Aug. 2023 – Jul. 2027)\n', options:{fontSize:14, color:COLOR_GRAY} },
+      { text:'Core: Database Systems, AI, NLP, Algorithm Design, Software Engineering\n\n', options:{fontSize:12, color:'999999'} },
+      { text:'Technical Skills\n', options:{fontSize:18, bold:true, color:COLOR_CORAL} },
+      { text:'Python (PyTorch, Pandas), Java, C++, JavaScript, Vue.js, MATLAB, Verilog, SQL, Git\n\n', options:{fontSize:14, color:COLOR_GRAY} },
+      { text:'Languages\n', options:{fontSize:18, bold:true, color:COLOR_CORAL} },
+      { text:'English — Fluent (IELTS 7.5: L9.0 R8.0 W7.0 S6.5)  |  Mandarin — Native  |  Cantonese — Fluent', options:{fontSize:14, color:COLOR_GRAY} },
+    ], { x:0.8, y:1.5, w:'85%', h:5, valign:'top' });
+
+    // Slide 3: Research
+    let s3 = pptx.addSlide();
+    s3.background = { fill: 'FFFFFF' };
+    s3.addShape(pptx.ShapeType.rect, { x:0, y:0, w:'100%', h:0.06, fill:{type:'solid',color:COLOR_PURPLE} });
+    s3.addText('Research Highlights', { x:0.8, y:0.4, w:8, h:0.8, fontSize:28, bold:true, color:COLOR_PURPLE });
+    s3.addText([
+      { text:'AI Agent Smart Campus Assistant', options:{fontSize:16, bold:true, color:COLOR_CORAL} },{ text:'  Mar.–Jun. 2026\n', options:{fontSize:13, color:COLOR_TEAL} },
+      { text:'LangChain RAG assistant; optimized retrieval <3s latency; course planning module with graduation tracking.\n\n', options:{fontSize:13, color:COLOR_GRAY} },
+      { text:'ParroTAO Training Platform', options:{fontSize:16, bold:true, color:COLOR_CORAL} },{ text:'  Nov. 2025 – Present\n', options:{fontSize:13, color:COLOR_TEAL} },
+      { text:'Project Leader (Provincial Key Innovation Program). Front-end architecture, AI analytics dashboards.\n\n', options:{fontSize:13, color:COLOR_GRAY} },
+      { text:'NUS AIoT — Smart Health System', options:{fontSize:16, bold:true, color:COLOR_CORAL} },{ text:'  May–Jul. 2025\n', options:{fontSize:13, color:COLOR_TEAL} },
+      { text:'Front-end Lead. GPS tracking, hydration/diet analysis, chatbot. First Prize.\n\n', options:{fontSize:13, color:COLOR_GRAY} },
+      { text:'Neural Combinatorial Optimization', options:{fontSize:16, bold:true, color:COLOR_CORAL} },{ text:'  Nov. 2025 – Present\n', options:{fontSize:13, color:COLOR_TEAL} },
+      { text:'Reproduced Pointer Network & Sym-NCO in EasyCO. Benchmarked on TSP/CVRP.', options:{fontSize:13, color:COLOR_GRAY} },
+    ], { x:0.8, y:1.5, w:'85%', h:5.5, valign:'top' });
+
+    // Slide 4: Work + Publications
+    let s4 = pptx.addSlide();
+    s4.background = { fill: 'FFFFFF' };
+    s4.addShape(pptx.ShapeType.rect, { x:0, y:0, w:'100%', h:0.06, fill:{type:'solid',color:COLOR_PURPLE} });
+    s4.addText('Experience & Publications', { x:0.8, y:0.4, w:8, h:0.8, fontSize:28, bold:true, color:COLOR_PURPLE });
+    s4.addText([
+      { text:'Meituan · Fortune 500', options:{fontSize:16, bold:true, color:COLOR_CORAL} },{ text:'  Jun.–Sep. 2026\n', options:{fontSize:13, color:COLOR_TEAL} },
+      { text:'Agent Training Assistant — prompt engineering, knowledge base design, Agent evolution dashboard, RBAC.\n\n', options:{fontSize:13, color:COLOR_GRAY} },
+      { text:'Cambridge University', options:{fontSize:16, bold:true, color:COLOR_CORAL} },{ text:'  Jan.–Feb. 2026\n', options:{fontSize:13, color:COLOR_TEAL} },
+      { text:'Group Leader — BCI system design, stakeholder analysis, FMEA/Bowtie risk management.\n\n', options:{fontSize:13, color:COLOR_GRAY} },
+      { text:'LLM-Based Invariant Testing', options:{fontSize:16, bold:true, color:COLOR_CORAL} },{ text:'  ISSRE Accept\n', options:{fontSize:13, color:COLOR_TEAL} },
+      { text:'Co-author. LISA framework for automated oracle generation beyond fuzzing.\n\n', options:{fontSize:13, color:COLOR_GRAY} },
+      { text:'LLM Multi-Agent Training Plan Generation', options:{fontSize:16, bold:true, color:COLOR_CORAL} },{ text:'  Patent 2026104381429\n', options:{fontSize:13, color:COLOR_TEAL} },
+      { text:'Co-inventor. Personalized training plans via LLM multi-agent collaboration.', options:{fontSize:13, color:COLOR_GRAY} },
+    ], { x:0.8, y:1.5, w:'85%', h:5.5, valign:'top' });
+
+    // Slide 5: Honors
+    let s5 = pptx.addSlide();
+    s5.background = { fill: 'FFFFFF' };
+    s5.addShape(pptx.ShapeType.rect, { x:0, y:0, w:'100%', h:0.06, fill:{type:'solid',color:COLOR_PURPLE} });
+    s5.addText('Honors & Awards', { x:0.8, y:0.4, w:8, h:0.8, fontSize:28, bold:true, color:COLOR_PURPLE });
+    const honors = [
+      ['Meritorious Winner, MCM/ICM', 'May 2026'],
+      ['National 3rd Prize, English Competition for College Students', 'May 2026'],
+      ['Outstanding Student, SUSTech', 'Dec. 2025'],
+      ['Provincial 2nd Prize, National Math Modeling Competition', 'Dec. 2025'],
+      ['3rd Class Merit Scholarship (2024–2025), SUSTech', 'Nov. 2025'],
+      ['3rd Prize, Greater Bay Area Robotics Competition', 'Nov. 2025'],
+      ['First Prize, NUS AIoT Summer Workshop', 'Jul. 2025'],
+    ];
+    let y = 1.5;
+    honors.forEach(([h, d]) => {
+      s5.addText(h, { x:0.8, y:y, w:'70%', h:0.45, fontSize:14, color:COLOR_DARK });
+      s5.addText(d, { x:10, y:y, w:'25%', h:0.45, fontSize:12, color:COLOR_TEAL, align:'right' });
+      y += 0.52;
+    });
+
+    // Slide 6: Leadership
+    let s6 = pptx.addSlide();
+    s6.background = { fill: 'FFFFFF' };
+    s6.addShape(pptx.ShapeType.rect, { x:0, y:0, w:'100%', h:0.06, fill:{type:'solid',color:COLOR_PURPLE} });
+    s6.addText('Leadership & Service', { x:0.8, y:0.4, w:8, h:0.8, fontSize:28, bold:true, color:COLOR_PURPLE });
+    s6.addText([
+      { text:'Captain, SUSTech Rowing Team', options:{fontSize:16, bold:true, color:COLOR_CORAL} },{ text:'  Sep. 2025 – Present\n', options:{fontSize:13, color:COLOR_TEAL} },
+      { text:'Organized training & competition. Gold Medal at Songshan Lake. 3rd in Shenzhen Women\'s Eight.\n\n', options:{fontSize:13, color:COLOR_GRAY} },
+      { text:'Captain, Table Tennis Team, Shuli College', options:{fontSize:16, bold:true, color:COLOR_CORAL} },{ text:'  Sep. 2025 – Present\n', options:{fontSize:13, color:COLOR_TEAL} },
+      { text:'Organized Freshman Tournament. Runner-up at "Zhumeng Cup". Outstanding Sports Team Scholarship.\n\n', options:{fontSize:13, color:COLOR_GRAY} },
+      { text:'Community Service', options:{fontSize:16, bold:true, color:COLOR_CORAL} },{ text:'  2018 – Present\n', options:{fontSize:13, color:COLOR_TEAL} },
+      { text:'Shenzhen Museum guide (2018–2023). Volunteer at 15th National Games, Cross-Strait Baseball Finals, GLDC.', options:{fontSize:13, color:COLOR_GRAY} },
+    ], { x:0.8, y:1.5, w:'85%', h:5, valign:'top' });
+
+    // Slide 7: Thank You
+    let s7 = pptx.addSlide();
+    s7.background = { fill: 'FFFFFF' };
+    s7.addShape(pptx.ShapeType.rect, { x:0, y:0, w:'100%', h:0.06, fill:{type:'solid',color:COLOR_PURPLE} });
+    s7.addText('Thank You!', { x:1, y:2, w:'80%', h:1.2, fontSize:44, bold:true, color:COLOR_PURPLE, align:'center' });
+    s7.addText('Yuqing Wei / 魏宇晴', { x:1, y:3.2, w:'80%', h:0.8, fontSize:22, color:COLOR_GRAY, align:'center' });
+    s7.addText('📧 12311043@mail.sustech.edu.cn\n📱 (+86) 178-2066-0860\n🐙 github.com/csgrace  |  🌐 csgrace.github.io', { x:1, y:4.2, w:'80%', h:1.5, fontSize:15, color:COLOR_GRAY, align:'center' });
+
+    pptx.writeFile({ fileName: 'Yuqing_Wei_Presentation.pptx' });
+  }
 </script>
 </body>
 </html>

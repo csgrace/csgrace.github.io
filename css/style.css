@@ -232,6 +232,29 @@ img {
   font-weight: 600;
 }
 
+/* --- Presentation Banner --- */
+.presentation-banner {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.presentation-banner a {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, var(--purple-light), var(--purple));
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.05rem;
+  transition: all 0.3s;
+  box-shadow: 0 4px 16px rgba(108,92,231,0.25);
+}
+
+.presentation-banner a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(108,92,231,0.4);
+}
+
 /* --- Quick Nav Cards (Home) --- */
 .quick-nav {
   display: grid;
