@@ -137,6 +137,9 @@ const i18n = {
     "gh.motion.desc": "Signal processing project for electrical engineering course.",
     "gh.ncatbot": "NcatBot — QQ Bot SDK",
     "gh.ncatbot.desc": "Fork: NapCat Python SDK for QQ bot development.",
+    "gh.cs340": "CS340 — Computational Ethics",
+    "gh.cs340.desc": "Computational Ethics course project.",
+    "repo.view": "View Repository",
 
     // Honors & Leadership
     "hl.title": "Honors & Leadership",
@@ -328,6 +331,9 @@ const i18n = {
     "gh.motion.desc": "电子工程课程信号处理项目。",
     "gh.ncatbot": "NcatBot — QQ 机器人 SDK",
     "gh.ncatbot.desc": "Fork: NapCat Python SDK，用于 QQ 机器人开发。",
+    "gh.cs340": "CS340 — 计算机伦理学",
+    "gh.cs340.desc": "计算机伦理学课程项目。",
+    "repo.view": "查看仓库",
 
     // Honors & Leadership
     "hl.title": "荣誉与领导力",

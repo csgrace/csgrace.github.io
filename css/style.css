@@ -749,6 +749,24 @@ img {
   margin-bottom: 0;
 }
 
+/* Repo link inside research entry */
+.research-entry .repo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 10px;
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: all 0.25s;
+  text-decoration: none;
+}
+.research-entry:nth-child(1) .repo-link { background: #E0EEFF; color: #5B9BD5; }
+.research-entry:nth-child(1) .repo-link:hover { background: #5B9BD5; color: #fff; }
+.research-entry:nth-child(3) .repo-link { background: #FFE0E0; color: var(--coral-dark); }
+.research-entry:nth-child(3) .repo-link:hover { background: var(--coral-dark); color: #fff; }
+
 /* Publications */
 .pub-entry {
   background: var(--white);
