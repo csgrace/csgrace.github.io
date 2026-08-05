@@ -42,6 +42,15 @@ const i18n = {
     "about.lang.zh": "Mandarin — Native",
     "about.lang.canto": "Cantonese — Fluent",
     "about.interests": "Research Interests",
+    "interest.aiot": "AIoT",
+    "interest.healthcare": "Smart Healthcare",
+    "interest.dl": "Deep Learning",
+    "interest.rl": "Reinforcement Learning",
+    "interest.co": "Combinatorial Optimization",
+    "interest.bci": "Brain-Computer Interface",
+    "interest.nlp": "NLP",
+    "interest.xai": "XAI",
+    "interest.sports": "Sports Health",
 
     // Research & Work
     "rw.title": "Research & Work",
@@ -224,6 +233,15 @@ const i18n = {
     "about.lang.zh": "普通话 — 母语",
     "about.lang.canto": "粤语 — 流利",
     "about.interests": "研究兴趣",
+    "interest.aiot": "AIoT",
+    "interest.healthcare": "智慧医疗",
+    "interest.dl": "深度学习",
+    "interest.rl": "强化学习",
+    "interest.co": "组合优化",
+    "interest.bci": "脑机接口",
+    "interest.nlp": "自然语言处理",
+    "interest.xai": "可解释AI",
+    "interest.sports": "运动健康",
 
     // Research & Work
     "rw.title": "研究与工作",
