@@ -709,6 +709,19 @@ img {
   font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.research-entry .entry-header h3 .date {
+  color: var(--purple);
+  font-weight: 600;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .research-entry .entry-meta {
@@ -719,13 +732,6 @@ img {
   gap: 8px;
   font-size: 0.88rem;
   color: var(--text-light);
-}
-
-.research-entry .entry-meta .date {
-  color: var(--purple);
-  font-weight: 600;
-  text-align: right;
-  margin-top: -2px;
 }
 
 .research-entry .entry-meta .role {
