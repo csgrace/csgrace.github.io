@@ -725,6 +725,7 @@ img {
   color: var(--purple);
   font-weight: 600;
   text-align: right;
+  margin-top: -2px;
 }
 
 .research-entry .entry-meta .role {
@@ -752,11 +753,12 @@ img {
   margin-bottom: 0;
 }
 
-/* Repo link inside research entry — subtle URL style */
+/* Repo link inside research entry — right-aligned below date */
 .research-entry .repo-link {
-  display: inline-block;
-  margin-top: 4px;
-  font-size: 0.82rem;
+  display: block;
+  text-align: right;
+  margin-top: 2px;
+  font-size: 0.8rem;
   color: var(--text-light);
   text-decoration: none;
   transition: color 0.2s;
@@ -766,8 +768,8 @@ img {
   color: var(--purple);
 }
 .research-entry .repo-link .link-icon {
-  margin-right: 4px;
-  font-size: 0.75rem;
+  margin-right: 3px;
+  font-size: 0.72rem;
 }
 
 /* Publications */
