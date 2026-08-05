@@ -46,9 +46,9 @@ const i18n = {
     // Research & Work
     "rw.title": "Research & Work",
     "rw.header.desc": "Academic research, industry experience, and publications.",
-    "rw.research_title": "Academic Research",
-    "rw.work_title": "Work Experience",
-    "rw.pub_title": "Publications & Patents",
+    "rw.research_title": "Research Projects",
+    "rw.work_title": "Internship Experience",
+    "rw.pub_title": "Papers & Patents",
 
     "rw.campus.title": "AI Agent Smart Campus Assistant",
     "rw.campus.date": "Mar. 2026 – Jun. 2026",
@@ -101,8 +101,9 @@ const i18n = {
     "rw.pub2.desc": "Proposed a training plan generation method via LLM multi-agent collaboration, covering system architecture, terminal, and storage, which ingests user profile and historical performance data to deliver personalized, science-based training plans aligned with individual goals.",
 
     // Tabs
-    "tab.research": "Academic Research",
-    "tab.work": "Work Experience",
+    "tab.research": "Research Projects",
+    "tab.work": "Internship Experience",
+    "tab.pub": "Papers & Patents",
     "tab.github": "GitHub Projects",
 
     // GitHub Projects
@@ -227,9 +228,9 @@ const i18n = {
     // Research & Work
     "rw.title": "研究与工作",
     "rw.header.desc": "学术研究、业界实习经历与发表。",
-    "rw.research_title": "学术研究",
-    "rw.work_title": "工作经历",
-    "rw.pub_title": "发表与专利",
+    "rw.research_title": "研究项目",
+    "rw.work_title": "实习经历",
+    "rw.pub_title": "论文与专利",
 
     "rw.campus.title": "AI Agent 智慧校园助手",
     "rw.campus.date": "2026 年 3 月 – 6 月",
@@ -268,7 +269,7 @@ const i18n = {
     "rw.meituan.title": "美团 · 领先科技零售 · 世界 500 强",
     "rw.meituan.date": "2026 年 6 月 – 9 月",
     "rw.meituan.role": "智能体训练助理",
-    "rw.meituan.d1": "通过提示工程、知识库设计与技能调优优化 AI 数字员工，利用交互数据分析评估并提升复杂场景下的任务质量与决策可靠性。",
+    "rw.meituan.d1": "通过提示词工程、知识库设计与skill调优优化 AI 数字员工，利用交互数据分析评估并提升复杂场景下的任务质量与决策可靠性。",
     "rw.meituan.d2": "开发智能体演化看板，追踪迭代影响，进行性能评估与数据驱动的行为分析，支持智能体行为的整体优化。",
     "rw.meituan.d3": "与团队协作，通过基于角色的访问控制 (RBAC) 定义角色并分配权限，将角色映射至智能体训练师、子智能体部署人员和终端用户，以明确职责并强化安全性。",
 
@@ -282,8 +283,9 @@ const i18n = {
     "rw.pub2.desc": "提出了一种基于大语言模型多智能体协作的训练计划生成方法，涵盖系统架构、终端及存储介质，通过接入用户画像与历史表现数据，提供与个人目标相匹配的个性化、科学化训练方案。",
 
     // Tabs
-    "tab.research": "学术研究",
-    "tab.work": "工作经历",
+    "tab.research": "研究项目",
+    "tab.work": "实习经历",
+    "tab.pub": "论文与专利",
     "tab.github": "GitHub 项目",
 
     // GitHub Projects

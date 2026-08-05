@@ -38,15 +38,16 @@
 
       <!-- Tab Navigation -->
       <div class="tab-nav fade-in">
-        <button class="tab-btn active" data-tab="research" data-i18n="tab.research">Academic Research</button>
-        <button class="tab-btn" data-tab="work" data-i18n="tab.work">Work Experience</button>
+        <button class="tab-btn active" data-tab="research" data-i18n="tab.research">Research Projects</button>
+        <button class="tab-btn" data-tab="work" data-i18n="tab.work">Internship Experience</button>
+        <button class="tab-btn" data-tab="pub" data-i18n="tab.pub">Papers & Patents</button>
         <button class="tab-btn" data-tab="github" data-i18n="tab.github">GitHub Projects</button>
       </div>
 
-      <!-- ============ TAB 1: Academic Research ============ -->
+      <!-- ============ TAB 1: Research Projects ============ -->
       <div class="tab-panel active" data-tab="research">
         <div class="research-section fade-in">
-          <h2>🔬 <span data-i18n="rw.research_title">Academic Research</span></h2>
+          <h2>🔬 <span data-i18n="rw.research_title">Research Projects</span></h2>
 
           <div class="research-entry">
             <div class="entry-header">
@@ -122,31 +123,12 @@
             </ul>
           </div>
         </div>
-
-        <!-- Publications -->
-        <div class="research-section fade-in">
-          <h2>📄 <span data-i18n="rw.pub_title">Publications & Patents</span></h2>
-
-          <div class="pub-entry">
-            <div class="pub-venue" data-i18n="rw.pub1.venue">ISSRE Accept</div>
-            <h3 data-i18n="rw.pub1.title">LLM-Based Invariant Testing for Software Functional Bugs</h3>
-            <div class="pub-role" data-i18n="rw.pub1.role">Co-author</div>
-            <div class="pub-desc" data-i18n="rw.pub1.desc">Proposed LISA, an LLM-based invariant testing framework that leverages execution trace data (API n-gram feedback) to iteratively generate test oracles (API sequences and invariants), improving functional bug detection beyond fuzzing methods.</div>
-          </div>
-
-          <div class="pub-entry">
-            <div class="pub-venue" data-i18n="rw.pub2.venue">Under Review — Patent Application No. 2026104381429</div>
-            <h3 data-i18n="rw.pub2.title">A Training Plan Generation Method, System, Terminal, and Medium Based on LLM Multi-Agent Collaboration</h3>
-            <div class="pub-role" data-i18n="rw.pub2.role">Co-inventor</div>
-            <div class="pub-desc" data-i18n="rw.pub2.desc">Proposed a training plan generation method via LLM multi-agent collaboration, covering system architecture, terminal, and storage, which ingests user profile and historical performance data to deliver personalized, science-based training plans aligned with individual goals.</div>
-          </div>
-        </div>
       </div>
 
-      <!-- ============ TAB 2: Work Experience ============ -->
+      <!-- ============ TAB 2: Internship Experience ============ -->
       <div class="tab-panel" data-tab="work">
         <div class="research-section fade-in">
-          <h2>💼 <span data-i18n="rw.work_title">Work Experience</span></h2>
+          <h2>💼 <span data-i18n="rw.work_title">Internship Experience</span></h2>
 
           <div class="research-entry">
             <div class="entry-header">
@@ -163,10 +145,12 @@
             </ul>
           </div>
         </div>
+      </div>
 
-        <!-- Publications in work tab too -->
+      <!-- ============ TAB 3: Papers & Patents ============ -->
+      <div class="tab-panel" data-tab="pub">
         <div class="research-section fade-in">
-          <h2>📄 <span data-i18n="rw.pub_title">Publications & Patents</span></h2>
+          <h2>📄 <span data-i18n="rw.pub_title">Papers & Patents</span></h2>
 
           <div class="pub-entry">
             <div class="pub-venue" data-i18n="rw.pub1.venue">ISSRE Accept</div>
@@ -184,21 +168,11 @@
         </div>
       </div>
 
-      <!-- ============ TAB 3: GitHub Projects ============ -->
+      <!-- ============ TAB 4: GitHub Projects ============ -->
       <div class="tab-panel" data-tab="github">
         <div class="research-section fade-in">
           <h2>🐙 <span data-i18n="gh.title">GitHub Projects</span></h2>
           <div class="projects-grid">
-
-            <a href="https://github.com/csgrace/NUS-AIOT" target="_blank" class="project-card">
-              <div class="project-card-banner" style="background: linear-gradient(135deg, var(--coral), var(--coral-dark));">🏥</div>
-              <div class="project-card-body">
-                <h3 data-i18n="gh.nusaiot">Smart Health System — NUS AIOT</h3>
-                <p data-i18n="gh.nusaiot.desc">Full-stack intelligent health management system. First Prize at NUS AIoT Summer Workshop.</p>
-                <div class="project-tags"><span class="project-tag">AIoT</span><span class="project-tag">Full-Stack</span><span class="project-tag">Healthcare</span></div>
-                <span class="project-link" style="background:#FFE0E0;color:var(--coral-dark);">🔗 View on GitHub</span>
-              </div>
-            </a>
 
             <a href="https://github.com/csgrace/Artificial_Intelligence" target="_blank" class="project-card">
               <div class="project-card-banner" style="background: linear-gradient(135deg, var(--purple), var(--purple-dark));">🤖</div>
