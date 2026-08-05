@@ -714,7 +714,9 @@ img {
 .research-entry .entry-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
   font-size: 0.88rem;
   color: var(--text-light);
 }
@@ -722,6 +724,7 @@ img {
 .research-entry .entry-meta .date {
   color: var(--purple);
   font-weight: 600;
+  text-align: right;
 }
 
 .research-entry .entry-meta .role {
@@ -749,23 +752,23 @@ img {
   margin-bottom: 0;
 }
 
-/* Repo link inside research entry */
+/* Repo link inside research entry — subtle URL style */
 .research-entry .repo-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  margin-top: 10px;
-  padding: 6px 14px;
-  border-radius: 16px;
+  display: inline-block;
+  margin-top: 4px;
   font-size: 0.82rem;
-  font-weight: 600;
-  transition: all 0.25s;
+  color: var(--text-light);
   text-decoration: none;
+  transition: color 0.2s;
+  word-break: break-all;
 }
-.research-entry:nth-child(1) .repo-link { background: #E0EEFF; color: #5B9BD5; }
-.research-entry:nth-child(1) .repo-link:hover { background: #5B9BD5; color: #fff; }
-.research-entry:nth-child(3) .repo-link { background: #FFE0E0; color: var(--coral-dark); }
-.research-entry:nth-child(3) .repo-link:hover { background: var(--coral-dark); color: #fff; }
+.research-entry .repo-link:hover {
+  color: var(--purple);
+}
+.research-entry .repo-link .link-icon {
+  margin-right: 4px;
+  font-size: 0.75rem;
+}
 
 /* Publications */
 .pub-entry {
