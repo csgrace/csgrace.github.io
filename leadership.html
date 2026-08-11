@@ -41,8 +41,8 @@
       font-size: 0.72rem; color: #aaa; font-weight: 400; margin-left: auto;
     }
     .awards-sidebar .side-item.active .count { color: var(--blue-light); }
-    .awards-sidebar .side-divider {
-      height: 1px; background: #f0f0f0; margin: 0 12px;
+    .awards-sidebar .side-item + .side-item {
+      border-top: 1px solid #f4f4f4;
     }
 
     .awards-content { flex: 1; min-width: 0; }
@@ -152,7 +152,6 @@
             <div class="side-item" data-cat="scholarship">
               🎓 <span data-i18n="hl.cat_scholarship">Scholarship</span> <span class="count">1</span>
             </div>
-            <div class="side-divider"></div>
             <div class="side-item" data-cat="sports">
               🏆 <span data-i18n="hl.cat_sports">Sports</span> <span class="count">3</span>
             </div>
