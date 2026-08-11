@@ -6,17 +6,7 @@
   <title data-i18n-title="hl.title">Honors & Leadership — Yuqing Wei</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* ===== Tab nav ===== */
-    .section-tabs {
-      display: flex; gap: 8px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap;
-    }
-    .section-tabs button {
-      padding: 10px 28px; border-radius: 24px; border: 2px solid #e0e0e0;
-      background: #fff; font-size: 0.9rem; font-weight: 600; cursor: pointer;
-      transition: all 0.25s; font-family: inherit; color: var(--gray);
-    }
-    .section-tabs button:hover { border-color: var(--blue-light); color: var(--blue); }
-    .section-tabs button.active { background: var(--blue); color: #fff; border-color: var(--blue); }
+    /* ===== Tabs (reuse global .tab-nav .tab-btn) ===== */
     .tab-content { display: none; }
     .tab-content.active { display: block; }
 
@@ -49,14 +39,15 @@
 
     /* ===== Award card ===== */
     .award-card {
-      display: flex; align-items: flex-start; gap: 16px;
-      background: #fff; border-radius: 10px; padding: 18px 22px; margin-bottom: 10px;
+      display: flex; align-items: baseline; gap: 14px;
+      background: #fff; border-radius: 10px; padding: 16px 22px; margin-bottom: 10px;
       box-shadow: 0 1px 8px rgba(0,0,0,0.03); transition: transform 0.2s, box-shadow 0.2s;
     }
     .award-card:hover { transform: translateX(3px); box-shadow: 0 2px 14px rgba(0,0,0,0.06); }
-    .award-card .award-icon { font-size: 1.4rem; flex-shrink: 0; width: 36px; text-align: center; padding-top: 1px; }
-    .award-card .award-body h4 { font-size: 0.92rem; color: var(--dark); margin-bottom: 3px; }
-    .award-card .award-body .award-date { font-size: 0.75rem; color: var(--gray); }
+    .award-card .award-icon { font-size: 1.3rem; flex-shrink: 0; width: 30px; text-align: center; }
+    .award-card .award-body { flex: 1; }
+    .award-card .award-body h4 { font-size: 0.9rem; color: var(--dark); margin-bottom: 0; }
+    .award-card .award-date { font-size: 0.78rem; color: var(--gray); white-space: nowrap; flex-shrink: 0; }
 
     .award-empty {
       text-align: center; padding: 40px 20px; color: var(--gray); font-size: 0.88rem;
@@ -128,10 +119,10 @@
       </div>
 
       <!-- Tab Nav -->
-      <div class="section-tabs fade-in">
-        <button class="active" data-tab="awards" data-i18n="hl.tab_awards">Honors</button>
-        <button data-tab="leadership" data-i18n="hl.tab_leadership">Leadership</button>
-        <button data-tab="volunteer" data-i18n="hl.tab_volunteer">Volunteer</button>
+      <div class="tab-nav fade-in">
+        <button class="tab-btn active" data-tab="awards" data-i18n="hl.tab_awards">Honors</button>
+        <button class="tab-btn" data-tab="leadership" data-i18n="hl.tab_leadership">Leadership</button>
+        <button class="tab-btn" data-tab="volunteer" data-i18n="hl.tab_volunteer">Volunteer</button>
       </div>
 
       <!-- ==================== TAB 1: AWARDS (Sidebar + Content) ==================== -->
@@ -166,8 +157,8 @@
                 <div class="award-icon">🎖️</div>
                 <div class="award-body">
                   <h4 data-i18n="hl.honor3">Outstanding Student, SUSTech</h4>
-                  <div class="award-date" data-i18n="hl.honor3_date">Dec. 2025</div>
                 </div>
+                <div class="award-date" data-i18n="hl.honor3_date">Dec. 2025</div>
               </div>
             </div>
 
@@ -176,28 +167,36 @@
               <div class="award-card">
                 <div class="award-icon">🥇</div>
                 <div class="award-body">
-                  <h4 data-i18n="hl.honor1">Meritorious Winner, Mathematical Contest in Modeling (MCM/ICM)</h4>
+                  
+<h4 data-i18n="hl.honor1">Meritorious Winner, Mathematical Contest in Modeling (MCM/ICM)</h4>
+                  </div>
                   <div class="award-date" data-i18n="hl.honor1_date">May 2026</div>
                 </div>
               </div>
               <div class="award-card">
                 <div class="award-icon">📝</div>
                 <div class="award-body">
-                  <h4 data-i18n="hl.honor2">Third Prize (National Level), National English Competition for College Students</h4>
+                  
+<h4 data-i18n="hl.honor2">Third Prize (National Level), National English Competition for College Students</h4>
+                  </div>
                   <div class="award-date" data-i18n="hl.honor2_date">May 2026</div>
                 </div>
               </div>
               <div class="award-card">
                 <div class="award-icon">🥈</div>
                 <div class="award-body">
-                  <h4 data-i18n="hl.honor4">Provincial 2nd Prize, National College Mathematical Modeling Competition</h4>
+                  
+<h4 data-i18n="hl.honor4">Provincial 2nd Prize, National College Mathematical Modeling Competition</h4>
+                  </div>
                   <div class="award-date" data-i18n="hl.honor4_date">Dec. 2025</div>
                 </div>
               </div>
               <div class="award-card">
                 <div class="award-icon">🏆</div>
                 <div class="award-body">
-                  <h4 data-i18n="hl.honor7">First Prize, AIoT Summer Workshop, National University of Singapore</h4>
+                  
+<h4 data-i18n="hl.honor7">First Prize, AIoT Summer Workshop, National University of Singapore</h4>
+                  </div>
                   <div class="award-date" data-i18n="hl.honor7_date">Jul. 2025</div>
                 </div>
               </div>
@@ -208,7 +207,9 @@
               <div class="award-card">
                 <div class="award-icon">🤖</div>
                 <div class="award-body">
-                  <h4 data-i18n="hl.honor6">Third Prize, Greater Bay Area Robotics Innovation & Entrepreneurship Competition</h4>
+                  
+<h4 data-i18n="hl.honor6">Third Prize, Greater Bay Area Robotics Innovation & Entrepreneurship Competition</h4>
+                  </div>
                   <div class="award-date" data-i18n="hl.honor6_date">Nov. 2025</div>
                 </div>
               </div>
@@ -219,7 +220,9 @@
               <div class="award-card">
                 <div class="award-icon">💵</div>
                 <div class="award-body">
-                  <h4 data-i18n="hl.honor5">Third Class of the Merit Student Scholarship (2024–2025), SUSTech</h4>
+                  
+<h4 data-i18n="hl.honor5">Third Class of the Merit Student Scholarship (2024–2025), SUSTech</h4>
+                  </div>
                   <div class="award-date" data-i18n="hl.honor5_date">Nov. 2025</div>
                 </div>
               </div>
@@ -233,21 +236,27 @@
               <div class="award-card">
                 <div class="award-icon">🚣</div>
                 <div class="award-body">
-                  <h4 data-i18n="hl.sport1">Third Place, Shenzhen Women's Eight with Coxswain Competition</h4>
+                  
+<h4 data-i18n="hl.sport1">Third Place, Shenzhen Women's Eight with Coxswain Competition</h4>
+                  </div>
                   <div class="award-date" data-i18n="hl.sport1_date">2025</div>
                 </div>
               </div>
               <div class="award-card">
                 <div class="award-icon">🥇</div>
                 <div class="award-body">
-                  <h4 data-i18n="hl.sport2">Gold Medal, Songshan Lake Water Sports Carnival</h4>
+                  
+<h4 data-i18n="hl.sport2">Gold Medal, Songshan Lake Water Sports Carnival</h4>
+                  </div>
                   <div class="award-date" data-i18n="hl.sport2_date">2025</div>
                 </div>
               </div>
               <div class="award-card">
                 <div class="award-icon">🏓</div>
                 <div class="award-body">
-                  <h4 data-i18n="hl.sport3">Runner-up, University-Level "Zhumeng Cup" Table Tennis Team Championship</h4>
+                  
+<h4 data-i18n="hl.sport3">Runner-up, University-Level "Zhumeng Cup" Table Tennis Team Championship</h4>
+                  </div>
                   <div class="award-date" data-i18n="hl.sport3_date">2025</div>
                 </div>
               </div>
