@@ -794,6 +794,17 @@ img {
   box-shadow: 0 4px 14px rgba(107,91,181,0.3);
 }
 
+/* Clickable research entry card */
+.research-entry-link {
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s, border-color 0.3s;
+}
+.research-entry-link:hover {
+  border-color: var(--purple-light);
+  box-shadow: 0 6px 24px rgba(107,91,181,0.12);
+}
+
 /* Publications */
 .pub-entry {
   background: var(--white);
