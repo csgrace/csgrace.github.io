@@ -969,7 +969,7 @@ img {
   border-top: 1px solid rgba(0,0,0,0.06);
 }
 .contact-strip-title {
-  font-size: 1.15rem; font-weight: 700; color: var(--dark);
+  font-size: 1.15rem; font-weight: 700; color: var(--text);
   text-align: center; margin-bottom: 20px;
 }
 .contact-row {
@@ -992,10 +992,10 @@ a.contact-mini-card:hover {
 }
 .contact-mini-card .cm-label {
   font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 1.5px; color: var(--blue-soft);
+  letter-spacing: 1.5px; color: var(--text-light);
 }
 .contact-mini-card .cm-value {
-  font-size: 0.85rem; color: var(--dark); font-weight: 500;
+  font-size: 0.85rem; color: var(--text); font-weight: 500;
 }
 
 /* --- Footer --- */
