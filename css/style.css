@@ -1094,142 +1094,52 @@ img {
   word-break: break-all;
 }
 
-/* --- Contact Section (homepage) --- */
-.contact-section {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.contact-section-inner {
-  background: linear-gradient(135deg, #6C5CE7 0%, #5541D7 50%, #4A2FB8 100%);
-  border-radius: 24px;
-  padding: 48px 40px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 12px 40px rgba(108,92,231,0.20);
-}
-
-.contact-section-inner::before {
-  content: '';
-  position: absolute;
-  top: -60px;
-  right: -60px;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.06);
-}
-
-.contact-section-inner::after {
-  content: '';
-  position: absolute;
-  bottom: -40px;
-  left: -40px;
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  background: rgba(255,107,107,0.10);
-}
-
-.contact-section-head {
-  text-align: center;
-  margin-bottom: 32px;
-  position: relative;
-  z-index: 1;
-}
-
-.contact-section-head h2 {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #fff;
-  margin-bottom: 8px;
-}
-
-.contact-section-head p {
-  font-size: 0.95rem;
-  color: rgba(255,255,255,0.7);
-  max-width: 420px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-.contact-section-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 14px;
-  position: relative;
-  z-index: 1;
-}
-
-.contact-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 22px 12px 12px;
-  border-radius: 50px;
-  background: rgba(255,255,255,0.95);
-  text-decoration: none;
-  color: var(--text);
-  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  backdrop-filter: blur(8px);
-}
-
-.contact-pill:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-  background: #fff;
-}
-
-.contact-pill-plain {
-  cursor: default;
-}
-
-.contact-pill-plain:hover {
-  transform: none;
-}
-
-.contact-pill-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.15rem;
-  color: #fff;
-  flex-shrink: 0;
-}
-
-.contact-pill-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.3;
-}
-
-.contact-pill-text small {
-  font-size: 0.68rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  color: var(--text-light);
-}
-
-.contact-pill-text strong {
-  font-size: 0.88rem;
-  color: var(--text);
-  font-weight: 600;
-  word-break: break-all;
-}
+/* --- Contact Section (homepage) — legacy, kept for reference --- */
 
 /* --- Footer --- */
 .footer {
   text-align: center;
-  padding: 32px 24px;
+  padding: 36px 24px 32px;
   color: var(--text-light);
   font-size: 0.85rem;
   border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 14px;
+}
+
+.footer-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: var(--text-light);
+  background: var(--bg-alt);
+  transition: all 0.25s;
+}
+
+.footer-icon-link:hover {
+  color: var(--coral);
+  background: #FFE8E8;
+  transform: translateY(-2px);
+}
+
+.footer-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.82rem;
+  color: var(--text-light);
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: var(--bg-alt);
 }
 
 .footer .heart {
@@ -1289,24 +1199,12 @@ img {
     gap: 14px;
   }
 
-  .contact-section-inner {
-    padding: 36px 20px;
+  .footer-links {
+    gap: 12px;
   }
 
-  .contact-section-head h2 {
-    font-size: 1.25rem;
-  }
-
-  .contact-section-head p {
-    font-size: 0.88rem;
-  }
-
-  .contact-pill {
-    padding: 10px 18px 10px 10px;
-  }
-
-  .contact-pill-text strong {
-    font-size: 0.82rem;
+  .footer-location {
+    font-size: 0.75rem;
   }
 
   .about-grid {
