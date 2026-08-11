@@ -43,7 +43,19 @@
       </div>
 
       <div class="presentation-banner fade-in">
-        <a href="presentation.html" data-i18n="presentation.banner">📽️ View my Interview Presentation →</a>
+        <a href="presentation.html" id="ppt-link" data-i18n="presentation.banner">📽️ View my Interview Presentation →</a>
+      </div>
+
+      <!-- Password modal for presentation -->
+      <div id="ppt-pw-modal" class="ppt-pw-modal">
+        <div class="ppt-pw-box">
+          <h2 data-i18n="ppt.pw.title">密码验证</h2>
+          <p class="ppt-pw-sub" data-i18n="ppt.pw.sub">请输入密码以查看演示文稿</p>
+          <input type="password" id="ppt-pw-input" placeholder="Password" autofocus>
+          <button class="ppt-pw-btn" id="ppt-pw-submit" data-i18n="ppt.pw.btn">确认</button>
+          <p class="ppt-pw-err" id="ppt-pw-err" data-i18n="ppt.pw.err">密码错误，请重试</p>
+          <button class="ppt-pw-cancel" id="ppt-pw-cancel" data-i18n="ppt.pw.cancel">取消</button>
+        </div>
       </div>
 
       <div class="quick-nav fade-in">
@@ -97,5 +109,59 @@
 
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
+  <script>
+  (function() {
+    const PW_HASH = '18edd612eff7bf0e4a73f84ee88cc0c65190cf335a65bb9cf92c7c9f691ffe84';
+
+    async function sha256(text) {
+      const d = new TextEncoder().encode(text);
+      const h = await crypto.subtle.digest('SHA-256', d);
+      return Array.from(new Uint8Array(h)).map(b => b.toString(16).padStart(2,'0')).join('');
+    }
+
+    const link = document.getElementById('ppt-link');
+    const modal = document.getElementById('ppt-pw-modal');
+    const input = document.getElementById('ppt-pw-input');
+    const submit = document.getElementById('ppt-pw-submit');
+    const cancel = document.getElementById('ppt-pw-cancel');
+    const err = document.getElementById('ppt-pw-err');
+
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (sessionStorage.getItem('ppt-auth-v2') === '1') {
+        window.location.href = 'presentation.html';
+        return;
+      }
+      modal.classList.add('show');
+      input.value = '';
+      err.style.display = 'none';
+      setTimeout(() => input.focus(), 100);
+    });
+
+    cancel.addEventListener('click', function() {
+      modal.classList.remove('show');
+    });
+
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) modal.classList.remove('show');
+    });
+
+    async function checkPw() {
+      if (await sha256(input.value) === PW_HASH) {
+        sessionStorage.setItem('ppt-auth-v2', '1');
+        window.location.href = 'presentation.html';
+      } else {
+        err.style.display = 'block';
+        input.value = '';
+        input.focus();
+      }
+    }
+
+    submit.addEventListener('click', checkPw);
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') checkPw();
+    });
+  })();
+  </script>
 </body>
 </html>

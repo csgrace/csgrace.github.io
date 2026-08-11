@@ -1141,6 +1141,109 @@ a.footer-info-item:hover svg {
   color: var(--coral);
 }
 
+/* --- PPT Password Modal --- */
+.ppt-pw-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  align-items: center;
+  justify-content: center;
+}
+
+.ppt-pw-modal.show {
+  display: flex;
+}
+
+.ppt-pw-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 36px 32px 28px;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.15);
+  text-align: center;
+  width: 340px;
+  max-width: 92vw;
+}
+
+.ppt-pw-box h2 {
+  color: var(--purple);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.ppt-pw-sub {
+  color: var(--text-light);
+  font-size: 0.82rem;
+  margin-bottom: 22px;
+}
+
+.ppt-pw-box input {
+  display: block;
+  width: 240px;
+  margin: 0 auto;
+  padding: 11px 14px;
+  border: 1.5px solid #d8dce4;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  text-align: center;
+  outline: none;
+  transition: border 0.2s;
+  font-family: inherit;
+  letter-spacing: 1px;
+}
+
+.ppt-pw-box input:focus {
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px rgba(108,92,231,0.08);
+}
+
+.ppt-pw-btn {
+  display: block;
+  width: 240px;
+  margin: 14px auto 0;
+  padding: 11px;
+  border-radius: 8px;
+  background: var(--purple);
+  color: #fff;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.ppt-pw-btn:hover {
+  background: var(--purple-dark);
+}
+
+.ppt-pw-err {
+  color: #e74c3c;
+  font-size: 0.78rem;
+  margin-top: 10px;
+  display: none;
+}
+
+.ppt-pw-cancel {
+  display: block;
+  margin: 12px auto 0;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 0.82rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.2s;
+}
+
+.ppt-pw-cancel:hover {
+  color: var(--text);
+}
+
 /* --- Animations --- */
 .fade-in {
   opacity: 0;

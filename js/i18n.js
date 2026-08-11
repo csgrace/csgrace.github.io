@@ -214,6 +214,11 @@ const i18n = {
     "lang.switch": "中文",
     "presentation.banner": "📽️ View my Interview Presentation →",
     "presentation.download": "Download PPTX",
+    "ppt.pw.title": "Password Required",
+    "ppt.pw.sub": "Please enter the password to view the presentation",
+    "ppt.pw.btn": "Confirm",
+    "ppt.pw.err": "Incorrect password, please try again",
+    "ppt.pw.cancel": "Cancel",
 
     // Meituan Detail
     "meituan.page.title": "Meituan Internship — Yuqing Wei",
@@ -484,6 +489,11 @@ const i18n = {
     "lang.switch": "English",
     "presentation.banner": "📽️ 查看我的面试展示 PPT →",
     "presentation.download": "下载 PPTX",
+    "ppt.pw.title": "密码验证",
+    "ppt.pw.sub": "请输入密码以查看演示文稿",
+    "ppt.pw.btn": "确认",
+    "ppt.pw.err": "密码错误，请重试",
+    "ppt.pw.cancel": "取消",
 
     // Meituan Detail
     "meituan.page.title": "美团实习 — 魏宇晴",
