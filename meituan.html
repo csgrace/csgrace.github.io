@@ -7,9 +7,15 @@
   <link rel="stylesheet" href="css/style.css">
   <style>
     .project-hero {
-      background: linear-gradient(135deg, #FF6B35 0%, #F7A100 100%);
+      background: url('images/hero_meituan.png') center/cover no-repeat;
       color: #fff; padding: 140px 0 100px; text-align: center;
+      position: relative;
     }
+    .project-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: rgba(0,0,0,0.35);
+    }
+    .project-hero .container { position: relative; z-index: 1; }
     .project-hero .tag-row { margin-bottom: 16px; }
     .project-hero .tag-row span {
       display: inline-block; padding: 4px 14px; border-radius: 20px;
