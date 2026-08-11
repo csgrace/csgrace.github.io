@@ -827,12 +827,42 @@ img {
   display: inline-block;
   padding: 3px 10px;
   border-radius: 10px;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  margin-bottom: 6px;
   background: #FFF4D6;
   color: #C8960C;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
+
+.pub-entry .pub-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 2px;
+}
+
+.pub-entry .pub-header h3 {
+  font-size: 1rem;
+  color: var(--dark);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.pub-entry .pub-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.pub-entry .pub-link:hover { color: var(--purple); }
+.pub-entry .pub-link .link-icon { font-size: 0.85rem; }
 
 .pub-entry:last-child .pub-venue {
   background: #D4F7EE;
