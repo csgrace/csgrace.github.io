@@ -89,7 +89,7 @@ const i18n = {
     "rw.cambridge.d2": "Visualized system interactions and data/information flows via rich pictures and flowcharts, mapping user-system feedback loops and data exchanges to clarify dependencies and refine the learning solution.",
     "rw.cambridge.d3": "Performed reliability and safety analysis using FMEA and Bowtie, identifying failure modes including signal misinterpretation, usability issues, and data privacy risks, and proposing mitigation strategies.",
 
-    "rw.meituan.title": "Meituan · Leading Tech Retail · Fortune 500",
+    "rw.meituan.title": "Meituan",
     "rw.meituan.date": "Jun. 2026 – Sep. 2026",
     "rw.meituan.role": "Agent Training Assistant",
     "rw.meituan.d1": "Optimized AI Agents via prompt engineering, knowledge base design, and skill tuning, using interaction data analysis to evaluate and improve task quality and decision reliability in complex business settings.",
@@ -326,7 +326,7 @@ const i18n = {
     "rw.cambridge.d2": "通过丰富图和流程图可视化系统交互与数据/信息流，梳理用户-系统反馈回路与数据交换，理顺系统模块间的逻辑关系，优化设计方案。",
     "rw.cambridge.d3": "运用 FMEA 和 Bowtie 进行可靠性与安全性分析，识别信号误读、可用性问题及数据隐私风险，并提出缓解策略。",
 
-    "rw.meituan.title": "美团 · 领先科技零售 · 世界 500 强",
+    "rw.meituan.title": "美团",
     "rw.meituan.date": "2026 年 6 月 – 9 月",
     "rw.meituan.role": "智能体训练助理",
     "rw.meituan.d1": "通过提示词工程、知识库设计与skill调优优化 AI 数字员工，利用交互数据分析评估并提升复杂场景下的任务质量与决策可靠性。",
