@@ -111,12 +111,20 @@
     return Array.from(new Uint8Array(h)).map(b => b.toString(16).padStart(2,'0')).join('');
   }
 
+  function showCanva() {
+    document.getElementById('pw-gate').classList.add('hidden');
+    document.getElementById('canva-container').classList.add('show');
+    // Auto-enter fullscreen for presentation-like experience
+    setTimeout(() => {
+      document.getElementById('canva-container').requestFullscreen().catch(() => {});
+    }, 500);
+  }
+
   async function checkPw() {
     const input = document.getElementById('pw-input').value;
     if (await sha256(input) === PW_HASH) {
       sessionStorage.setItem('ppt-auth', '1');
-      document.getElementById('pw-gate').classList.add('hidden');
-      document.getElementById('canva-container').classList.add('show');
+      showCanva();
     } else {
       document.getElementById('pw-err').style.display = 'block';
       document.getElementById('pw-input').value = '';
@@ -129,8 +137,7 @@
   });
 
   if (sessionStorage.getItem('ppt-auth') === '1') {
-    document.getElementById('pw-gate').classList.add('hidden');
-    document.getElementById('canva-container').classList.add('show');
+    showCanva();
   }
 
   // Auto-hide top bar
