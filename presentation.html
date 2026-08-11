@@ -4,76 +4,77 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yuqing Wei / 魏宇晴 — Presentation</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.min.css">
-<script src="https://cdn.jsdelivr.net/gh/gitbrent/PptxGenJS@3.12.0/dist/pptxgen.bundle.js"></script>
 <style>
   :root {
-    --blue: #3B64C9; --blue-light: #9DB1E2; --blue-soft: #89A1DC;
-    --blue-bg: #F2F5FB; --dark: #2D3436; --gray: #636E72;
+    --blue: #3B64C9; --blue-light: #9DB1E2;
+    --dark: #2D3436; --gray: #636E72;
   }
 
-  /* Password modal overlay */
-  #pw-gate{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;font-family:inherit;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
-  #pw-gate.hidden{display:none}
-  .pw-box{background:#fff;border-radius:12px;padding:40px 36px 32px;box-shadow:0 16px 48px rgba(0,0,0,0.15);text-align:center;width:360px;max-width:92vw}
-  .pw-box h2{color:var(--blue);font-size:1.15rem;font-weight:700;margin-bottom:6px}
-  .pw-box .pw-sub{color:var(--gray);font-size:0.82rem;margin-bottom:22px}
-  .pw-box input{display:block;width:240px;margin:0 auto;padding:11px 14px;border:1.5px solid #d8dce4;border-radius:8px;font-size:0.95rem;text-align:center;outline:none;transition:border .2s;font-family:inherit;letter-spacing:1px}
-  .pw-box input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(59,100,201,0.08)}
-  .pw-box .pw-btn{display:block;width:240px;margin:14px auto 0;padding:11px;border-radius:8px;background:var(--blue);color:#fff;border:none;font-size:0.95rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:inherit}
-  .pw-box .pw-btn:hover{background:#2E4FA8}
-  .pw-box .pw-err{color:#e74c3c;font-size:0.78rem;margin-top:10px;display:none}
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  /* Reveal overrides */
-  .reveal{font-family:'Segoe UI',system-ui,'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif}
-  .reveal .slides section{padding:36px 50px;text-align:left;height:100%;box-sizing:border-box}
-  .reveal .slides section::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--blue),var(--blue-soft))}
+  /* Password gate */
+  #pw-gate {
+    position: fixed; inset: 0; z-index: 9999;
+    background: rgba(0,0,0,0.45);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Segoe UI', system-ui, 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+  }
+  #pw-gate.hidden { display: none; }
+  .pw-box {
+    background: #fff; border-radius: 12px; padding: 40px 36px 32px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.15); text-align: center;
+    width: 360px; max-width: 92vw;
+  }
+  .pw-box h2 { color: var(--blue); font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; }
+  .pw-box .pw-sub { color: var(--gray); font-size: 0.82rem; margin-bottom: 22px; }
+  .pw-box input {
+    display: block; width: 240px; margin: 0 auto; padding: 11px 14px;
+    border: 1.5px solid #d8dce4; border-radius: 8px; font-size: 0.95rem;
+    text-align: center; outline: none; transition: border .2s;
+    font-family: inherit; letter-spacing: 1px;
+  }
+  .pw-box input:focus {
+    border-color: var(--blue); box-shadow: 0 0 0 3px rgba(59,100,201,0.08);
+  }
+  .pw-box .pw-btn {
+    display: block; width: 240px; margin: 14px auto 0; padding: 11px;
+    border-radius: 8px; background: var(--blue); color: #fff; border: none;
+    font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all .2s;
+    font-family: inherit;
+  }
+  .pw-box .pw-btn:hover { background: #2E4FA8; }
+  .pw-box .pw-err { color: #e74c3c; font-size: 0.78rem; margin-top: 10px; display: none; }
 
-  .corner-tl,.corner-br,.corner-tr{position:absolute;z-index:0;pointer-events:none;border-radius:50%}
-  .corner-tl{top:-50px;left:-50px;width:160px;height:160px;background:radial-gradient(circle,rgba(59,100,201,0.04) 0%,transparent 70%)}
-  .corner-br{bottom:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(157,177,226,0.06) 0%,transparent 70%)}
-  .corner-tr{top:-40px;right:-40px;width:130px;height:130px;background:radial-gradient(circle,rgba(59,100,201,0.03) 0%,transparent 70%)}
+  /* Canva embed */
+  #canva-container {
+    position: fixed; inset: 0; display: none;
+    background: #0d0d0d;
+  }
+  #canva-container.show { display: block; }
+  #canva-container iframe {
+    width: 100%; height: 100%; border: none;
+    display: block;
+  }
 
-  .reveal h1{font-size:1.7em;font-weight:800;color:var(--blue);margin-bottom:6px}
-  .reveal h2{font-size:1.15em;font-weight:700;color:var(--blue);margin-bottom:14px}
-  .reveal h3{font-size:0.85em;font-weight:700;color:var(--dark);margin-bottom:2px}
-  .reveal p,.reveal li{font-size:0.7em;line-height:1.5;color:var(--gray)}
-  .reveal .small{font-size:0.62em;color:#999}
-  .en-label{font-size:0.5em;color:var(--blue-soft);font-weight:400;letter-spacing:2px;text-transform:uppercase}
-  .diamond{display:inline-block;width:5px;height:5px;background:var(--blue-light);transform:rotate(45deg);margin-right:8px;vertical-align:middle;position:relative;top:-1px}
-  .card{background:#FAFBFC;border-radius:5px;padding:10px 14px;margin-bottom:6px;border-left:3px solid var(--blue-light);text-align:left}
-  .card h3{font-size:0.82em;margin-bottom:1px}
-  .card p{font-size:0.68em;margin:2px 0}
-  .c2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .c3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
-  .date{color:var(--blue-soft);font-weight:600;font-size:0.7em}
-  .highlight{color:var(--blue);font-weight:700}
-  .tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:0.62em;font-weight:600;margin:1px;background:var(--blue-bg);color:var(--blue)}
-  .sep{width:40px;height:2px;background:var(--blue-light);margin:8px 0 16px 0}
-
-  .cover-slide{text-align:left!important;display:flex!important;flex-direction:column;justify-content:center!important;padding-left:90px!important}
-  .cover-slide .en-top{font-size:0.7em;color:var(--blue-soft);letter-spacing:4px;text-transform:uppercase;margin-bottom:2px}
-  .cover-slide h1{font-size:2.4em}
-  .cover-slide .info-line{font-size:0.68em;color:var(--gray);margin:1px 0}
-  .end-slide{text-align:center!important;display:flex!important;flex-direction:column;justify-content:center!important;align-items:center!important}
-
-  /* Download */
-  .dl-wrap{position:fixed;top:14px;right:18px;z-index:100}
-  .dl-btn{padding:7px 16px;border-radius:18px;background:rgba(255,255,255,0.92);color:var(--blue);border:1.5px solid var(--blue-light);font-weight:600;font-size:0.78rem;cursor:pointer;transition:all .2s;box-shadow:0 2px 8px rgba(0,0,0,0.05);font-family:inherit}
-  .dl-btn:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
-  .dl-drop{display:none;position:absolute;top:36px;right:0;background:#fff;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.1);overflow:hidden;min-width:145px}
-  .dl-drop.show{display:block}
-  .dl-drop button{display:block;width:100%;padding:9px 16px;border:none;background:none;text-align:left;font-size:0.82rem;cursor:pointer;color:var(--dark);font-family:inherit}
-  .dl-drop button:hover{background:var(--blue-bg);color:var(--blue)}
-
-  #slide-progress{position:fixed;top:0;left:0;height:2px;background:var(--blue);z-index:101;transition:width .3s}
-
-  @media(max-width:768px){
-    .reveal .slides section{padding:24px 18px}
-    .c2,.c3{grid-template-columns:1fr}
-    .cover-slide{padding-left:28px!important}
-    .cover-slide h1{font-size:1.5em}
+  /* Top bar */
+  #top-bar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: 44px; display: flex; align-items: center; justify-content: flex-end;
+    padding: 0 16px; gap: 12px;
+    background: rgba(0,0,0,0.5); backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  #top-bar:hover, #top-bar.visible { opacity: 1; }
+  #top-bar a, #top-bar button {
+    color: #fff; font-size: 0.8rem; text-decoration: none;
+    padding: 6px 14px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.3);
+    background: transparent; cursor: pointer; font-family: inherit;
+    transition: all 0.2s;
+  }
+  #top-bar a:hover, #top-bar button:hover {
+    background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.6);
   }
 </style>
 </head>
@@ -89,171 +90,18 @@
   </div>
 </div>
 
-<div id="slide-progress" style="width:0%"></div>
-
-<div class="dl-wrap">
-  <button class="dl-btn" onclick="toggleDL()">Download</button>
-  <div class="dl-drop" id="dlDrop">
-    <button onclick="downloadPPTX()">Download PPTX</button>
-    <button onclick="downloadPDF()">Download PDF</button>
+<div id="canva-container">
+  <div id="top-bar">
+    <a href="https://www.canva.cn/design/DAHRubK14p0/-knLy0cWCo4xbxY7Bp790A/edit" target="_blank">在 Canva 中编辑 ↗</a>
+    <button onclick="toggleFullscreen()">全屏放映</button>
   </div>
+  <iframe
+    loading="lazy"
+    src="https://www.canva.com/design/DAHRubK14p0/-knLy0cWCo4xbxY7Bp790A/view?embed"
+    allowfullscreen allow="fullscreen; autoplay">
+  </iframe>
 </div>
 
-<div class="reveal"><div class="slides">
-
-<!-- 1: COVER -->
-<section class="cover-slide">
-  <div class="corner-tl"></div><div class="corner-br"></div>
-  <p class="en-top">PERSONAL INTRODUCTION</p>
-  <h1>个人简介</h1>
-  <div class="sep"></div>
-  <p style="font-size:0.9em;color:var(--dark);font-weight:700">Yuqing Wei / 魏宇晴</p>
-  <p style="font-size:0.72em;color:var(--blue-soft)">南方科技大学 · 计算机科学与技术 · 本科在读</p>
-  <p class="small">B.E. in Computer Science & Technology, Expected Jul. 2027</p>
-  <p class="info-line" style="margin-top:16px">12311043@mail.sustech.edu.cn &nbsp;|&nbsp; (+86) 178-2066-0860</p>
-  <p class="info-line">github.com/csgrace &nbsp;|&nbsp; csgrace.github.io</p>
-</section>
-
-<!-- 2: EDUCATION + LANGUAGES -->
-<section>
-  <div class="corner-tr"></div>
-  <h2><span class="diamond"></span>教育背景 <span class="en-label">Education</span></h2>
-  <div class="c2">
-    <div>
-      <div class="card fragment fade-up"><h3>南方科技大学 SUSTech</h3><p>计算机科学与技术 本科 (CSE)</p><p class="date">2023.08 – 2027.07 (预计)</p></div>
-      <div class="card fragment fade-up"><h3>核心课程</h3><p>数据库系统原理 · 人工智能 · 自然语言处理 · 算法设计与分析 · 工程概率与统计 · 软件工程 · 计算机网络 · 操作系统</p></div>
-      <div class="card fragment fade-up"><h3>语言能力</h3><p><span class="highlight">英语</span> IELTS 7.5 <span class="small">(听9.0 读8.0 写7.0 说6.5)</span> &nbsp;|&nbsp; <span class="highlight">普通话</span> 母语 &nbsp;|&nbsp; <span class="highlight">粤语</span> 流利</p></div>
-    </div>
-    <div>
-      <div class="card fragment fade-up"><h3>研究兴趣</h3><p>AIoT · 智慧医疗 · 深度学习 · 强化学习 · 组合优化 · 脑机接口 · 自然语言处理 · 可解释AI</p></div>
-      <div class="card fragment fade-up"><h3>技术栈</h3><p><span class="tag">Python (PyTorch)</span><span class="tag">Java</span><span class="tag">C++</span><span class="tag">JavaScript</span><span class="tag">Vue.js</span><span class="tag">SQL</span><span class="tag">Git</span><span class="tag">MATLAB</span><span class="tag">Verilog</span></p></div>
-      <div class="card fragment fade-up"><h3>专长方向</h3><p>大模型应用开发 (LangChain, RAG, Prompt Engineering) · 前端工程化 · 数据分析与可视化</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 3: RESEARCH 1/2 -->
-<section>
-  <div class="corner-tl"></div>
-  <h2><span class="diamond"></span>研究项目 <span class="en-label">Research Projects</span> <span style="font-size:0.6em;color:var(--gray)">1 / 2</span></h2>
-  <div class="card fragment fade-up"><h3>AI Agent 智慧校园助手 <span class="date">2026.03 – 06</span></h3>
-    <p>基于 LangChain 的 RAG 助手，构建完整数据管道：文档接入、分块、嵌入、索引、检索增强生成。优化后检索延迟 <span class="highlight">&lt; 3s</span>，带引用溯源。</p>
-    <p>课程规划模块：接入培养方案与学分记录，自动生成包含毕业追踪与学分冲突检测的个性化学期计划。</p></div>
-  <div class="card fragment fade-up"><h3>ParroTAO 训练分析平台 <span class="date">2025.11 – 至今</span></h3>
-    <p><span class="highlight">项目负责人</span>（省级重点大学生创新创业项目）。负责前端架构设计，开发运动队管理、训练任务协调等核心模块。</p>
-    <p>交互式可视化面板融合训练日志与生理数据，提供 AI 辅助绩效分析。平台已完成内部测试，正筹备校级跑团评估。</p></div>
-</section>
-
-<!-- 4: RESEARCH 2/2 -->
-<section>
-  <div class="corner-br"></div><div class="corner-tr"></div>
-  <h2><span class="diamond"></span>研究项目 <span class="en-label">Research Projects</span> <span style="font-size:0.6em;color:var(--gray)">2 / 2</span></h2>
-  <div class="card fragment fade-up"><h3>NUS 计算机学院 — AIoT 暑期项目 <span class="date">2025.05 – 07 · 新加坡</span></h3>
-    <p><span class="highlight">前端负责人</span>。智能健康管理系统：GPS 运动追踪与路线可视化、饮水记录、饮食数据分析、久坐提醒、个性化聊天机器人。</p>
-    <p>贯穿始终的用户中心设计理念，迭代式易用性优化。<span class="highlight">课程第一名 / 一等奖</span>。</p></div>
-  <div class="card fragment fade-up"><h3>通用神经组合优化模型项目 <span class="date">2025.11 – 至今</span></h3>
-    <p>EasyCO 框架内复现 Pointer Network、Sym-NCO 等基于 Transformer 的神经组合优化模型。原始路径数据转换为统一图表示，实现强化学习训练流水线。</p>
-    <p>TSP、CVRP 标准基准数据集评测，不同问题规模下的性能对比验证。</p></div>
-  <div class="card fragment fade-up"><h3>剑桥大学 · 工程系 — 系统设计与工程思维冬季课程 <span class="date">2026.01 – 02 · 英国</span></h3>
-    <p><span class="highlight">组长 (Group Leader)</span>。注意力感知脑机接口系统设计：利益相关者分析、丰富图建模、FMEA/Bowtie 可靠性分析。</p></div>
-</section>
-
-<!-- 5: MEITUAN -->
-<section>
-  <div class="corner-tl"></div>
-  <h2><span class="diamond"></span>实习经历 <span class="en-label">Internship</span></h2>
-  <div class="card fragment fade-up" style="padding:18px 24px">
-    <h3 style="font-size:1em">美团 · 领先科技零售 · 世界 500 强 <span class="date">2026.06 – 09 · 北京</span></h3>
-    <p style="font-size:0.75em;margin-top:4px"><span class="highlight">智能体训练助理 (Agent Training Assistant)</span></p>
-    <div class="c3" style="margin-top:10px">
-      <div><p style="font-size:0.7em">通过提示词工程、知识库设计与 skill 调优优化 AI 数字员工，利用交互数据分析评估并提升复杂场景下的任务质量与决策可靠性</p></div>
-      <div><p style="font-size:0.7em">开发 Agent 演化看板，追踪迭代效果，进行性能评估与数据驱动的行为分析，支持智能体行为的整体优化</p></div>
-      <div><p style="font-size:0.7em">协作设计 RBAC 权限系统，定义角色并分配权限，映射至训练师、部署人员与终端用户，明确职责与安全边界</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 6: PAPERS -->
-<section>
-  <div class="corner-br"></div>
-  <h2><span class="diamond"></span>论文与专利 <span class="en-label">Papers & Patents</span></h2>
-  <div class="card fragment fade-up" style="margin-bottom:12px;border-left-color:var(--blue)">
-    <h3>LLM-Based Invariant Testing for Software Functional Bugs</h3>
-    <p><span class="highlight">ISSRE Accept</span> &nbsp;|&nbsp; 共同作者 (Co-author)</p>
-    <p style="margin-top:4px">提出 LISA 框架：基于大语言模型的不变式测试方法，利用执行轨迹数据 (API n-gram 反馈) 迭代生成测试预言（API 序列与不变量），在功能缺陷检测方面显著超越传统模糊测试方法。</p>
-  </div>
-  <div class="card fragment fade-up" style="border-left-color:var(--blue)">
-    <h3>基于 LLM 多智能体协作的训练计划生成方法、系统、终端及介质</h3>
-    <p><span class="highlight">审查中 · 专利申请号 2026104381429</span> &nbsp;|&nbsp; 共同发明人 (Co-inventor)</p>
-    <p style="margin-top:4px">提出 LLM 多智能体协作框架，接入用户画像与历史表现数据，生成与个人目标相匹配的个性化、科学化训练方案，涵盖系统架构、终端及存储介质。</p>
-  </div>
-</section>
-
-<!-- 7: HONORS 1/2 -->
-<section>
-  <div class="corner-tr"></div>
-  <h2><span class="diamond"></span>荣誉获奖 <span class="en-label">Honors & Awards</span> <span style="font-size:0.6em;color:var(--gray)">1 / 2</span></h2>
-  <div class="c2">
-    <div class="card fragment fade-up"><h3>美国大学生数学建模竞赛 (MCM/ICM)</h3><p><span class="highlight">Meritorious Winner (一等奖)</span></p><p class="date">2026.05</p></div>
-    <div class="card fragment fade-up"><h3>全国大学生英语竞赛</h3><p><span class="highlight">全国三等奖</span></p><p class="date">2026.05</p></div>
-    <div class="card fragment fade-up"><h3>优秀学生</h3><p>南方科技大学</p><p class="date">2025.12</p></div>
-    <div class="card fragment fade-up"><h3>全国大学生数学建模竞赛</h3><p><span class="highlight">省级二等奖</span></p><p class="date">2025.12</p></div>
-  </div>
-</section>
-
-<!-- 8: HONORS 2/2 -->
-<section>
-  <div class="corner-br"></div>
-  <h2><span class="diamond"></span>荣誉获奖 <span class="en-label">Honors & Awards</span> <span style="font-size:0.6em;color:var(--gray)">2 / 2</span></h2>
-  <div class="c2">
-    <div class="card fragment fade-up"><h3>优秀学生奖学金</h3><p><span class="highlight">三等奖</span> (2024–2025 学年)</p><p class="date">2025.11</p></div>
-    <div class="card fragment fade-up"><h3>大湾区青年创新创业大赛</h3><p>机器人专项赛 <span class="highlight">三等奖</span></p><p class="date">2025.11</p></div>
-    <div class="card fragment fade-up"><h3>NUS AIoT 暑期工作坊</h3><p><span class="highlight">一等奖 (First Prize)</span></p><p class="date">2025.07</p></div>
-    <div class="card fragment fade-up"><h3>IELTS 语言成绩</h3><p><span class="highlight">总分 7.5</span> <span class="small">(听力 9.0 · 阅读 8.0 · 写作 7.0 · 口语 6.5)</span></p></div>
-  </div>
-</section>
-
-<!-- 9: LEADERSHIP -->
-<section>
-  <div class="corner-tl"></div><div class="corner-br"></div>
-  <h2><span class="diamond"></span>领导力 <span class="en-label">Leadership</span></h2>
-  <div class="card fragment fade-up" style="margin-bottom:8px"><h3>南方科技大学赛艇队 队长 <span class="date">2025.09 – 至今</span></h3>
-    <p>协调水上与陆上训练，组织校级赛艇比赛。<span class="highlight">松山湖水上运动嘉年华金牌</span>（女子八人单桨）。深圳市女子八人单桨有舵手比赛 <span class="highlight">第三名</span>。</p></div>
-  <div class="card fragment fade-up"><h3>树礼书院乒乓球队 队长 <span class="date">2025.09 – 至今</span></h3>
-    <p>组织球队日常训练，统筹策划并举办书院乒乓球新生赛。<span class="highlight">校级"筑梦杯"乒乓球团体赛亚军</span>。</p>
-    <p>代表球队通过公开答辩，成功为团队赢得<span class="highlight">优秀运动团体奖学金</span>。</p></div>
-</section>
-
-<!-- 10: VOLUNTEER -->
-<section>
-  <div class="corner-tr"></div>
-  <h2><span class="diamond"></span>志愿服务 <span class="en-label">Community Service</span></h2>
-  <div class="card fragment fade-up" style="margin-bottom:10px"><h3>社区服务 <span class="date">2018 – 至今</span></h3>
-    <p>深圳博物馆小小讲解员（2018–2023），为访客提供导览服务。</p></div>
-  <div class="card fragment fade-up" style="margin-bottom:6px"><h3>大型活动志愿者</h3>
-    <div class="c3">
-      <div class="card fragment fade-up" style="text-align:center"><p style="font-size:0.75em;font-weight:700">第十五届全运会</p><p class="date">2025</p></div>
-      <div class="card fragment fade-up" style="text-align:center"><p style="font-size:0.75em;font-weight:700">海峡两岸学生棒球联赛</p><p class="date">2024</p></div>
-      <div class="card fragment fade-up" style="text-align:center"><p style="font-size:0.75em;font-weight:700">GLDC 国际标准舞锦标赛</p><p class="date">2024</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 11: THANK YOU -->
-<section class="end-slide">
-  <div class="corner-tl"></div><div class="corner-br"></div><div class="corner-tr"></div>
-  <p class="en-top" style="font-size:0.75em">THANK YOU</p>
-  <h1 style="font-size:2.6em">感谢聆听</h1>
-  <div class="sep" style="margin:12px auto 24px auto"></div>
-  <p style="font-size:0.95em;color:var(--dark);font-weight:700">Yuqing Wei / 魏宇晴</p>
-  <p style="font-size:0.72em;color:var(--gray);margin-top:6px">12311043@mail.sustech.edu.cn &nbsp;|&nbsp; (+86) 178-2066-0860</p>
-  <p style="font-size:0.72em;color:var(--gray)">github.com/csgrace &nbsp;|&nbsp; csgrace.github.io</p>
-  <p class="small" style="margin-top:20px">期待与您交流！Happy to answer any questions!</p>
-</section>
-
-</div></div>
-
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.min.js"></script>
 <script>
   const PW_HASH = '18edd612eff7bf0e4a73f84ee88cc0c65190cf335a65bb9cf92c7c9f691ffe84';
 
@@ -268,7 +116,7 @@
     if (await sha256(input) === PW_HASH) {
       sessionStorage.setItem('ppt-auth', '1');
       document.getElementById('pw-gate').classList.add('hidden');
-      initReveal();
+      document.getElementById('canva-container').classList.add('show');
     } else {
       document.getElementById('pw-err').style.display = 'block';
       document.getElementById('pw-input').value = '';
@@ -276,88 +124,31 @@
     }
   }
 
-  document.getElementById('pw-input').addEventListener('keydown', e => { if (e.key==='Enter') checkPw(); });
+  document.getElementById('pw-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') checkPw();
+  });
 
   if (sessionStorage.getItem('ppt-auth') === '1') {
     document.getElementById('pw-gate').classList.add('hidden');
-    initReveal();
+    document.getElementById('canva-container').classList.add('show');
   }
 
-  function initReveal() {
-    Reveal.initialize({
-      hash: true, center: false, width: 1280, height: 720, margin: 0.06,
-      transition: 'convex', transitionSpeed: 'slow', backgroundTransition: 'zoom',
-      controls: true, progress: true, slideNumber: 'c / t',
-      keyboard: true, overview: true, touch: true, fragments: true, fragmentInURL: false
-    });
-    Reveal.on('slidechanged', event => {
-      document.getElementById('slide-progress').style.width =
-        ((event.indexh + 1) / Reveal.getTotalSlides() * 100) + '%';
-    });
-  }
-</script>
-
-<script>
-  function toggleDL() { document.getElementById('dlDrop').classList.toggle('show'); }
-  document.addEventListener('click', e => {
-    if (!e.target.closest('.dl-wrap')) document.getElementById('dlDrop').classList.remove('show');
+  // Auto-hide top bar
+  const topBar = document.getElementById('top-bar');
+  let hideTimer;
+  document.addEventListener('mousemove', () => {
+    topBar.classList.add('visible');
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => topBar.classList.remove('visible'), 2000);
   });
 
-  function downloadPDF() {
-    document.getElementById('dlDrop').classList.remove('show');
-    const url = window.location.href.split('?')[0].split('#')[0] + '?print-pdf';
-    window.open(url, '_blank');
-  }
-
-  function downloadPPTX() {
-    document.getElementById('dlDrop').classList.remove('show');
-    const P = window.PptxGenJS;
-    if (!P) { alert('Loading, try again.'); return; }
-    const pptx = new P();
-    pptx.defineLayout({name:'W',width:13.333,height:7.5});pptx.layout='W';
-    const BL='3B64C9',B2='9DB1E2',B3='89A1DC',DK='2D3436',GY='636E72';
-    function S(){const s=pptx.addSlide();s.background={fill:'FFFFFF'};s.addShape('rect',{x:0,y:0,w:'100%',h:0.05,fill:{type:'solid',color:BL}});return s;}
-
-    let s1=S();s1.addText('PERSONAL INTRODUCTION',{x:1.2,y:1.8,w:8,h:.5,fontSize:11,color:B3,charSpacing:4});
-    s1.addText('个人简介',{x:1.2,y:2.3,w:8,h:1,fontSize:38,bold:true,color:BL});
-    s1.addShape('rect',{x:1.2,y:3.3,w:1,w:.04,fill:{type:'solid',color:B2}});
-    s1.addText('Yuqing Wei / 魏宇晴\n南方科技大学 · 计算机科学与技术 · 本科在读\nB.E. CSE, Expected Jul. 2027',{x:1.2,y:3.6,w:9,h:1.5,fontSize:15,color:DK});
-    s1.addText('12311043@mail.sustech.edu.cn | (+86) 178-2066-0860 | github.com/csgrace',{x:1.2,y:5.8,w:10,h:.4,fontSize:10,color:GY});
-
-    let s2=S();s2.addText('教育背景  Education',{x:0.8,y:0.35,w:8,h:.6,fontSize:20,bold:true,color:BL});
-    s2.addText([{text:'南方科技大学 SUSTech\n',options:{fontSize:14,bold:true,color:DK}},{text:'计算机科学与技术本科 (CSE) · 2023.08 – 2027.07 (预计)\n',options:{fontSize:11,color:GY}},{text:'核心课程：数据库系统原理、人工智能、NLP、算法设计与分析、软件工程等\n',options:{fontSize:10,color:GY}},{text:'语言能力：英语 IELTS 7.5 (听9.0 读8.0 写7.0 说6.5) | 普通话母语 | 粤语流利\n',options:{fontSize:11,color:DK}},{text:'研究兴趣：AIoT · 智慧医疗 · 深度学习 · 强化学习 · 组合优化 · 脑机接口 · NLP · XAI\n',options:{fontSize:10,color:GY}},{text:'技术栈：Python(PyTorch), Java, C++, JavaScript, Vue.js, SQL, Git, MATLAB, Verilog',options:{fontSize:10,color:GY}}],{x:0.8,y:1.4,w:'85%',h:5.5,valign:'top'});
-
-    let s3=S();s3.addText('研究项目 (1/2)',{x:0.8,y:0.35,w:8,h:.6,fontSize:20,bold:true,color:BL});
-    s3.addText([{text:'AI Agent 智慧校园助手',options:{fontSize:13,bold:true,color:DK}},{text:'  2026.03–06\n',options:{fontSize:10,color:B3}},{text:'LangChain RAG助手，完整数据管道；<3s延迟；课程规划+毕业追踪。\n\n',options:{fontSize:11,color:GY}},{text:'ParroTAO 训练分析平台',options:{fontSize:13,bold:true,color:DK}},{text:'  2025.11–至今\n',options:{fontSize:10,color:B3}},{text:'项目负责人（省级重点大创）。前端架构，AI可视化分析面板。',options:{fontSize:11,color:GY}}],{x:0.8,y:1.4,w:'85%',h:5.5,valign:'top'});
-
-    let s4=S();s4.addText('研究项目 (2/2)',{x:0.8,y:0.35,w:8,h:.6,fontSize:20,bold:true,color:BL});
-    s4.addText([{text:'NUS AIoT 智能健康系统',options:{fontSize:13,bold:true,color:DK}},{text:'  2025.05–07 · 新加坡\n',options:{fontSize:10,color:B3}},{text:'前端负责人。GPS追踪、饮食分析、聊天机器人。课程第一名/一等奖。\n\n',options:{fontSize:11,color:GY}},{text:'神经组合优化 | 剑桥大学 BCI 系统设计（组长）',options:{fontSize:13,bold:true,color:DK}},{text:'  2025.11–至今 | 2026.01–02\n',options:{fontSize:10,color:B3}},{text:'EasyCO复现Pointer Network/Sym-NCO。FMEA/Bowtie风险分析。',options:{fontSize:11,color:GY}}],{x:0.8,y:1.4,w:'85%',h:5.5,valign:'top'});
-
-    let s5=S();s5.addText('实习经历  Internship',{x:0.8,y:0.35,w:8,h:.6,fontSize:20,bold:true,color:BL});
-    s5.addText([{text:'美团 · 世界500强',options:{fontSize:15,bold:true,color:DK}},{text:'  2026.06–09 · 北京\n',options:{fontSize:11,color:B3}},{text:'智能体训练助理 (Agent Training Assistant)\n\n',options:{fontSize:13,color:BL}},{text:'提示词工程、知识库设计与skill调优\n',options:{fontSize:11,color:GY}},{text:'Agent演化看板，数据驱动的行为分析\n',options:{fontSize:11,color:GY}},{text:'RBAC权限系统设计，角色映射与权限分配',options:{fontSize:11,color:GY}}],{x:0.8,y:1.4,w:'85%',h:5.5,valign:'top'});
-
-    let s6=S();s6.addText('论文与专利  Papers & Patents',{x:0.8,y:0.35,w:8,h:.6,fontSize:20,bold:true,color:BL});
-    s6.addText([{text:'LLM-Based Invariant Testing for Software Functional Bugs\n',options:{fontSize:13,bold:true,color:DK}},{text:'ISSRE Accept | 共同作者\n',options:{fontSize:10,color:B3}},{text:'LISA框架：基于LLM利用执行轨迹迭代生成测试预言，超越模糊测试。\n\n',options:{fontSize:11,color:GY}},{text:'基于LLM多智能体协作的训练计划生成方法、系统、终端及介质\n',options:{fontSize:13,bold:true,color:DK}},{text:'专利申请2026104381429 | 共同发明人\n',options:{fontSize:10,color:B3}},{text:'LLM多智能体协作，用户画像+历史数据，个性化科学训练方案。',options:{fontSize:11,color:GY}}],{x:0.8,y:1.4,w:'85%',h:5.5,valign:'top'});
-
-    let s7=S();s7.addText('荣誉获奖 (1/2)',{x:0.8,y:0.35,w:8,h:.6,fontSize:20,bold:true,color:BL});
-    [['美国大学生数学建模竞赛 (MCM/ICM) — Meritorious Winner','2026.05'],['全国大学生英语竞赛 — 全国三等奖','2026.05'],['优秀学生 — 南方科技大学','2025.12'],['全国大学生数学建模竞赛 — 省级二等奖','2025.12']].forEach(([h,d],i)=>{s7.addText(h,{x:0.8,y:1.4+i*0.7,w:'72%',h:.5,fontSize:13,color:DK});s7.addText(d,{x:10.5,y:1.4+i*0.7,w:'15%',h:.5,fontSize:11,color:B3,align:'right'})});
-
-    let s8=S();s8.addText('荣誉获奖 (2/2)',{x:0.8,y:0.35,w:8,h:.6,fontSize:20,bold:true,color:BL});
-    [['优秀学生奖学金三等奖 (2024–2025)','2025.11'],['大湾区青创大赛 (机器人专项赛) 三等奖','2025.11'],['NUS AIoT 暑期工作坊 — 一等奖','2025.07'],['IELTS 7.5 (听9.0 读8.0 写7.0 说6.5)','']].forEach(([h,d],i)=>{s8.addText(h,{x:0.8,y:1.4+i*0.7,w:'72%',h:.5,fontSize:13,color:DK});if(d)s8.addText(d,{x:10.5,y:1.4+i*0.7,w:'15%',h:.5,fontSize:11,color:B3,align:'right'})});
-
-    let s9=S();s9.addText('领导力  Leadership',{x:0.8,y:0.35,w:8,h:.6,fontSize:20,bold:true,color:BL});
-    s9.addText([{text:'南方科技大学赛艇队 队长',options:{fontSize:13,bold:true,color:DK}},{text:'  2025.09–至今\n',options:{fontSize:10,color:B3}},{text:'协调训练，组织校级比赛。松山湖金牌，深圳女子八人单桨第三名。\n\n',options:{fontSize:11,color:GY}},{text:'树礼书院乒乓球队 队长',options:{fontSize:13,bold:true,color:DK}},{text:'  2025.09–至今\n',options:{fontSize:10,color:B3}},{text:'组织训练，策划新生赛。"筑梦杯"亚军。优秀运动团体奖学金。',options:{fontSize:11,color:GY}}],{x:0.8,y:1.4,w:'85%',h:5.5,valign:'top'});
-
-    let s10=S();s10.addText('志愿服务  Community Service',{x:0.8,y:0.35,w:8,h:.6,fontSize:20,bold:true,color:BL});
-    s10.addText([{text:'社区服务',options:{fontSize:13,bold:true,color:DK}},{text:'  2018–至今\n',options:{fontSize:10,color:B3}},{text:'深圳博物馆小小讲解员(2018–2023)，为访客提供导览服务。\n\n',options:{fontSize:11,color:GY}},{text:'大型活动志愿者\n',options:{fontSize:12,bold:true,color:BL}},{text:'第十五届全运会(2025) | 海峡两岸棒球联赛总决赛(2024) | GLDC国标舞锦标赛(2024)',options:{fontSize:11,color:GY}}],{x:0.8,y:1.4,w:'85%',h:5.5,valign:'top'});
-
-    let s11=S();s11.addText('THANK YOU',{x:1,y:1.6,w:'80%',h:.5,fontSize:13,color:B3,charSpacing:5,align:'center'});
-    s11.addText('感谢聆听',{x:1,y:2.1,w:'80%',h:1,fontSize:36,bold:true,color:BL,align:'center'});
-    s11.addShape('rect',{x:5.6,y:3.1,w:1,w:.04,fill:{type:'solid',color:B2}});
-    s11.addText('Yuqing Wei / 魏宇晴',{x:1,y:3.5,w:'80%',h:.8,fontSize:18,color:DK,align:'center'});
-    s11.addText('12311043@mail.sustech.edu.cn | (+86) 178-2066-0860\ngithub.com/csgrace | csgrace.github.io',{x:1,y:4.5,w:'80%',h:1,fontSize:13,color:GY,align:'center'});
-
-    pptx.writeFile({fileName:'Yuqing_Wei_Presentation.pptx'});
+  function toggleFullscreen() {
+    const el = document.getElementById('canva-container');
+    if (!document.fullscreenElement) {
+      el.requestFullscreen().catch(() => {});
+    } else {
+      document.exitFullscreen();
+    }
   }
 </script>
 </body>
