@@ -245,13 +245,46 @@
       </div>
     </div>
 
+    <!-- SECTION 4: RBAC -->
+    <h2><span class="num">4</span> <span data-i18n="meituan.rbac.title">RBAC Permission Architecture</span></h2>
+    <div class="ps-block">
+      <div class="ps-card problem">
+        <div class="ps-label" data-i18n="meituan.problem">Problem</div>
+        <p data-i18n="meituan.rbac.problem">Without proper access control, unauthorized configuration changes to agent prompts, skills, and deployments could disrupt production workflows and introduce security risks.</p>
+      </div>
+      <div class="ps-card solution">
+        <div class="ps-label" data-i18n="meituan.solution">Solution — Four-Role RBAC Model</div>
+        <p data-i18n="meituan.rbac.solution">Collaborated across teams to define a <strong>four-role access control model</strong> for the agent platform. Each role maps to specific permissions, creating clear operational boundaries and a security baseline for the multi-tenant agent ecosystem:</p>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px;">
+          <div style="background:#FAFBFC;border-radius:8px;padding:14px;text-align:center;">
+            <div style="font-size:1.2rem;font-weight:800;color:#FF6B35;margin-bottom:4px;" data-i18n="meituan.rbac.r1_name">Owner</div>
+            <div style="font-size:0.75rem;color:var(--gray);" data-i18n="meituan.rbac.r1_desc">Full platform control, system configuration, audit access</div>
+          </div>
+          <div style="background:#FAFBFC;border-radius:8px;padding:14px;text-align:center;">
+            <div style="font-size:1.2rem;font-weight:800;color:#3B64C9;margin-bottom:4px;" data-i18n="meituan.rbac.r2_name">Trainer</div>
+            <div style="font-size:0.75rem;color:var(--gray);" data-i18n="meituan.rbac.r2_desc">Prompt & skill management, knowledge base editing, agent tuning</div>
+          </div>
+          <div style="background:#FAFBFC;border-radius:8px;padding:14px;text-align:center;">
+            <div style="font-size:1.2rem;font-weight:800;color:#27ae60;margin-bottom:4px;" data-i18n="meituan.rbac.r3_name">Permission Admin</div>
+            <div style="font-size:0.75rem;color:var(--gray);" data-i18n="meituan.rbac.r3_desc">Role assignment, access policy configuration, security audit</div>
+          </div>
+          <div style="background:#FAFBFC;border-radius:8px;padding:14px;text-align:center;">
+            <div style="font-size:1.2rem;font-weight:800;color:#636E72;margin-bottom:4px;" data-i18n="meituan.rbac.r4_name">User</div>
+            <div style="font-size:0.75rem;color:var(--gray);" data-i18n="meituan.rbac.r4_desc">Agent interaction only, no configuration access</div>
+          </div>
+        </div>
+        <div class="tech-tags"><span>RBAC</span><span>Access Control</span><span>Security Baseline</span><span>Multi-tenant</span></div>
+      </div>
+    </div>
+
     <!-- Takeaway -->
     <h2 data-i18n="meituan.detail.takeaway">Key Takeaways</h2>
     <div class="highlight-box">
       <p data-i18n="meituan.detail.takeaway.desc">
         <strong>1. AI Agents in production ≠ demos.</strong> Real-world deployment requires robust evaluation, monitoring, and iteration loops. A single prompt template isn't enough—you need a system.<br><br>
         <strong>2. Data closes the loop.</strong> The evolution dashboard and KB evaluation suite turned agent optimization from "gut feeling" into a measurable, repeatable process. Every change was tracked and validated.<br><br>
-        <strong>3. Memory is architecture, not storage.</strong> The Directory Tree + Progressive Loading pattern solved context overflow without losing information fidelity. Full memory addressable, context window lightweight.
+        <strong>3. Memory is architecture, not storage.</strong> The Directory Tree + Progressive Loading pattern solved context overflow without losing information fidelity. Full memory addressable, context window lightweight.<br><br>
+        <strong>4. Security scales with roles.</strong> The four-role RBAC model created clear boundaries: Owner, Trainer, Permission Admin, and User—ensuring that every action on the platform is authorized and auditable.
       </p>
     </div>
 
