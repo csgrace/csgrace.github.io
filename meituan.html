@@ -7,15 +7,21 @@
   <link rel="stylesheet" href="css/style.css">
   <style>
     .project-hero {
-      background: url('images/hero_meituan.png') center/cover no-repeat;
-      color: #2D3436; padding: 60px 0; text-align: center;
       position: relative; margin-top: var(--nav-height);
+      display: flex; align-items: center; justify-content: center;
     }
-    .project-hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: rgba(0,0,0,0.08);
+    .project-hero .hero-bg {
+      width: 100%; display: block;
     }
-    .project-hero .container { position: relative; z-index: 1; }
+    .project-hero .hero-content {
+      position: absolute; text-align: center; color: #2D3436;
+    }
+    .project-hero .hero-content h1 {
+      font-size: 2rem; margin: 0 0 6px; color: inherit;
+    }
+    .project-hero .hero-content .sub {
+      font-size: 0.95rem; opacity: 0.8;
+    }
     .project-hero .tag-row { margin-bottom: 16px; }
     .project-hero .tag-row span {
       display: inline-block; padding: 4px 14px; border-radius: 20px;
@@ -130,7 +136,8 @@
   </nav>
 
   <div class="project-hero">
-    <div class="container">
+    <img class="hero-bg" src="images/hero_meituan.png" alt="">
+    <div class="hero-content">
       <h1 data-i18n="meituan.hero.title">美团</h1>
       <p class="sub" data-i18n="meituan.detail.sub">Agent Training Assistant · 2026.06 – 2026.09 · Beijing</p>
     </div>
