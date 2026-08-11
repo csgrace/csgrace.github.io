@@ -6,16 +6,13 @@
   <title data-i18n-title="hl.title">Honors & Leadership — Yuqing Wei</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* ===== Tabs (reuse global .tab-nav .tab-btn) ===== */
     .tab-content { display: none; }
     .tab-content.active { display: block; }
 
-    /* ===== Sidebar layout ===== */
     .awards-layout { display: flex; gap: 28px; align-items: flex-start; }
     .awards-sidebar {
       width: 200px; flex-shrink: 0; position: sticky; top: calc(var(--nav-height) + 24px);
-      background: #fff; border-radius: 12px; box-shadow: 0 2px 14px rgba(0,0,0,0.05);
-      overflow: hidden;
+      background: #fff; border-radius: 12px; box-shadow: 0 2px 14px rgba(0,0,0,0.05); overflow: hidden;
     }
     .awards-sidebar .side-item {
       display: flex; align-items: center; gap: 10px;
@@ -24,20 +21,12 @@
       text-decoration: none; user-select: none;
     }
     .awards-sidebar .side-item:hover { background: #F8F9FA; color: var(--dark); }
-    .awards-sidebar .side-item.active {
-      color: var(--blue); background: #F2F5FB; border-left-color: var(--blue);
-    }
-    .awards-sidebar .side-item .count {
-      font-size: 0.72rem; color: #aaa; font-weight: 400; margin-left: auto;
-    }
+    .awards-sidebar .side-item.active { color: var(--blue); background: #F2F5FB; border-left-color: var(--blue); }
+    .awards-sidebar .side-item .count { font-size: 0.72rem; color: #aaa; font-weight: 400; margin-left: auto; }
     .awards-sidebar .side-item.active .count { color: var(--blue-light); }
-    .awards-sidebar .side-item + .side-item {
-      border-top: 1px solid #f4f4f4;
-    }
-
+    .awards-sidebar .side-item + .side-item { border-top: 1px solid #f4f4f4; }
     .awards-content { flex: 1; min-width: 0; }
 
-    /* ===== Award card ===== */
     .award-card {
       display: flex; align-items: baseline; gap: 14px;
       background: #fff; border-radius: 10px; padding: 16px 22px; margin-bottom: 10px;
@@ -48,27 +37,20 @@
     .award-card .award-body { flex: 1; }
     .award-card .award-body h4 { font-size: 0.9rem; color: var(--dark); margin-bottom: 0; }
     .award-card .award-date { font-size: 0.78rem; color: var(--gray); white-space: nowrap; flex-shrink: 0; }
+    .award-empty { text-align: center; padding: 40px 20px; color: var(--gray); font-size: 0.88rem; }
 
-    .award-empty {
-      text-align: center; padding: 40px 20px; color: var(--gray); font-size: 0.88rem;
-    }
-
-    /* ===== Leadership ===== */
     .leader-entry {
       background: #fff; border-radius: 12px; padding: 24px 28px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.04); margin-bottom: 16px;
-      border-left: 4px solid var(--teal);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04); margin-bottom: 16px; border-left: 4px solid var(--teal);
     }
     .leader-entry h3 { font-size: 1.05rem; color: var(--dark); margin-bottom: 4px; }
     .leader-entry .date { font-size: 0.82rem; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
     .leader-entry li { font-size: 0.9rem; color: var(--gray); line-height: 1.7; margin-bottom: 4px; }
     .leader-entry ul { padding-left: 20px; }
 
-    /* ===== Volunteer ===== */
     .vol-card {
       background: #fff; border-radius: 12px; padding: 24px 28px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.04); margin-bottom: 16px;
-      border-left: 4px solid var(--coral);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04); margin-bottom: 16px; border-left: 4px solid var(--coral);
     }
     .vol-card h3 { font-size: 1.05rem; color: var(--dark); margin-bottom: 4px; }
     .vol-card .date { font-size: 0.82rem; color: var(--coral); font-weight: 600; margin-bottom: 8px; }
@@ -76,279 +58,208 @@
 
     @media(max-width:768px) {
       .awards-layout { flex-direction: column; }
-      .awards-sidebar {
-        width: 100%; position: static; display: flex; flex-wrap: wrap; gap: 4px;
-        box-shadow: none; background: transparent;
-      }
-      .awards-sidebar .side-item {
-        padding: 8px 14px; border-radius: 20px; border: 1.5px solid #e0e0e0; font-size: 0.8rem;
-      }
+      .awards-sidebar { width: 100%; position: static; display: flex; flex-wrap: wrap; gap: 4px; box-shadow: none; background: transparent; }
+      .awards-sidebar .side-item { padding: 8px 14px; border-radius: 20px; border: 1.5px solid #e0e0e0; font-size: 0.8rem; }
       .awards-sidebar .side-item.active { border-color: var(--blue); background: #F2F5FB; }
-      .awards-sidebar .side-divider { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Yuqing Wei</a>
-      <ul class="nav-links">
-        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-        <li><a href="about.html" data-i18n="nav.about">About</a></li>
-        <li><a href="research.html" data-i18n="nav.research">Research & Work</a></li>
-        <li><a href="leadership.html" data-i18n="nav.experience">Honors & Leadership</a></li>
-        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
-      </ul>
-      <div class="nav-right">
-        <button id="lang-switch" class="lang-switch">中文</button>
-        <button class="hamburger" data-i18n="menu.label" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Yuqing Wei</a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+      <li><a href="about.html" data-i18n="nav.about">About</a></li>
+      <li><a href="research.html" data-i18n="nav.research">Research & Work</a></li>
+      <li><a href="leadership.html" data-i18n="nav.experience">Honors & Leadership</a></li>
+      <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button id="lang-switch" class="lang-switch">中文</button>
+      <button class="hamburger" data-i18n="menu.label" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <section class="page">
-    <div class="container">
+<section class="page">
+  <div class="container">
 
-      <div class="section-header fade-in">
-        <h1 data-i18n="hl.title">Honors & Leadership</h1>
-        <div class="accent" style="background: var(--teal);"></div>
-        <p data-i18n="hl.header.desc">Awards, leadership roles, and community engagement.</p>
-      </div>
+    <div class="section-header fade-in">
+      <h1 data-i18n="hl.title">Honors & Leadership</h1>
+      <div class="accent" style="background: var(--teal);"></div>
+      <p data-i18n="hl.header.desc">Awards, leadership roles, and community engagement.</p>
+    </div>
 
-      <!-- Tab Nav -->
-      <div class="tab-nav fade-in">
-        <button class="tab-btn active" data-tab="awards" data-i18n="hl.tab_awards">Honors</button>
-        <button class="tab-btn" data-tab="leadership" data-i18n="hl.tab_leadership">Leadership</button>
-        <button class="tab-btn" data-tab="volunteer" data-i18n="hl.tab_volunteer">Volunteer</button>
-      </div>
+    <div class="tab-nav fade-in">
+      <button class="tab-btn active" data-tab="awards" data-i18n="hl.tab_awards">Honors</button>
+      <button class="tab-btn" data-tab="leadership" data-i18n="hl.tab_leadership">Leadership</button>
+      <button class="tab-btn" data-tab="volunteer" data-i18n="hl.tab_volunteer">Volunteer</button>
+    </div>
 
-      <!-- ==================== TAB 1: AWARDS (Sidebar + Content) ==================== -->
-      <div class="tab-content active" data-tab="awards">
-        <div class="awards-layout fade-in">
+    <!-- TAB: Awards -->
+    <div class="tab-content active" data-tab="awards">
+      <div class="awards-layout fade-in">
+        <div class="awards-sidebar" id="awards-sidebar">
+          <div class="side-item active" data-cat="moral">🏅 <span data-i18n="hl.cat_moral">Moral Education</span> <span class="count">1</span></div>
+          <div class="side-item" data-cat="academic">📚 <span data-i18n="hl.cat_academic">Academic</span> <span class="count">4</span></div>
+          <div class="side-item" data-cat="innovation">💡 <span data-i18n="hl.cat_innovation">Innovation</span> <span class="count">1</span></div>
+          <div class="side-item" data-cat="scholarship">🎓 <span data-i18n="hl.cat_scholarship">Scholarship</span> <span class="count">1</span></div>
+          <div class="side-item" data-cat="sports">🏆 <span data-i18n="hl.cat_sports">Sports</span> <span class="count">3</span></div>
+        </div>
+        <div class="awards-content" id="awards-content">
 
-          <!-- Sidebar -->
-          <div class="awards-sidebar" id="awards-sidebar">
-            <div class="side-item active" data-cat="moral">
-              🏅 <span data-i18n="hl.cat_moral">Moral Education</span> <span class="count">1</span>
-            </div>
-            <div class="side-item" data-cat="academic">
-              📚 <span data-i18n="hl.cat_academic">Academic</span> <span class="count">4</span>
-            </div>
-            <div class="side-item" data-cat="innovation">
-              💡 <span data-i18n="hl.cat_innovation">Innovation</span> <span class="count">1</span>
-            </div>
-            <div class="side-item" data-cat="scholarship">
-              🎓 <span data-i18n="hl.cat_scholarship">Scholarship</span> <span class="count">1</span>
-            </div>
-            <div class="side-item" data-cat="sports">
-              🏆 <span data-i18n="hl.cat_sports">Sports</span> <span class="count">3</span>
+          <div class="award-panel active" data-cat="moral">
+            <div class="award-card">
+              <div class="award-icon">🎖️</div>
+              <div class="award-body"><h4 data-i18n="hl.honor3">Outstanding Student, SUSTech</h4></div>
+              <div class="award-date" data-i18n="hl.honor3_date">Dec. 2025</div>
             </div>
           </div>
 
-          <!-- Content -->
-          <div class="awards-content" id="awards-content">
-
-            <!-- 德育荣誉 -->
-            <div class="award-panel active" data-cat="moral">
-              <div class="award-card">
-                <div class="award-icon">🎖️</div>
-                <div class="award-body">
-                  <h4 data-i18n="hl.honor3">Outstanding Student, SUSTech</h4>
-                </div>
-                <div class="award-date" data-i18n="hl.honor3_date">Dec. 2025</div>
-              </div>
+          <div class="award-panel" data-cat="academic">
+            <div class="award-card">
+              <div class="award-icon">🥇</div>
+              <div class="award-body"><h4 data-i18n="hl.honor1">Meritorious Winner, Mathematical Contest in Modeling (MCM/ICM)</h4></div>
+              <div class="award-date" data-i18n="hl.honor1_date">May 2026</div>
             </div>
-
-            <!-- 学业荣誉 -->
-            <div class="award-panel" data-cat="academic">
-              <div class="award-card">
-                <div class="award-icon">🥇</div>
-                <div class="award-body">
-                  
-<h4 data-i18n="hl.honor1">Meritorious Winner, Mathematical Contest in Modeling (MCM/ICM)</h4>
-                  </div>
-                  <div class="award-date" data-i18n="hl.honor1_date">May 2026</div>
-                </div>
-              </div>
-              <div class="award-card">
-                <div class="award-icon">📝</div>
-                <div class="award-body">
-                  
-<h4 data-i18n="hl.honor2">Third Prize (National Level), National English Competition for College Students</h4>
-                  </div>
-                  <div class="award-date" data-i18n="hl.honor2_date">May 2026</div>
-                </div>
-              </div>
-              <div class="award-card">
-                <div class="award-icon">🥈</div>
-                <div class="award-body">
-                  
-<h4 data-i18n="hl.honor4">Provincial 2nd Prize, National College Mathematical Modeling Competition</h4>
-                  </div>
-                  <div class="award-date" data-i18n="hl.honor4_date">Dec. 2025</div>
-                </div>
-              </div>
-              <div class="award-card">
-                <div class="award-icon">🏆</div>
-                <div class="award-body">
-                  
-<h4 data-i18n="hl.honor7">First Prize, AIoT Summer Workshop, National University of Singapore</h4>
-                  </div>
-                  <div class="award-date" data-i18n="hl.honor7_date">Jul. 2025</div>
-                </div>
-              </div>
+            <div class="award-card">
+              <div class="award-icon">📝</div>
+              <div class="award-body"><h4 data-i18n="hl.honor2">Third Prize (National Level), National English Competition for College Students</h4></div>
+              <div class="award-date" data-i18n="hl.honor2_date">May 2026</div>
             </div>
-
-            <!-- 创新创业 -->
-            <div class="award-panel" data-cat="innovation">
-              <div class="award-card">
-                <div class="award-icon">🤖</div>
-                <div class="award-body">
-                  
-<h4 data-i18n="hl.honor6">Third Prize, Greater Bay Area Robotics Innovation & Entrepreneurship Competition</h4>
-                  </div>
-                  <div class="award-date" data-i18n="hl.honor6_date">Nov. 2025</div>
-                </div>
-              </div>
+            <div class="award-card">
+              <div class="award-icon">🥈</div>
+              <div class="award-body"><h4 data-i18n="hl.honor4">Provincial 2nd Prize, National College Mathematical Modeling Competition</h4></div>
+              <div class="award-date" data-i18n="hl.honor4_date">Dec. 2025</div>
             </div>
-
-            <!-- 奖学金 -->
-            <div class="award-panel" data-cat="scholarship">
-              <div class="award-card">
-                <div class="award-icon">💵</div>
-                <div class="award-body">
-                  
-<h4 data-i18n="hl.honor5">Third Class of the Merit Student Scholarship (2024–2025), SUSTech</h4>
-                  </div>
-                  <div class="award-date" data-i18n="hl.honor5_date">Nov. 2025</div>
-                </div>
-              </div>
+            <div class="award-card">
+              <div class="award-icon">🏆</div>
+              <div class="award-body"><h4 data-i18n="hl.honor7">First Prize, AIoT Summer Workshop, National University of Singapore</h4></div>
+              <div class="award-date" data-i18n="hl.honor7_date">Jul. 2025</div>
             </div>
-
-            <!-- 体育奖项 -->
-            <div class="award-panel" data-cat="sports">
-              <h3 style="font-size:0.95rem;color:var(--dark);margin:0 0 12px;padding-bottom:6px;border-bottom:2px solid #f0f0f0;">
-                👥 <span data-i18n="hl.cat_team">Team</span> <span style="font-size:0.75rem;color:var(--gray);font-weight:400;">· 3</span>
-              </h3>
-              <div class="award-card">
-                <div class="award-icon">🚣</div>
-                <div class="award-body">
-                  
-<h4 data-i18n="hl.sport1">Third Place, Shenzhen Women's Eight with Coxswain Competition</h4>
-                  </div>
-                  <div class="award-date" data-i18n="hl.sport1_date">2025</div>
-                </div>
-              </div>
-              <div class="award-card">
-                <div class="award-icon">🥇</div>
-                <div class="award-body">
-                  
-<h4 data-i18n="hl.sport2">Gold Medal, Songshan Lake Water Sports Carnival</h4>
-                  </div>
-                  <div class="award-date" data-i18n="hl.sport2_date">2025</div>
-                </div>
-              </div>
-              <div class="award-card">
-                <div class="award-icon">🏓</div>
-                <div class="award-body">
-                  
-<h4 data-i18n="hl.sport3">Runner-up, University-Level "Zhumeng Cup" Table Tennis Team Championship</h4>
-                  </div>
-                  <div class="award-date" data-i18n="hl.sport3_date">2025</div>
-                </div>
-              </div>
-
-              <h3 style="font-size:0.95rem;color:var(--dark);margin:20px 0 12px;padding-bottom:6px;border-bottom:2px solid #f0f0f0;">
-                🧑 <span data-i18n="hl.cat_individual">Individual</span> <span style="font-size:0.75rem;color:var(--gray);font-weight:400;">· 0</span>
-              </h3>
-              <div class="award-empty" data-i18n="hl.sport_empty">No individual awards yet</div>
-            </div>
-
           </div>
+
+          <div class="award-panel" data-cat="innovation">
+            <div class="award-card">
+              <div class="award-icon">🤖</div>
+              <div class="award-body"><h4 data-i18n="hl.honor6">Third Prize, Greater Bay Area Robotics Innovation & Entrepreneurship Competition</h4></div>
+              <div class="award-date" data-i18n="hl.honor6_date">Nov. 2025</div>
+            </div>
+          </div>
+
+          <div class="award-panel" data-cat="scholarship">
+            <div class="award-card">
+              <div class="award-icon">💵</div>
+              <div class="award-body"><h4 data-i18n="hl.honor5">Third Class of the Merit Student Scholarship (2024–2025), SUSTech</h4></div>
+              <div class="award-date" data-i18n="hl.honor5_date">Nov. 2025</div>
+            </div>
+          </div>
+
+          <div class="award-panel" data-cat="sports">
+            <h3 style="font-size:0.95rem;color:var(--dark);margin:0 0 12px;padding-bottom:6px;border-bottom:2px solid #f0f0f0;">👥 <span data-i18n="hl.cat_team">Team</span> <span style="font-size:0.75rem;color:var(--gray);font-weight:400;">· 3</span></h3>
+            <div class="award-card">
+              <div class="award-icon">🚣</div>
+              <div class="award-body"><h4 data-i18n="hl.sport1">Third Place, Shenzhen Women's Eight with Coxswain Competition</h4></div>
+              <div class="award-date" data-i18n="hl.sport1_date">2025</div>
+            </div>
+            <div class="award-card">
+              <div class="award-icon">🥇</div>
+              <div class="award-body"><h4 data-i18n="hl.sport2">Gold Medal, Songshan Lake Water Sports Carnival</h4></div>
+              <div class="award-date" data-i18n="hl.sport2_date">2025</div>
+            </div>
+            <div class="award-card">
+              <div class="award-icon">🏓</div>
+              <div class="award-body"><h4 data-i18n="hl.sport3">Runner-up, University-Level "Zhumeng Cup" Table Tennis Team Championship</h4></div>
+              <div class="award-date" data-i18n="hl.sport3_date">2025</div>
+            </div>
+            <h3 style="font-size:0.95rem;color:var(--dark);margin:20px 0 12px;padding-bottom:6px;border-bottom:2px solid #f0f0f0;">🧑 <span data-i18n="hl.cat_individual">Individual</span> <span style="font-size:0.75rem;color:var(--gray);font-weight:400;">· 0</span></h3>
+            <div class="award-empty" data-i18n="hl.sport_empty">No individual awards yet</div>
+          </div>
+
         </div>
       </div>
-
-      <!-- ==================== TAB 2: LEADERSHIP ==================== -->
-      <div class="tab-content fade-in" data-tab="leadership">
-        <div class="leader-entry">
-          <h3 data-i18n="hl.rowing.title">Captain, SUSTech Rowing Team</h3>
-          <div class="date" data-i18n="hl.rowing.date">Sep. 2025 – Present</div>
-          <ul>
-            <li data-i18n="hl.rowing.d1">Coordinated on-water and land training and organized the university-wide Rowing Competition.</li>
-            <li data-i18n="hl.rowing.d2">Guided the team to a third-place finish in the Shenzhen Women's Eight with Coxswain competition and secured a Gold Medal at the Songshan Lake Water Sports Carnival.</li>
-          </ul>
-        </div>
-        <div class="leader-entry">
-          <h3 data-i18n="hl.tt.title">Captain, Table Tennis Team, Shuli College</h3>
-          <div class="date" data-i18n="hl.tt.date">Sep. 2025 – Present</div>
-          <ul>
-            <li data-i18n="hl.tt.d1">Organized daily training sessions, planned and hosted the college's Freshman Table Tennis Tournament.</li>
-            <li data-i18n="hl.tt.d2">Led the team to a runner-up finish in the university-level "Zhumeng Cup" table tennis team championship.</li>
-            <li data-i18n="hl.tt.d3">Represented the team in a public presentation and won Outstanding Sports Team Scholarship.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- ==================== TAB 3: VOLUNTEER ==================== -->
-      <div class="tab-content fade-in" data-tab="volunteer">
-        <div class="vol-card">
-          <h3 data-i18n="hl.volunteer_title">Community Service & Volunteering</h3>
-          <div class="date" data-i18n="hl.volunteer.date">2018 – Present</div>
-          <p data-i18n="hl.volunteer.d1">Served as a young guide for visitors at The Shenzhen Museum (2018–2023).</p>
-        </div>
-        <div class="vol-card">
-          <h3 data-i18n="hl.volunteer_events_title">Major Event Volunteering</h3>
-          <div class="date">2024 – 2025</div>
-          <p data-i18n="hl.volunteer.d2">Usher or Greeter at major events: 15th National Games of the People's Republic of China (2025), 5th Cross-Strait Student Baseball League Finals (2024), and GLDC Ballroom Dancing Competition (2024).</p>
-        </div>
-      </div>
-
     </div>
-  </section>
 
-  <footer class="footer">
-    <p data-i18n="footer.text">Made by Yuqing Wei · 2026</p>
-  </footer>
+    <!-- TAB: Leadership -->
+    <div class="tab-content fade-in" data-tab="leadership">
+      <div class="leader-entry">
+        <h3 data-i18n="hl.rowing.title">Captain, SUSTech Rowing Team</h3>
+        <div class="date" data-i18n="hl.rowing.date">Sep. 2025 – Present</div>
+        <ul>
+          <li data-i18n="hl.rowing.d1">Coordinated on-water and land training and organized the university-wide Rowing Competition.</li>
+          <li data-i18n="hl.rowing.d2">Guided the team to a third-place finish in the Shenzhen Women's Eight with Coxswain competition and secured a Gold Medal at the Songshan Lake Water Sports Carnival.</li>
+        </ul>
+      </div>
+      <div class="leader-entry">
+        <h3 data-i18n="hl.tt.title">Captain, Table Tennis Team, Shuli College</h3>
+        <div class="date" data-i18n="hl.tt.date">Sep. 2025 – Present</div>
+        <ul>
+          <li data-i18n="hl.tt.d1">Organized daily training sessions, planned and hosted the college's Freshman Table Tennis Tournament.</li>
+          <li data-i18n="hl.tt.d2">Led the team to a runner-up finish in the university-level "Zhumeng Cup" table tennis team championship.</li>
+          <li data-i18n="hl.tt.d3">Represented the team in a public presentation and won Outstanding Sports Team Scholarship.</li>
+        </ul>
+      </div>
+    </div>
 
-  <script src="js/i18n.js"></script>
-  <script src="js/main.js"></script>
-  <script>
-    // Tab switching
-    document.querySelectorAll('.section-tabs button').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const tab = btn.getAttribute('data-tab');
-        document.querySelectorAll('.section-tabs button').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        document.querySelectorAll('.tab-content').forEach(p => {
-          p.classList.toggle('active', p.getAttribute('data-tab') === tab);
+    <!-- TAB: Volunteer -->
+    <div class="tab-content fade-in" data-tab="volunteer">
+      <div class="vol-card">
+        <h3 data-i18n="hl.volunteer_title">Community Service & Volunteering</h3>
+        <div class="date" data-i18n="hl.volunteer.date">2018 – Present</div>
+        <p data-i18n="hl.volunteer.d1">Served as a young guide for visitors at The Shenzhen Museum (2018–2023).</p>
+      </div>
+      <div class="vol-card">
+        <h3 data-i18n="hl.volunteer_events_title">Major Event Volunteering</h3>
+        <div class="date">2024 – 2025</div>
+        <p data-i18n="hl.volunteer.d2">Usher or Greeter at major events: 15th National Games of the People's Republic of China (2025), 5th Cross-Strait Student Baseball League Finals (2024), and GLDC Ballroom Dancing Competition (2024).</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <p data-i18n="footer.text">Made by Yuqing Wei · 2026</p>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // Tab switching
+  document.querySelectorAll('.tab-nav .tab-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var tab = btn.getAttribute('data-tab');
+      document.querySelectorAll('.tab-nav .tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.tab-content').forEach(function(p) {
+        p.classList.toggle('active', p.getAttribute('data-tab') === tab);
+      });
+    });
+  });
+
+  // Sidebar category switching
+  (function() {
+    var sidebar = document.getElementById('awards-sidebar');
+    if (!sidebar) return;
+    sidebar.querySelectorAll('.side-item').forEach(function(item) {
+      item.addEventListener('click', function() {
+        var cat = item.getAttribute('data-cat');
+        sidebar.querySelectorAll('.side-item').forEach(function(i) { i.classList.remove('active'); });
+        item.classList.add('active');
+        document.querySelectorAll('.award-panel').forEach(function(p) {
+          p.style.display = p.getAttribute('data-cat') === cat ? 'block' : 'none';
         });
       });
     });
-
-    // Sidebar category switching (within Awards tab)
-    const sidebar = document.getElementById('awards-sidebar');
-    if (sidebar) {
-      sidebar.querySelectorAll('.side-item').forEach(item => {
-        item.addEventListener('click', () => {
-          const cat = item.getAttribute('data-cat');
-          sidebar.querySelectorAll('.side-item').forEach(i => i.classList.remove('active'));
-          item.classList.add('active');
-          document.querySelectorAll('.award-panel').forEach(p => {
-            p.style.display = p.getAttribute('data-cat') === cat ? 'block' : 'none';
-          });
-        });
+    var first = sidebar.querySelector('.side-item.active');
+    if (first) {
+      document.querySelectorAll('.award-panel').forEach(function(p) {
+        p.style.display = p.getAttribute('data-cat') === first.getAttribute('data-cat') ? 'block' : 'none';
       });
-      // Default: show first category
-      const first = sidebar.querySelector('.side-item.active');
-      if (first) {
-        document.querySelectorAll('.award-panel').forEach(p => {
-          p.style.display = p.getAttribute('data-cat') === first.getAttribute('data-cat') ? 'block' : 'none';
-        });
-      }
     }
-  </script>
+  })();
+</script>
 </body>
 </html>
