@@ -6,111 +6,155 @@
   <title data-i18n-title="meituan.page.title">Meituan Internship — Yuqing Wei</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
+    :root { --orange: #FF6B35; --orange-light: #FFF3EC; --green: #27ae60; --red: #e74c3c; }
+
+    /* Hero */
     .project-hero {
       position: relative; margin-top: var(--nav-height);
       display: flex; align-items: center; justify-content: center;
     }
-    .project-hero .hero-bg {
-      width: 100%; display: block;
-    }
+    .project-hero .hero-bg { width: 100%; display: block; }
     .project-hero .hero-content {
       position: absolute; text-align: center; color: #2D3436;
+      text-shadow: 0 1px 4px rgba(255,255,255,0.6);
     }
-    .project-hero .hero-content h1 {
-      font-size: 2rem; margin: 0 0 6px; color: inherit;
-    }
-    .project-hero .hero-content .sub {
-      font-size: 0.95rem; opacity: 0.8;
-    }
-    .project-hero .tag-row { margin-bottom: 16px; }
-    .project-hero .tag-row span {
-      display: inline-block; padding: 4px 14px; border-radius: 20px;
-      background: rgba(255,255,255,0.2); font-size: 0.82rem;
-      margin: 0 6px; backdrop-filter: blur(4px);
-    }
-    .project-hero h1 { font-size: 2rem; margin: 12px 0 6px; }
-    .project-hero .sub { font-size: 0.95rem; opacity: 0.85; }
+    .project-hero .hero-content h1 { font-size: 2.25rem; margin: 0 0 4px; color: inherit; font-weight: 800; }
+    .project-hero .hero-content .sub { font-size: 0.95rem; opacity: 0.75; }
 
+    /* Content area */
     .detail { max-width: 1240px; margin: 0 auto; padding: 48px 32px 80px; }
     .detail h2 {
-      font-size: 1.25rem; color: var(--dark); margin: 44px 0 16px;
-      padding-bottom: 8px; border-bottom: 2px solid #f0f0f0;
-      display: flex; align-items: center; gap: 8px;
+      font-size: 1.25rem; color: var(--dark); margin: 52px 0 18px;
+      padding-bottom: 10px; border-bottom: 2px solid #f0f0f0;
+      display: flex; align-items: center; gap: 10px;
     }
     .detail h2 .num {
       display: inline-flex; align-items: center; justify-content: center;
       width: 28px; height: 28px; border-radius: 50%;
-      background: #FF6B35; color: #fff; font-size: 0.82rem; font-weight: 700;
-      flex-shrink: 0;
+      background: var(--orange); color: #fff; font-size: 0.8rem; font-weight: 700; flex-shrink: 0;
     }
     .detail p, .detail li { font-size: 0.92rem; line-height: 1.7; color: var(--gray); }
     .detail ul { padding-left: 20px; }
     .detail li { margin-bottom: 6px; }
 
-    .stat-row { display: flex; gap: 20px; flex-wrap: wrap; margin: 20px 0; }
-    .stat-card {
-      flex: 1; min-width: 160px; background: #FAFBFC; border-radius: 10px;
-      padding: 20px; text-align: center; border-left: 3px solid #FF6B35;
-    }
-    .stat-card .num { font-size: 1.5rem; font-weight: 800; color: #FF6B35; }
-    .stat-card .label { font-size: 0.78rem; color: var(--gray); margin-top: 4px; }
-
     /* Problem / Solution cards */
-    .ps-block { margin: 20px 0; display: grid; gap: 16px; }
+    .ps-block { margin: 20px 0; display: grid; gap: 14px; }
     .ps-card {
-      background: #fff; border-radius: 12px; padding: 24px 28px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      background: #fff; border-radius: 12px; padding: 22px 28px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04); transition: transform 0.2s, box-shadow 0.2s;
     }
-    .ps-card.problem { border-left: 4px solid #e74c3c; }
-    .ps-card.solution { border-left: 4px solid #27ae60; }
+    .ps-card.problem { border-left: 4px solid var(--red); }
+    .ps-card.solution { border-left: 4px solid var(--green); }
     .ps-card .ps-label {
-      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 1px; margin-bottom: 6px;
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1.5px; margin-bottom: 8px;
     }
-    .ps-card.problem .ps-label { color: #e74c3c; }
-    .ps-card.solution .ps-label { color: #27ae60; }
+    .ps-card.problem .ps-label { color: var(--red); }
+    .ps-card.solution .ps-label { color: var(--green); }
     .ps-card h3 { font-size: 1rem; color: var(--dark); margin: 4px 0 10px; }
     .ps-card p, .ps-card li { font-size: 0.88rem; }
 
-    .highlight-box {
-      background: linear-gradient(135deg, #FFF3EC, #FFF8F4);
-      border-radius: 10px; padding: 24px 28px; margin: 20px 0;
-      border-left: 4px solid #FF6B35;
+    /* KB evaluation cards — more prominent */
+    .eval-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 0 0 20px; }
+    .eval-card {
+      background: #fff; border-radius: 12px; padding: 20px 24px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.05); transition: transform 0.2s, box-shadow 0.2s;
+      position: relative; overflow: hidden;
     }
-    .highlight-box p { margin: 0; color: #8B4513; font-size: 0.9rem; line-height: 1.8; }
-
-    .back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--blue); text-decoration: none; font-size: 0.88rem; font-weight: 600; margin-bottom: 12px; }
-    .back-link:hover { text-decoration: underline; }
-
-    .tech-tags { margin-top: 12px; }
-    .tech-tags span {
-      display: inline-block; padding: 3px 10px; border-radius: 6px;
-      background: #FFF3EC; color: #FF6B35; font-size: 0.72rem; font-weight: 600; margin: 2px;
+    .eval-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .eval-card .eval-icon { font-size: 1.4rem; margin-bottom: 6px; }
+    .eval-card.fixed { border-left: 4px solid #3B64C9; }
+    .eval-card.dynamic { border-left: 4px solid var(--green); }
+    .eval-card .eval-label {
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
+      margin-bottom: 6px;
     }
+    .eval-card.fixed .eval-label { color: #3B64C9; }
+    .eval-card.dynamic .eval-label { color: var(--green); }
+    .eval-card p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; }
 
-    /* Metrics grid */
+    /* Metrics grid — consistent height */
     .metrics-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 14px 0;
+      display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin: 14px 0 20px;
     }
     .metric-item {
-      background: #FAFBFC; border-radius: 8px; padding: 14px; text-align: center;
-      border-bottom: 3px solid #FF6B35;
+      background: #fff; border-radius: 10px; padding: 16px 10px; text-align: center;
+      border-bottom: 3px solid var(--orange); min-height: 70px;
+      display: flex; flex-direction: column; justify-content: center;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.03); transition: transform 0.2s;
     }
-    .metric-item .m-name { font-size: 0.82rem; font-weight: 700; color: var(--dark); }
-    .metric-item .m-desc { font-size: 0.7rem; color: var(--gray); margin-top: 2px; }
+    .metric-item:hover { transform: translateY(-2px); }
+    .metric-item .m-name { font-size: 0.78rem; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+    .metric-item .m-desc { font-size: 0.68rem; color: var(--gray); }
+
+    /* Highlight box */
+    .highlight-box {
+      background: linear-gradient(135deg, #FFF3EC, #FFF8F4);
+      border-radius: 12px; padding: 28px 32px; margin: 20px 0;
+      border-left: 4px solid var(--orange);
+    }
+    .highlight-box p { margin: 0; color: #8B4513; font-size: 0.9rem; line-height: 1.9; }
+
+    /* Back link */
+    .back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--blue); text-decoration: none; font-size: 0.88rem; font-weight: 600; margin-bottom: 16px; }
+    .back-link:hover { text-decoration: underline; }
 
     /* Architecture image */
     .arch-img {
-      width: 100%; max-width: 100%; border-radius: 12px;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.06); margin: 16px 0;
+      width: 100%; border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06); margin: 20px 0;
     }
     [data-i18n-img] { display: none; }
     [data-i18n-img].active { display: block; }
 
+    /* Memo cards */
+    .memo-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 14px; }
+    .memo-card {
+      background: #FAFBFC; border-radius: 10px; padding: 16px 18px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .memo-card:hover { transform: translateY(-2px); box-shadow: 0 3px 14px rgba(0,0,0,0.06); }
+    .memo-card h3 { font-size: 0.9rem; color: var(--dark); margin-bottom: 6px; }
+    .memo-card p { font-size: 0.82rem; color: var(--gray); line-height: 1.6; }
+
+    /* Role cards */
+    .role-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 14px; }
+    .role-card {
+      background: #FAFBFC; border-radius: 10px; padding: 18px 14px; text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .role-card:hover { transform: translateY(-3px); box-shadow: 0 4px 18px rgba(0,0,0,0.08); }
+    .role-card .r-name { font-size: 1.1rem; font-weight: 800; margin-bottom: 4px; }
+    .role-card .r-desc { font-size: 0.75rem; color: var(--gray); line-height: 1.5; }
+    .role-card.owner { border-top: 3px solid var(--orange); }
+    .role-card.owner .r-name { color: var(--orange); }
+    .role-card.trainer { border-top: 3px solid #3B64C9; }
+    .role-card.trainer .r-name { color: #3B64C9; }
+    .role-card.admin { border-top: 3px solid var(--green); }
+    .role-card.admin .r-name { color: var(--green); }
+    .role-card.user { border-top: 3px solid #636E72; }
+    .role-card.user .r-name { color: #636E72; }
+
+    /* Back to top */
+    #back-top {
+      position: fixed; bottom: 32px; right: 32px; z-index: 999;
+      width: 42px; height: 42px; border-radius: 50%;
+      background: var(--orange); color: #fff; border: none;
+      font-size: 1.2rem; cursor: pointer;
+      box-shadow: 0 3px 14px rgba(255,107,53,0.3);
+      opacity: 0; pointer-events: none; transition: opacity 0.3s;
+    }
+    #back-top.show { opacity: 1; pointer-events: auto; }
+    #back-top:hover { background: #E55A2B; transform: translateY(-2px); }
+
+    html { scroll-behavior: smooth; }
+
     @media(max-width:768px) {
-      .stat-row { flex-direction: column; }
-      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
-      .project-hero h1 { font-size: 1.4rem; }
+      .metrics-grid { grid-template-columns: repeat(3, 1fr); }
+      .eval-cards, .memo-row { grid-template-columns: 1fr; }
+      .role-row { grid-template-columns: repeat(2, 1fr); }
+      .project-hero .hero-content h1 { font-size: 1.5rem; }
+      .detail { padding: 32px 18px 60px; }
     }
   </style>
 </head>
@@ -197,15 +241,17 @@
       </div>
     </div>
 
-    <!-- Evaluation Suite detail -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 20px;">
-      <div class="ps-card" style="border-left:4px solid #3B64C9;">
-        <div class="ps-label" style="color:#3B64C9;" data-i18n="meituan.kb.fixed_label">Fixed Baseline Set</div>
-        <p data-i18n="meituan.kb.fixed_desc" style="font-size:0.85rem;">Lock core scenarios, ensure <strong>longitudinal comparability</strong>. High-frequency queries + document back-derivation + manually designed boundary cases.</p>
+    <!-- Evaluation Suite -->
+    <div class="eval-cards">
+      <div class="eval-card fixed">
+        <div class="eval-icon">📌</div>
+        <div class="eval-label" data-i18n="meituan.kb.fixed_label">Fixed Baseline Set</div>
+        <p data-i18n="meituan.kb.fixed_desc">Lock core scenarios, ensure <strong>longitudinal comparability</strong>. High-frequency queries + document back-derivation + manually designed boundary cases.</p>
       </div>
-      <div class="ps-card" style="border-left:4px solid #27ae60;">
-        <div class="ps-label" style="color:#27ae60;" data-i18n="meituan.kb.dynamic_label">Dynamic Live Set</div>
-        <p data-i18n="meituan.kb.dynamic_desc" style="font-size:0.85rem;">Cover emerging issues, ensure <strong>horizontal sensitivity</strong>. Online Bad/Good Cases + user query sampling + KB update back-derivation.</p>
+      <div class="eval-card dynamic">
+        <div class="eval-icon">🔄</div>
+        <div class="eval-label" data-i18n="meituan.kb.dynamic_label">Dynamic Live Set</div>
+        <p data-i18n="meituan.kb.dynamic_desc">Cover emerging issues, ensure <strong>horizontal sensitivity</strong>. Online Bad/Good Cases + user query sampling + KB update back-derivation.</p>
       </div>
     </div>
 
@@ -228,14 +274,14 @@
       </div>
       <div class="ps-card solution">
         <div class="ps-label" data-i18n="meituan.solution">Solution — Two-Layer Memory Architecture</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px;">
-          <div style="background:#FAFBFC;border-radius:8px;padding:14px;">
-            <h3 style="font-size:0.9rem;color:var(--dark);margin-bottom:6px;" data-i18n="meituan.memory.tree_title">📂 Directory Tree</h3>
-            <p style="font-size:0.82rem;color:var(--gray);" data-i18n="meituan.memory.tree_desc"><strong>Layered Storage.</strong> A master index resides in context, recording which category maps to which partition. User preferences and historical decisions are split into separate sub-files by category. Context loads only the index, not the full memory volume.</p>
+        <div class="memo-row">
+          <div class="memo-card">
+            <h3 data-i18n="meituan.memory.tree_title">📂 Directory Tree</h3>
+            <p data-i18n="meituan.memory.tree_desc"><strong>Layered Storage.</strong> A master index resides in context, recording which category maps to which partition. User preferences and historical decisions are split into separate sub-files by category. Context loads only the index, not the full memory volume.</p>
           </div>
-          <div style="background:#FAFBFC;border-radius:8px;padding:14px;">
-            <h3 style="font-size:0.9rem;color:var(--dark);margin-bottom:6px;" data-i18n="meituan.memory.load_title">🔄 Progressive Loading</h3>
-            <p style="font-size:0.82rem;color:var(--gray);" data-i18n="meituan.memory.load_desc"><strong>On-Demand Retrieval.</strong> Read the index to locate the target partition, then fetch only what's needed. Release immediately after use — no long-term context occupation. Full memory remains addressable, while the context window stays consistently lightweight.</p>
+          <div class="memo-card">
+            <h3 data-i18n="meituan.memory.load_title">🔄 Progressive Loading</h3>
+            <p data-i18n="meituan.memory.load_desc"><strong>On-Demand Retrieval.</strong> Read the index to locate the target partition, then fetch only what's needed. Release immediately after use — no long-term context occupation. Full memory remains addressable, while the context window stays consistently lightweight.</p>
           </div>
         </div>
       </div>
@@ -251,22 +297,22 @@
       <div class="ps-card solution">
         <div class="ps-label" data-i18n="meituan.solution">Solution — Four-Role RBAC Model</div>
         <p data-i18n="meituan.rbac.solution">Collaborated across teams to define a <strong>four-role access control model</strong> for the agent platform. Each role maps to specific permissions, creating clear operational boundaries and a security baseline for the multi-tenant agent ecosystem:</p>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px;">
-          <div style="background:#FAFBFC;border-radius:8px;padding:14px;text-align:center;">
-            <div style="font-size:1.2rem;font-weight:800;color:#FF6B35;margin-bottom:4px;" data-i18n="meituan.rbac.r1_name">Owner</div>
-            <div style="font-size:0.75rem;color:var(--gray);" data-i18n="meituan.rbac.r1_desc">Full platform control, system configuration, audit access</div>
+        <div class="role-row">
+          <div class="role-card owner">
+            <div class="r-name" data-i18n="meituan.rbac.r1_name">Owner</div>
+            <div class="r-desc" data-i18n="meituan.rbac.r1_desc">Full platform control, system configuration, audit access</div>
           </div>
-          <div style="background:#FAFBFC;border-radius:8px;padding:14px;text-align:center;">
-            <div style="font-size:1.2rem;font-weight:800;color:#3B64C9;margin-bottom:4px;" data-i18n="meituan.rbac.r2_name">Trainer</div>
-            <div style="font-size:0.75rem;color:var(--gray);" data-i18n="meituan.rbac.r2_desc">Prompt & skill management, knowledge base editing, agent tuning</div>
+          <div class="role-card trainer">
+            <div class="r-name" data-i18n="meituan.rbac.r2_name">Trainer</div>
+            <div class="r-desc" data-i18n="meituan.rbac.r2_desc">Prompt & skill management, knowledge base editing, agent tuning</div>
           </div>
-          <div style="background:#FAFBFC;border-radius:8px;padding:14px;text-align:center;">
-            <div style="font-size:1.2rem;font-weight:800;color:#27ae60;margin-bottom:4px;" data-i18n="meituan.rbac.r3_name">Permission Admin</div>
-            <div style="font-size:0.75rem;color:var(--gray);" data-i18n="meituan.rbac.r3_desc">Role assignment, access policy configuration, security audit</div>
+          <div class="role-card admin">
+            <div class="r-name" data-i18n="meituan.rbac.r3_name">Permission Admin</div>
+            <div class="r-desc" data-i18n="meituan.rbac.r3_desc">Role assignment, access policy configuration, security audit</div>
           </div>
-          <div style="background:#FAFBFC;border-radius:8px;padding:14px;text-align:center;">
-            <div style="font-size:1.2rem;font-weight:800;color:#636E72;margin-bottom:4px;" data-i18n="meituan.rbac.r4_name">User</div>
-            <div style="font-size:0.75rem;color:var(--gray);" data-i18n="meituan.rbac.r4_desc">Agent interaction only, no configuration access</div>
+          <div class="role-card user">
+            <div class="r-name" data-i18n="meituan.rbac.r4_name">User</div>
+            <div class="r-desc" data-i18n="meituan.rbac.r4_desc">Agent interaction only, no configuration access</div>
           </div>
         </div>
       </div>
@@ -289,7 +335,19 @@
     <p data-i18n="footer.text">Made by Yuqing Wei · 2026</p>
   </footer>
 
+  <button id="back-top" title="Back to top">↑</button>
+
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    // Back to top button
+    const backTop = document.getElementById('back-top');
+    window.addEventListener('scroll', () => {
+      backTop.classList.toggle('show', window.scrollY > 600);
+    });
+    backTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
