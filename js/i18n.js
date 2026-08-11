@@ -196,6 +196,8 @@ const i18n = {
 
     // Contact
     "contact.title": "Let's Connect!",
+    "contact.home_title": "Get in Touch",
+    "contact.email.label": "Email",
     "contact.header.desc": "I'm always open to new opportunities, collaborations, and conversations. Feel free to reach out!",
     "contact.email.uni": "University Email",
     "contact.email.personal": "Personal Email",
@@ -464,6 +466,8 @@ const i18n = {
 
     // Contact
     "contact.title": "联系我！",
+    "contact.home_title": "联系方式",
+    "contact.email.label": "邮箱",
     "contact.header.desc": "我始终欢迎新的机会、合作与交流。随时联系我！",
     "contact.email.uni": "学校邮箱",
     "contact.email.personal": "个人邮箱",
