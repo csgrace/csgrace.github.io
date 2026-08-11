@@ -43,8 +43,9 @@
       background: #fff; border-radius: 12px; padding: 24px 28px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.04); margin-bottom: 16px; border-left: 4px solid var(--teal);
     }
-    .leader-entry h3 { font-size: 1.05rem; color: var(--dark); margin-bottom: 4px; }
-    .leader-entry .date { font-size: 0.82rem; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .leader-entry .leader-header { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 10px; }
+    .leader-entry .leader-header h3 { font-size: 1.05rem; color: var(--dark); margin: 0; }
+    .leader-entry .leader-header .date { font-size: 0.82rem; color: var(--teal); font-weight: 600; white-space: nowrap; flex-shrink: 0; }
     .leader-entry li { font-size: 0.9rem; color: var(--gray); line-height: 1.7; margin-bottom: 4px; }
     .leader-entry ul { padding-left: 20px; }
 
@@ -52,8 +53,9 @@
       background: #fff; border-radius: 12px; padding: 24px 28px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.04); margin-bottom: 16px; border-left: 4px solid var(--coral);
     }
-    .vol-card h3 { font-size: 1.05rem; color: var(--dark); margin-bottom: 4px; }
-    .vol-card .date { font-size: 0.82rem; color: var(--coral); font-weight: 600; margin-bottom: 8px; }
+    .vol-card .vol-header { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 8px; }
+    .vol-card .vol-header h3 { font-size: 1.05rem; color: var(--dark); margin: 0; }
+    .vol-card .vol-header .date { font-size: 0.82rem; color: var(--coral); font-weight: 600; white-space: nowrap; flex-shrink: 0; }
     .vol-card p { font-size: 0.9rem; color: var(--gray); line-height: 1.7; }
 
     @media(max-width:768px) {
@@ -185,20 +187,26 @@
     <!-- TAB: Leadership -->
     <div class="tab-content fade-in" data-tab="leadership">
       <div class="leader-entry">
-        <h3 data-i18n="hl.rowing.title">Captain, SUSTech Rowing Team</h3>
-        <div class="date" data-i18n="hl.rowing.date">Sep. 2025 – Present</div>
+        <div class="leader-header">
+          <h3 data-i18n="hl.rowing.title">Captain, SUSTech Rowing Team</h3>
+          <span class="date" data-i18n="hl.rowing.date">Sep. 2025 – Present</span>
+        </div>
         <ul>
-          <li data-i18n="hl.rowing.d1">Coordinated on-water and land training and organized the university-wide Rowing Competition.</li>
-          <li data-i18n="hl.rowing.d2">Guided the team to a third-place finish in the Shenzhen Women's Eight with Coxswain competition and secured a Gold Medal at the Songshan Lake Water Sports Carnival.</li>
+          <li data-i18n="hl.rowing.d1">Coordinated twice-weekly land training sessions and weekend on-water training, managed team recruitment and attendance.</li>
+          <li data-i18n="hl.rowing.d2">Organized the semesterly indoor rowing qualifying meet and oversaw new member tryouts and daily attendance tracking.</li>
+          <li data-i18n="hl.rowing.d3">Guided the team to a third-place finish in the Shenzhen X9 Rowing League Women's Eight with Coxswain competition and secured a Gold Medal at the Songshan Lake Water Sports Carnival.</li>
         </ul>
       </div>
       <div class="leader-entry">
-        <h3 data-i18n="hl.tt.title">Captain, Table Tennis Team, Shuli College</h3>
-        <div class="date" data-i18n="hl.tt.date">Sep. 2025 – Present</div>
+        <div class="leader-header">
+          <h3 data-i18n="hl.tt.title">Captain, Table Tennis Team, Shuli College</h3>
+          <span class="date" data-i18n="hl.tt.date">Sep. 2025 – Present</span>
+        </div>
         <ul>
-          <li data-i18n="hl.tt.d1">Organized daily training sessions, planned and hosted the college's Freshman Table Tennis Tournament.</li>
-          <li data-i18n="hl.tt.d2">Led the team to a runner-up finish in the university-level "Zhumeng Cup" table tennis team championship.</li>
-          <li data-i18n="hl.tt.d3">Represented the team in a public presentation and won Outstanding Sports Team Scholarship.</li>
+          <li data-i18n="hl.tt.d1">Organized weekly team training sessions and held internal round-robin matches before competitions for preparation.</li>
+          <li data-i18n="hl.tt.d2">Planned and hosted the 2025 Shuli College Freshman Table Tennis Tournament.</li>
+          <li data-i18n="hl.tt.d3">Led the team to a runner-up finish in the university-level "Zhumeng Cup" table tennis team championship and champion in the undergraduate division.</li>
+          <li data-i18n="hl.tt.d4">Represented the team in a public presentation and successfully won the 2025 Shuli College "Outstanding Sports Team" Scholarship.</li>
         </ul>
       </div>
     </div>
@@ -206,13 +214,17 @@
     <!-- TAB: Volunteer -->
     <div class="tab-content fade-in" data-tab="volunteer">
       <div class="vol-card">
-        <h3 data-i18n="hl.volunteer_title">Community Service & Volunteering</h3>
-        <div class="date" data-i18n="hl.volunteer.date">2018 – Present</div>
+        <div class="vol-header">
+          <h3 data-i18n="hl.volunteer_title">Community Service & Volunteering</h3>
+          <span class="date" data-i18n="hl.volunteer.date">2018 – Present</span>
+        </div>
         <p data-i18n="hl.volunteer.d1">Served as a young guide for visitors at The Shenzhen Museum (2018–2023).</p>
       </div>
       <div class="vol-card">
-        <h3 data-i18n="hl.volunteer_events_title">Major Event Volunteering</h3>
-        <div class="date">2024 – 2025</div>
+        <div class="vol-header">
+          <h3 data-i18n="hl.volunteer_events_title">Major Event Volunteering</h3>
+          <span class="date">2024 – 2025</span>
+        </div>
         <p data-i18n="hl.volunteer.d2">Usher or Greeter at major events: 15th National Games of the People's Republic of China (2025), 5th Cross-Strait Student Baseball League Finals (2024), and GLDC Ballroom Dancing Competition (2024).</p>
       </div>
     </div>
