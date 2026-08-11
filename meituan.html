@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meituan Internship — Yuqing Wei</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .project-hero {
+      background: linear-gradient(135deg, #FF6B35 0%, #F7A100 100%);
+      color: #fff; padding: 64px 0 48px; text-align: center;
+    }
+    .project-hero .tag-row { margin-bottom: 16px; }
+    .project-hero .tag-row span {
+      display: inline-block; padding: 4px 14px; border-radius: 20px;
+      background: rgba(255,255,255,0.2); font-size: 0.82rem;
+      margin: 0 6px; backdrop-filter: blur(4px);
+    }
+    .project-hero h1 { font-size: 2rem; margin: 12px 0 6px; }
+    .project-hero .sub { font-size: 0.95rem; opacity: 0.85; }
+
+    .detail { max-width: 860px; margin: 0 auto; padding: 48px 20px 80px; }
+    .detail h2 {
+      font-size: 1.25rem; color: var(--dark); margin: 40px 0 14px;
+      padding-bottom: 8px; border-bottom: 2px solid #f0f0f0;
+    }
+    .detail h2:first-child { margin-top: 0; }
+    .detail p, .detail li { font-size: 0.92rem; line-height: 1.7; color: var(--gray); }
+    .detail ul { padding-left: 20px; }
+    .detail li { margin-bottom: 8px; }
+
+    .stat-row { display: flex; gap: 20px; flex-wrap: wrap; margin: 20px 0; }
+    .stat-card {
+      flex: 1; min-width: 180px; background: #FAFBFC; border-radius: 10px;
+      padding: 20px; text-align: center; border-left: 3px solid #FF6B35;
+    }
+    .stat-card .num { font-size: 1.5rem; font-weight: 800; color: #FF6B35; }
+    .stat-card .label { font-size: 0.78rem; color: var(--gray); margin-top: 4px; }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #FFF3EC, #FFF8F4);
+      border-radius: 10px; padding: 24px 28px; margin: 20px 0;
+      border-left: 4px solid #FF6B35;
+    }
+    .highlight-box p { margin: 0; color: #8B4513; font-size: 0.9rem; }
+
+    .mermaid {
+      background: #fff; border-radius: 12px; padding: 24px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06); margin: 20px 0;
+      text-align: center; overflow-x: auto;
+    }
+
+    .back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--blue); text-decoration: none; font-size: 0.88rem; font-weight: 600; margin-bottom: 12px; }
+    .back-link:hover { text-decoration: underline; }
+
+    .contrib-list { display: grid; gap: 20px; margin: 20px 0; }
+    .contrib-card {
+      background: #fff; border-radius: 12px; padding: 24px 28px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04); position: relative;
+    }
+    .contrib-card .idx {
+      position: absolute; top: -12px; left: 20px;
+      background: #FF6B35; color: #fff; width: 28px; height: 28px;
+      border-radius: 50%; text-align: center; line-height: 28px;
+      font-size: 0.82rem; font-weight: 700;
+    }
+    .contrib-card h3 { font-size: 1rem; color: var(--dark); margin: 4px 0 8px; }
+    .contrib-card .tech-tags { margin-top: 10px; }
+    .contrib-card .tech-tags span {
+      display: inline-block; padding: 2px 10px; border-radius: 6px;
+      background: #FFF3EC; color: #FF6B35; font-size: 0.72rem; font-weight: 600; margin: 2px;
+    }
+
+    @media(max-width:768px) {
+      .stat-row { flex-direction: column; }
+      .project-hero h1 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Yuqing Wei</a>
+      <ul class="nav-links">
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="about.html" data-i18n="nav.about">About</a></li>
+        <li><a href="research.html" data-i18n="nav.research">Research & Work</a></li>
+        <li><a href="leadership.html" data-i18n="nav.experience">Honors & Leadership</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <button id="lang-switch" class="lang-switch">中文</button>
+        <button class="hamburger" data-i18n="menu.label" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="project-hero">
+    <div class="container">
+      <div class="tag-row">
+        <span>Internship</span><span>Fortune 500</span><span>2026</span>
+      </div>
+      <h1 data-i18n="rw.meituan.title">Meituan · Leading Tech Retail · Fortune 500</h1>
+      <p class="sub" data-i18n="meituan.detail.sub">Agent Training Assistant · 2026.06 – 2026.09 · Beijing</p>
+    </div>
+  </div>
+
+  <div class="detail">
+    <a href="research.html" class="back-link">← <span data-i18n="nav.research">Research & Work</span></a>
+
+    <h2 data-i18n="meituan.detail.overview">Overview</h2>
+    <p data-i18n="meituan.detail.overview.desc">
+      At Meituan, I worked on optimizing AI Agents deployed in real business workflows—handling tasks like
+      order processing, customer communication, and internal operations. My role focused on three pillars:
+      <strong>prompt engineering</strong> for agent behavior shaping,
+      <strong>evaluation infrastructure</strong> for data-driven iteration, and
+      <strong>RBAC permission design</strong> for secure multi-role deployment.
+      This internship gave me deep exposure to how LLM agents operate at scale in a Fortune 500 production environment.
+    </p>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="num" data-i18n="meituan.detail.stat1.num">3+</div>
+        <div class="label" data-i18n="meituan.detail.stat1.label">Agent Scenarios Optimized</div>
+      </div>
+      <div class="stat-card">
+        <div class="num" data-i18n="meituan.detail.stat2.num">1×</div>
+        <div class="label" data-i18n="meituan.detail.stat2.label">Evolution Dashboard Delivered</div>
+      </div>
+      <div class="stat-card">
+        <div class="num" data-i18n="meituan.detail.stat3.num">RBAC</div>
+        <div class="label" data-i18n="meituan.detail.stat3.label">Permission System Designed</div>
+      </div>
+    </div>
+
+    <h2 data-i18n="meituan.detail.arch">Agent Optimization Pipeline</h2>
+    <div class="mermaid">
+      <pre class="mermaid-chart">
+flowchart LR
+    A[🎯 Agent<br/>Deployment] --> B[📊 Interaction<br/>Data Collection]
+    B --> C[🔍 Performance<br/>Analysis]
+    C --> D[✏️ Prompt & KB<br/>Optimization]
+    D --> E[🔄 Agent<br/>Re-deployment]
+    E --> A
+
+    C --> F[📈 Evolution<br/>Dashboard]
+    F --> G[📋 Iteration<br/>Report]
+    G --> D
+      </pre>
+    </div>
+    <p data-i18n="meituan.detail.arch.desc" style="text-align:center;font-size:0.85rem;margin-top:8px;">
+      Core loop: Deploy → Monitor → Analyze → Optimize → Re-deploy. The dashboard provided visibility into each iteration's impact.
+    </p>
+
+    <h2 data-i18n="meituan.detail.contrib">Key Contributions</h2>
+    <div class="contrib-list">
+      <div class="contrib-card">
+        <div class="idx">1</div>
+        <h3 data-i18n="meituan.detail.c1.title">Prompt Engineering & Knowledge Base Design</h3>
+        <p data-i18n="meituan.detail.c1.desc">
+          Analyzed real interaction logs to identify failure patterns—hallucinations, context loss, incorrect tool selection.
+          Iteratively refined system prompts and restructured the knowledge base to reduce these failures.
+          Applied skill tuning: breaking complex agent tasks into composable sub-skills, each with targeted prompts and
+          retrieval scopes, improving overall task completion quality and decision reliability in complex business settings.
+        </p>
+        <div class="tech-tags"><span>Prompt Engineering</span><span>RAG</span><span>Knowledge Base</span><span>Skill Tuning</span></div>
+      </div>
+
+      <div class="contrib-card">
+        <div class="idx">2</div>
+        <h3 data-i18n="meituan.detail.c2.title">Agent Evolution Dashboard</h3>
+        <p data-i18n="meituan.detail.c2.desc">
+          Built a visualization dashboard to track agent performance across iterations. The dashboard ingested interaction
+          logs and evaluation metrics, presenting trend charts, A/B comparison views, and anomaly detection alerts.
+          This enabled the team to make data-driven decisions: identifying which prompt changes improved outcomes,
+          spotting regressions early, and prioritizing optimization efforts based on quantitative evidence.
+        </p>
+        <div class="tech-tags"><span>Data Visualization</span><span>Performance Metrics</span><span>A/B Testing</span><span>Monitoring</span></div>
+      </div>
+
+      <div class="contrib-card">
+        <div class="idx">3</div>
+        <h3 data-i18n="meituan.detail.c3.title">RBAC Permission System Design</h3>
+        <p data-i18n="meituan.detail.c3.desc">
+          Collaborated across teams to define a role-based access control model for the agent platform.
+          Mapped three distinct roles—Agent Trainers (prompt & skill management), Sub-agent Deployers
+          (deployment & monitoring), and End-users (interaction only)—to specific permissions.
+          This clarified operational boundaries, reduced unauthorized configuration changes, and
+          established a security baseline for the multi-tenant agent ecosystem.
+        </p>
+        <div class="tech-tags"><span>RBAC</span><span>Security</span><span>Multi-role Architecture</span></div>
+      </div>
+    </div>
+
+    <h2 data-i18n="meituan.detail.takeaway">Key Takeaways</h2>
+    <div class="highlight-box">
+      <p data-i18n="meituan.detail.takeaway.desc">
+        <strong>1. AI Agents in production ≠ demos.</strong> Real-world deployment requires robust evaluation, monitoring,
+        and iteration loops. A single prompt template isn't enough—you need a system.<br><br>
+        <strong>2. Data closes the loop.</strong> The evolution dashboard turned agent optimization from "gut feeling"
+        into a measurable, repeatable process. Every change was tracked and validated.<br><br>
+        <strong>3. Security scales with roles.</strong> As more teams adopt AI Agents, clear permission boundaries
+        become critical. RBAC isn't an afterthought—it's a foundation.
+      </p>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <p data-i18n="footer.text">Made by Yuqing Wei · 2026</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
+  </script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

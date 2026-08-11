@@ -776,6 +776,24 @@ img {
   font-size: 0.7rem;
 }
 
+/* Detail link (e.g., View Details →) */
+.research-entry .detail-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+.research-entry .detail-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(107,91,181,0.3);
+}
+
 /* Publications */
 .pub-entry {
   background: var(--white);

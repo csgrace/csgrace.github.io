@@ -136,6 +136,7 @@ const i18n = {
     "gh.cs340": "CS340 — Computational Ethics",
     "gh.cs340.desc": "Computational Ethics course project.",
     "repo.view": "View Repository",
+    "rw.detail_link": "View Details →",
 
     // Honors & Leadership
     "hl.title": "Honors & Leadership",
@@ -191,6 +192,28 @@ const i18n = {
     "lang.switch": "中文",
     "presentation.banner": "📽️ View my Interview Presentation →",
     "presentation.download": "Download PPTX",
+
+    // Meituan Detail
+    "meituan.detail.sub": "Agent Training Assistant · 2026.06 – 2026.09 · Beijing",
+    "meituan.detail.overview": "Overview",
+    "meituan.detail.overview.desc": "At Meituan, I worked on optimizing AI Agents deployed in real business workflows—handling tasks like order processing, customer communication, and internal operations. My role focused on three pillars: prompt engineering for agent behavior shaping, evaluation infrastructure for data-driven iteration, and RBAC permission design for secure multi-role deployment. This internship gave me deep exposure to how LLM agents operate at scale in a Fortune 500 production environment.",
+    "meituan.detail.stat1.num": "3+",
+    "meituan.detail.stat1.label": "Agent Scenarios Optimized",
+    "meituan.detail.stat2.num": "1×",
+    "meituan.detail.stat2.label": "Evolution Dashboard Delivered",
+    "meituan.detail.stat3.num": "RBAC",
+    "meituan.detail.stat3.label": "Permission System Designed",
+    "meituan.detail.arch": "Agent Optimization Pipeline",
+    "meituan.detail.arch.desc": "Core loop: Deploy → Monitor → Analyze → Optimize → Re-deploy. The dashboard provided visibility into each iteration's impact.",
+    "meituan.detail.contrib": "Key Contributions",
+    "meituan.detail.c1.title": "Prompt Engineering & Knowledge Base Design",
+    "meituan.detail.c1.desc": "Analyzed real interaction logs to identify failure patterns—hallucinations, context loss, incorrect tool selection. Iteratively refined system prompts and restructured the knowledge base to reduce these failures. Applied skill tuning: breaking complex agent tasks into composable sub-skills, each with targeted prompts and retrieval scopes, improving overall task completion quality and decision reliability in complex business settings.",
+    "meituan.detail.c2.title": "Agent Evolution Dashboard",
+    "meituan.detail.c2.desc": "Built a visualization dashboard to track agent performance across iterations. The dashboard ingested interaction logs and evaluation metrics, presenting trend charts, A/B comparison views, and anomaly detection alerts. This enabled the team to make data-driven decisions: identifying which prompt changes improved outcomes, spotting regressions early, and prioritizing optimization efforts based on quantitative evidence.",
+    "meituan.detail.c3.title": "RBAC Permission System Design",
+    "meituan.detail.c3.desc": "Collaborated across teams to define a role-based access control model for the agent platform. Mapped three distinct roles—Agent Trainers (prompt & skill management), Sub-agent Deployers (deployment & monitoring), and End-users (interaction only)—to specific permissions. This clarified operational boundaries, reduced unauthorized configuration changes, and established a security baseline for the multi-tenant agent ecosystem.",
+    "meituan.detail.takeaway": "Key Takeaways",
+    "meituan.detail.takeaway.desc": "1. AI Agents in production ≠ demos. Real-world deployment requires robust evaluation, monitoring, and iteration loops. A single prompt template isn't enough—you need a system. 2. Data closes the loop. The evolution dashboard turned agent optimization from \"gut feeling\" into a measurable, repeatable process. Every change was tracked and validated. 3. Security scales with roles. As more teams adopt AI Agents, clear permission boundaries become critical. RBAC isn't an afterthought—it's a foundation.",
   },
 
   zh: {
@@ -326,6 +349,7 @@ const i18n = {
     "gh.cs340": "CS340 — 计算机伦理学",
     "gh.cs340.desc": "计算机伦理学课程项目。",
     "repo.view": "查看仓库",
+    "rw.detail_link": "查看详情 →",
 
     // Honors & Leadership
     "hl.title": "荣誉与领导力",
@@ -381,6 +405,28 @@ const i18n = {
     "lang.switch": "English",
     "presentation.banner": "📽️ 查看我的面试展示 PPT →",
     "presentation.download": "下载 PPTX",
+
+    // Meituan Detail
+    "meituan.detail.sub": "智能体训练助理 · 2026.06 – 2026.09 · 北京",
+    "meituan.detail.overview": "项目概述",
+    "meituan.detail.overview.desc": "在美团期间，我负责优化部署在实际业务流程中的 AI 智能体——处理订单处理、客户沟通和内部运营等任务。我的工作聚焦于三个支柱：通过提示词工程塑造智能体行为、构建评估基础设施实现数据驱动迭代、以及设计 RBAC 权限系统保障多角色安全部署。这段实习让我深入了解了 LLM Agent 在财富 500 强生产环境中的大规模运作方式。",
+    "meituan.detail.stat1.num": "3+",
+    "meituan.detail.stat1.label": "优化智能体场景数",
+    "meituan.detail.stat2.num": "1×",
+    "meituan.detail.stat2.label": "演化看板交付",
+    "meituan.detail.stat3.num": "RBAC",
+    "meituan.detail.stat3.label": "权限体系设计",
+    "meituan.detail.arch": "智能体优化流水线",
+    "meituan.detail.arch.desc": "核心循环：部署 → 监控 → 分析 → 优化 → 重新部署。演化看板提供了每次迭代的可见性和量化依据。",
+    "meituan.detail.contrib": "核心贡献",
+    "meituan.detail.c1.title": "提示词工程与知识库设计",
+    "meituan.detail.c1.desc": "分析真实交互日志，识别失败模式——幻觉、上下文丢失、错误工具选择。迭代优化系统提示词并重构知识库以降低故障率。应用 Skill 调优策略：将复杂智能体任务拆分为可组合的子技能，每项配备精准提示词和检索范围，显著提升复杂业务场景下的任务完成质量与决策可靠性。",
+    "meituan.detail.c2.title": "智能体演化看板",
+    "meituan.detail.c2.desc": "构建可视化看板，追踪智能体在各迭代周期的表现。看板接入交互日志与评估指标，呈现趋势图表、A/B 对比视图和异常检测告警。使团队能够做出数据驱动的决策：识别哪些提示词变更提升了效果、早期发现性能回退、基于量化证据确定优化优先级。",
+    "meituan.detail.c3.title": "RBAC 权限体系设计",
+    "meituan.detail.c3.desc": "跨团队协作，为智能体平台定义基于角色的访问控制模型。将三种角色——智能体训练师（提示词与技能管理）、子智能体部署人员（部署与监控）、终端用户（仅交互）——映射到具体权限。明确了操作边界，减少了越权配置变更，为多租户智能体生态建立了安全基线。",
+    "meituan.detail.takeaway": "关键收获",
+    "meituan.detail.takeaway.desc": "1. 生产环境中的 AI Agent ≠ Demo。真实部署需要稳健的评估、监控和迭代循环，单靠一个 Prompt 模板远远不够——你需要一套系统。2. 数据驱动闭环。演化看板将智能体优化从"凭感觉"转变为可度量、可复现的流程，每次变更都有追踪和验证。3. 安全随角色扩展。随着更多团队采用 AI Agent，清晰的权限边界变得至关重要。RBAC 不是事后补救——它是基础架构。",
   }
 };
 
