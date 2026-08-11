@@ -854,12 +854,12 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  margin-top: 10px;
   font-size: 0.8rem;
   color: var(--blue);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.2s;
+  white-space: nowrap;
 }
 .pub-entry .pub-link:hover { color: var(--purple); }
 .pub-entry .pub-link .link-icon { font-size: 0.85rem; }
@@ -875,11 +875,16 @@ img {
   margin-bottom: 4px;
 }
 
+.pub-entry .pub-role-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
 .pub-entry .pub-role {
   font-size: 0.85rem;
   color: var(--purple);
   font-weight: 600;
-  margin-bottom: 8px;
 }
 
 .pub-entry .pub-desc {
