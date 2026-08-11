@@ -258,7 +258,7 @@ img {
 /* --- Quick Nav Cards (Home) --- */
 .quick-nav {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 20px 0 60px;
 }
@@ -965,37 +965,43 @@ img {
 
 /* --- Contact strip (homepage) --- */
 .contact-strip {
-  margin-top: 48px; padding: 36px 0 0;
+  margin-top: 48px; padding: 48px 0 0;
   border-top: 1px solid rgba(0,0,0,0.06);
 }
 .contact-strip-title {
-  font-size: 1.15rem; font-weight: 700; color: var(--text);
-  text-align: center; margin-bottom: 20px;
+  font-size: 1.3rem; font-weight: 700; color: var(--text);
+  text-align: center; margin-bottom: 28px;
 }
 .contact-row {
-  display: flex; justify-content: center; flex-wrap: wrap; gap: 16px;
+  display: flex; justify-content: center; flex-wrap: wrap; gap: 24px;
 }
-.contact-mini-card {
-  display: flex; flex-direction: column; align-items: center; gap: 4px;
-  padding: 20px 28px; border-radius: 14px;
-  background: #FAFBFC; color: inherit; text-decoration: none;
-  min-width: 200px; transition: all 0.25s;
+.cm-card {
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+  padding: 32px 28px 28px; border-radius: 20px;
+  background: var(--white); color: inherit; text-decoration: none;
+  min-width: 210px; transition: all 0.3s;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.05);
   border: 1.5px solid transparent;
 }
-a.contact-mini-card:hover {
-  background: #fff; border-color: var(--blue-light);
-  box-shadow: 0 4px 20px rgba(59,100,201,0.08); transform: translateY(-2px);
+a.cm-card:hover {
+  border-color: #e0e0e0;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.10); transform: translateY(-4px);
 }
-.contact-mini-card .cm-icon {
-  font-size: 1.4rem; margin-bottom: 2px;
-  color: var(--blue); display: flex; align-items: center;
+.cm-icon-circle {
+  width: 56px; height: 56px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem; color: #fff; flex-shrink: 0;
 }
-.contact-mini-card .cm-label {
-  font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 1.5px; color: var(--text-light);
+.cm-info {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
 }
-.contact-mini-card .cm-value {
-  font-size: 0.85rem; color: var(--text); font-weight: 500;
+.cm-card .cm-label {
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 1.8px; color: var(--text-light);
+}
+.cm-card .cm-value {
+  font-size: 0.9rem; color: var(--text); font-weight: 600;
+  word-break: break-all; text-align: center;
 }
 
 /* --- Footer --- */
