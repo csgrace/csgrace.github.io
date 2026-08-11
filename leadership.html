@@ -5,6 +5,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n-title="hl.title">Honors & Leadership — Yuqing Wei</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ===== Tab nav ===== */
+    .section-tabs {
+      display: flex; gap: 8px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap;
+    }
+    .section-tabs button {
+      padding: 10px 28px; border-radius: 24px; border: 2px solid #e0e0e0;
+      background: #fff; font-size: 0.9rem; font-weight: 600; cursor: pointer;
+      transition: all 0.25s; font-family: inherit; color: var(--gray);
+    }
+    .section-tabs button:hover { border-color: var(--blue-light); color: var(--blue); }
+    .section-tabs button.active {
+      background: var(--blue); color: #fff; border-color: var(--blue);
+    }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* ===== Accordion ===== */
+    .accordion { margin-bottom: 12px; }
+    .accordion-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 22px; background: #fff; border-radius: 10px;
+      cursor: pointer; transition: all 0.25s;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04); border: 1px solid #f0f0f0;
+      user-select: none;
+    }
+    .accordion-header:hover { box-shadow: 0 3px 16px rgba(0,0,0,0.07); }
+    .accordion-header .cat-title { font-size: 1rem; font-weight: 700; color: var(--dark); display: flex; align-items: center; gap: 10px; }
+    .accordion-header .cat-count { font-size: 0.78rem; color: var(--gray); font-weight: 400; }
+    .accordion-header .arrow {
+      font-size: 0.75rem; color: var(--gray); transition: transform 0.3s;
+    }
+    .accordion.open .accordion-header .arrow { transform: rotate(180deg); }
+
+    .accordion-body {
+      max-height: 0; overflow: hidden; transition: max-height 0.35s ease;
+    }
+    .accordion.open .accordion-body { max-height: 2000px; }
+
+    /* Award card inside accordion */
+    .award-mini {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 14px 18px; margin: 0 4px;
+      border-bottom: 1px solid #f5f5f5; background: #FAFBFC;
+    }
+    .award-mini:first-child { margin-top: 8px; border-radius: 8px 8px 0 0; }
+    .award-mini:last-child { border-bottom: none; margin-bottom: 8px; border-radius: 0 0 8px 8px; }
+    .award-mini:only-child { border-radius: 8px; }
+    .award-mini .award-icon { font-size: 1.3rem; flex-shrink: 0; width: 32px; text-align: center; }
+    .award-mini .award-text h4 { font-size: 0.9rem; color: var(--dark); margin-bottom: 2px; }
+    .award-mini .award-text .award-date { font-size: 0.75rem; color: var(--gray); }
+
+    /* Nested accordion (sports) */
+    .sub-accordion { margin: 8px 4px; }
+    .sub-accordion .accordion-header {
+      padding: 12px 18px; background: #F8F9FA; border-radius: 8px; box-shadow: none; border: 1px solid #eee;
+    }
+    .sub-accordion .accordion-header .cat-title { font-size: 0.9rem; }
+
+    /* ===== Leadership ===== */
+    .leader-entry {
+      background: #fff; border-radius: 12px; padding: 24px 28px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04); margin-bottom: 16px;
+      border-left: 4px solid var(--teal);
+    }
+    .leader-entry h3 { font-size: 1.05rem; color: var(--dark); margin-bottom: 4px; }
+    .leader-entry .date { font-size: 0.82rem; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .leader-entry li { font-size: 0.9rem; color: var(--gray); line-height: 1.7; margin-bottom: 4px; }
+    .leader-entry ul { padding-left: 20px; }
+
+    /* ===== Volunteer ===== */
+    .vol-card {
+      background: #fff; border-radius: 12px; padding: 24px 28px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04); margin-bottom: 16px;
+      border-left: 4px solid var(--coral);
+    }
+    .vol-card h3 { font-size: 1.05rem; color: var(--dark); margin-bottom: 4px; }
+    .vol-card .date { font-size: 0.82rem; color: var(--coral); font-weight: 600; margin-bottom: 8px; }
+    .vol-card p { font-size: 0.9rem; color: var(--gray); line-height: 1.7; }
+
+    @media(max-width:768px) {
+      .accordion-header { padding: 12px 16px; }
+      .award-mini { padding: 10px 12px; gap: 10px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -36,94 +122,174 @@
         <p data-i18n="hl.header.desc">Awards, leadership roles, and community engagement.</p>
       </div>
 
-      <!-- Honors & Awards -->
-      <div class="awards-section fade-in">
-        <h2>🏅 <span data-i18n="hl.honors_title">Honors & Awards</span></h2>
-        <div class="awards-grid">
+      <!-- Tab Nav -->
+      <div class="section-tabs fade-in">
+        <button class="active" data-tab="awards" data-i18n="hl.tab_awards">奖项</button>
+        <button data-tab="leadership" data-i18n="hl.tab_leadership">领导力</button>
+        <button data-tab="volunteer" data-i18n="hl.tab_volunteer">志愿者</button>
+      </div>
 
-          <div class="award-item">
-            <div class="award-medal">🥇</div>
-            <div class="award-info">
-              <h4 data-i18n="hl.honor1">Meritorious Winner, Mathematical Contest in Modeling (MCM/ICM)</h4>
-              <div class="detail" data-i18n="hl.honor1_date">May 2026</div>
+      <!-- ==================== TAB 1: 奖项 ==================== -->
+      <div class="tab-content active" data-tab="awards">
+
+        <!-- 德育荣誉 -->
+        <div class="accordion fade-in">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <span class="cat-title">🏅 <span data-i18n="hl.cat_moral">德育荣誉</span> <span class="cat-count">· 1</span></span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="accordion-body">
+            <div class="award-mini">
+              <div class="award-icon">🎖️</div>
+              <div class="award-text">
+                <h4 data-i18n="hl.honor3">Outstanding Student, SUSTech</h4>
+                <div class="award-date" data-i18n="hl.honor3_date">Dec. 2025</div>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div class="award-item">
-            <div class="award-medal">📝</div>
-            <div class="award-info">
-              <h4 data-i18n="hl.honor2">Third Prize (National Level), National English Competition for College Students</h4>
-              <div class="detail" data-i18n="hl.honor2_date">May 2026</div>
+        <!-- 学业荣誉 -->
+        <div class="accordion fade-in">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <span class="cat-title">📚 <span data-i18n="hl.cat_academic">学业荣誉</span> <span class="cat-count">· 4</span></span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="accordion-body">
+            <div class="award-mini">
+              <div class="award-icon">🥇</div>
+              <div class="award-text">
+                <h4 data-i18n="hl.honor1">Meritorious Winner, Mathematical Contest in Modeling (MCM/ICM)</h4>
+                <div class="award-date" data-i18n="hl.honor1_date">May 2026</div>
+              </div>
+            </div>
+            <div class="award-mini">
+              <div class="award-icon">📝</div>
+              <div class="award-text">
+                <h4 data-i18n="hl.honor2">Third Prize (National Level), National English Competition for College Students</h4>
+                <div class="award-date" data-i18n="hl.honor2_date">May 2026</div>
+              </div>
+            </div>
+            <div class="award-mini">
+              <div class="award-icon">🥈</div>
+              <div class="award-text">
+                <h4 data-i18n="hl.honor4">Provincial 2nd Prize, National College Mathematical Modeling Competition</h4>
+                <div class="award-date" data-i18n="hl.honor4_date">Dec. 2025</div>
+              </div>
+            </div>
+            <div class="award-mini">
+              <div class="award-icon">🏆</div>
+              <div class="award-text">
+                <h4 data-i18n="hl.honor7">First Prize, AIoT Summer Workshop, National University of Singapore</h4>
+                <div class="award-date" data-i18n="hl.honor7_date">Jul. 2025</div>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div class="award-item">
-            <div class="award-medal">🎖️</div>
-            <div class="award-info">
-              <h4 data-i18n="hl.honor3">Outstanding Student, SUSTech</h4>
-              <div class="detail" data-i18n="hl.honor3_date">Dec. 2025</div>
+        <!-- 创新创业荣誉 -->
+        <div class="accordion fade-in">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <span class="cat-title">💡 <span data-i18n="hl.cat_innovation">创新创业荣誉</span> <span class="cat-count">· 1</span></span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="accordion-body">
+            <div class="award-mini">
+              <div class="award-icon">🤖</div>
+              <div class="award-text">
+                <h4 data-i18n="hl.honor6">Third Prize, Greater Bay Area Robotics Innovation & Entrepreneurship Competition</h4>
+                <div class="award-date" data-i18n="hl.honor6_date">Nov. 2025</div>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div class="award-item">
-            <div class="award-medal">🥈</div>
-            <div class="award-info">
-              <h4 data-i18n="hl.honor4">Provincial 2nd Prize, National College Mathematical Modeling Competition</h4>
-              <div class="detail" data-i18n="hl.honor4_date">Dec. 2025</div>
+        <!-- 奖学金 -->
+        <div class="accordion fade-in">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <span class="cat-title">🎓 <span data-i18n="hl.cat_scholarship">奖学金</span> <span class="cat-count">· 1</span></span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="accordion-body">
+            <div class="award-mini">
+              <div class="award-icon">💵</div>
+              <div class="award-text">
+                <h4 data-i18n="hl.honor5">Third Class of the Merit Student Scholarship (2024–2025), SUSTech</h4>
+                <div class="award-date" data-i18n="hl.honor5_date">Nov. 2025</div>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div class="award-item">
-            <div class="award-medal">🎓</div>
-            <div class="award-info">
-              <h4 data-i18n="hl.honor5">Third Class of the Merit Student Scholarship (2024–2025), SUSTech</h4>
-              <div class="detail" data-i18n="hl.honor5_date">Nov. 2025</div>
-            </div>
+        <!-- 体育奖项 -->
+        <div class="accordion fade-in">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <span class="cat-title">🏆 <span data-i18n="hl.cat_sports">体育奖项</span> <span class="cat-count">· 3</span></span>
+            <span class="arrow">▼</span>
           </div>
+          <div class="accordion-body">
 
-          <div class="award-item">
-            <div class="award-medal">🤖</div>
-            <div class="award-info">
-              <h4 data-i18n="hl.honor6">Third Prize, Greater Bay Area Robotics Innovation & Entrepreneurship Competition</h4>
-              <div class="detail" data-i18n="hl.honor6_date">Nov. 2025</div>
+            <!-- 团体 -->
+            <div class="sub-accordion accordion">
+              <div class="accordion-header" onclick="event.stopPropagation(); toggleAccordion(this)">
+                <span class="cat-title">👥 <span data-i18n="hl.cat_team">团体</span> <span class="cat-count">· 3</span></span>
+                <span class="arrow">▼</span>
+              </div>
+              <div class="accordion-body">
+                <div class="award-mini">
+                  <div class="award-icon">🚣</div>
+                  <div class="award-text">
+                    <h4 data-i18n="hl.sport1">Third Place, Shenzhen Women's Eight with Coxswain Competition</h4>
+                    <div class="award-date" data-i18n="hl.sport1_date">2025</div>
+                  </div>
+                </div>
+                <div class="award-mini">
+                  <div class="award-icon">🥇</div>
+                  <div class="award-text">
+                    <h4 data-i18n="hl.sport2">Gold Medal, Songshan Lake Water Sports Carnival</h4>
+                    <div class="award-date" data-i18n="hl.sport2_date">2025</div>
+                  </div>
+                </div>
+                <div class="award-mini">
+                  <div class="award-icon">🏓</div>
+                  <div class="award-text">
+                    <h4 data-i18n="hl.sport3">Runner-up, University-Level "Zhumeng Cup" Table Tennis Team Championship</h4>
+                    <div class="award-date" data-i18n="hl.sport3_date">2025</div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div class="award-item">
-            <div class="award-medal">🏆</div>
-            <div class="award-info">
-              <h4 data-i18n="hl.honor7">First Prize, AIoT Summer Workshop, National University of Singapore</h4>
-              <div class="detail" data-i18n="hl.honor7_date">Jul. 2025</div>
+            <!-- 个人 -->
+            <div class="sub-accordion accordion">
+              <div class="accordion-header" onclick="event.stopPropagation(); toggleAccordion(this)">
+                <span class="cat-title">🧑 <span data-i18n="hl.cat_individual">个人</span> <span class="cat-count">· 0</span></span>
+                <span class="arrow">▼</span>
+              </div>
+              <div class="accordion-body">
+                <p style="padding:14px 18px;color:var(--gray);font-size:0.85rem;text-align:center;" data-i18n="hl.sport_empty">暂无个人奖项记录</p>
+              </div>
             </div>
-          </div>
 
+          </div>
         </div>
       </div>
 
-      <!-- Leadership & Activities -->
-      <div class="research-section fade-in">
-        <h2>👥 <span data-i18n="hl.leadership_title">Leadership & Activities</span></h2>
+      <!-- ==================== TAB 2: 领导力 ==================== -->
+      <div class="tab-content fade-in" data-tab="leadership">
 
-        <div class="research-entry">
-          <div class="entry-header">
-            <h3 data-i18n="hl.rowing.title">Captain, SUSTech Rowing Team</h3>
-            <div class="entry-meta">
-              <span class="date" data-i18n="hl.rowing.date">Sep. 2025 – Present</span>
-            </div>
-          </div>
+        <div class="leader-entry">
+          <h3 data-i18n="hl.rowing.title">Captain, SUSTech Rowing Team</h3>
+          <div class="date" data-i18n="hl.rowing.date">Sep. 2025 – Present</div>
           <ul>
             <li data-i18n="hl.rowing.d1">Coordinated on-water and land training and organized the university-wide Rowing Competition.</li>
             <li data-i18n="hl.rowing.d2">Guided the team to a third-place finish in the Shenzhen Women's Eight with Coxswain competition and secured a Gold Medal at the Songshan Lake Water Sports Carnival.</li>
           </ul>
         </div>
 
-        <div class="research-entry">
-          <div class="entry-header">
-            <h3 data-i18n="hl.tt.title">Captain, Table Tennis Team, Shuli College</h3>
-            <div class="entry-meta">
-              <span class="date" data-i18n="hl.tt.date">Sep. 2025 – Present</span>
-            </div>
-          </div>
+        <div class="leader-entry">
+          <h3 data-i18n="hl.tt.title">Captain, Table Tennis Team, Shuli College</h3>
+          <div class="date" data-i18n="hl.tt.date">Sep. 2025 – Present</div>
           <ul>
             <li data-i18n="hl.tt.d1">Organized daily training sessions, planned and hosted the college's Freshman Table Tennis Tournament.</li>
             <li data-i18n="hl.tt.d2">Led the team to a runner-up finish in the university-level "Zhumeng Cup" table tennis team championship.</li>
@@ -131,18 +297,23 @@
           </ul>
         </div>
 
-        <div class="research-entry">
-          <div class="entry-header">
-            <h3 data-i18n="hl.volunteer_title">Community Service & Volunteering</h3>
-            <div class="entry-meta">
-              <span class="date" data-i18n="hl.volunteer.date">2018 – Present</span>
-            </div>
-          </div>
-          <ul>
-            <li data-i18n="hl.volunteer.d1">Served as a young guide for visitors at The Shenzhen Museum (2018–2023).</li>
-            <li data-i18n="hl.volunteer.d2">Usher or Greeter at major events: 15th National Games of the People's Republic of China (2025), 5th Cross-Strait Student Baseball League Finals (2024), and GLDC Ballroom Dancing Competition (2024).</li>
-          </ul>
+      </div>
+
+      <!-- ==================== TAB 3: 志愿者 ==================== -->
+      <div class="tab-content fade-in" data-tab="volunteer">
+
+        <div class="vol-card">
+          <h3 data-i18n="hl.volunteer_title">Community Service & Volunteering</h3>
+          <div class="date" data-i18n="hl.volunteer.date">2018 – Present</div>
+          <p data-i18n="hl.volunteer.d1">Served as a young guide for visitors at The Shenzhen Museum (2018–2023).</p>
         </div>
+
+        <div class="vol-card">
+          <h3 data-i18n="hl.volunteer_events_title">Major Event Volunteering</h3>
+          <div class="date">2024 – 2025</div>
+          <p data-i18n="hl.volunteer.d2">Usher or Greeter at major events: 15th National Games of the People's Republic of China (2025), 5th Cross-Strait Student Baseball League Finals (2024), and GLDC Ballroom Dancing Competition (2024).</p>
+        </div>
+
       </div>
 
     </div>
@@ -154,5 +325,24 @@
 
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    // Accordion toggle
+    function toggleAccordion(header) {
+      const accordion = header.parentElement;
+      accordion.classList.toggle('open');
+    }
+
+    // Tab switching
+    document.querySelectorAll('.section-tabs button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.getAttribute('data-tab');
+        document.querySelectorAll('.section-tabs button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.tab-content').forEach(p => {
+          p.classList.toggle('active', p.getAttribute('data-tab') === tab);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
