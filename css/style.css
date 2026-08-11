@@ -963,6 +963,19 @@ img {
   word-break: break-all;
 }
 
+/* --- Contact strip (homepage) --- */
+.contact-strip {
+  display: flex; justify-content: center; flex-wrap: wrap; gap: 12px;
+  margin-top: 48px; padding: 20px 0 0;
+}
+.contact-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 20px; border-radius: 24px;
+  background: #F8F9FA; color: var(--gray); font-size: 0.85rem;
+  text-decoration: none; transition: all 0.25s; font-weight: 500;
+}
+a.contact-chip:hover { background: var(--blue-bg); color: var(--blue); transform: translateY(-1px); }
+
 /* --- Footer --- */
 .footer {
   text-align: center;
