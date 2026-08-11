@@ -196,10 +196,10 @@ const i18n = {
     // Meituan Detail
     "meituan.page.title": "Meituan Internship — Yuqing Wei",
     "meituan.detail.sub": "Agent Training Assistant · 2026.06 – 2026.09 · Beijing",
-    "meituan.hero.tag1": "Internship",
-    "meituan.hero.tag2": "Fortune 500",
-    "meituan.hero.tag3": "AI Agent",
-    "meituan.detail.overview": "Overview",
+    "meituan.hero.title": "Meituan",
+    "meituan.detail.company": "About Meituan",
+    "meituan.detail.company.desc": "Meituan (美团) is China's leading e-commerce platform for services, founded in 2010 and listed on the Hong Kong Stock Exchange (3690.HK). With over 700 million annual transacting users, Meituan connects consumers with local businesses across food delivery, in-store dining, hotel & travel booking, and retail. As a Fortune 500 company, Meituan is also a major force in AI and autonomous delivery—operating one of the world's largest real-time dispatch systems and investing heavily in LLM-powered agent technologies to transform service industry operations.",
+    "meituan.detail.overview": "My Internship",
     "meituan.detail.overview.desc": "During my internship at Meituan, I worked on optimizing AI Agents deployed in production business workflows—including order processing, customer communication, and internal operations. I focused on three core technical challenges: Skill execution reliability, knowledge base quality, and long-term memory management. Each required diving deep into agent internals, designing evaluation frameworks, and shipping measurable improvements.",
     "meituan.detail.stat1.num": "3",
     "meituan.detail.stat1.label": "Technical Pillars",
@@ -433,10 +433,10 @@ const i18n = {
     // Meituan Detail
     "meituan.page.title": "美团实习 — 魏宇晴",
     "meituan.detail.sub": "智能体训练助理 · 2026.06 – 2026.09 · 北京",
-    "meituan.hero.tag1": "实习",
-    "meituan.hero.tag2": "世界500强",
-    "meituan.hero.tag3": "AI Agent",
-    "meituan.detail.overview": "项目概述",
+    "meituan.hero.title": "美团",
+    "meituan.detail.company": "关于美团",
+    "meituan.detail.company.desc": "美团是中国领先的生活服务电商平台，成立于 2010 年，于香港联交所上市（3690.HK）。年交易用户数超过 7 亿，业务覆盖外卖配送、到店餐饮、酒店旅游、零售等多个领域。作为世界 500 强企业，美团也是 AI 与无人配送领域的重要力量——运营着全球规模最大的实时调度系统之一，并大力投入基于大语言模型的智能体技术，推动服务行业的智能化转型。",
+    "meituan.detail.overview": "我的实习",
     "meituan.detail.overview.desc": "在美团实习期间，我负责优化部署在生产业务流程中的 AI 智能体——涵盖订单处理、客户沟通和内部运营等场景。我聚焦于三个核心技术挑战：Skill 执行可靠性、知识库质量、以及长记忆管理。每个方向都需要深入 Agent 内部机制、设计评估框架，并交付可量化的改进。",
     "meituan.detail.stat1.num": "3",
     "meituan.detail.stat1.label": "技术方向",
@@ -474,7 +474,7 @@ const i18n = {
     "meituan.memory.load_title": "🔄 渐进加载",
     "meituan.memory.load_desc": "按需检索。读取索引定位目标分区，仅获取所需内容。使用后立即释放——不长期占用上下文窗口。全部记忆保持可寻址，上下文窗口始终保持轻量。",
     "meituan.detail.takeaway": "关键收获",
-    "meituan.detail.takeaway.desc": "1. 生产环境中的 AI Agent ≠ Demo。真实部署需要稳健的评估、监控和迭代循环，单靠一个 Prompt 模板远远不够——你需要一套系统。2. 数据驱动闭环。演化看板和知识库评估套件将 Agent 优化从"凭感觉"转变为可度量、可复现的流程，每次变更都有追踪和验证。3. 记忆是架构，不是存储。目录树 + 渐进加载模式在不丢失信息保真度的前提下解决了上下文溢出。全部记忆可寻址，上下文窗口保持轻量。",
+    "meituan.detail.takeaway.desc": "1. 生产环境中的 AI Agent ≠ Demo。真实部署需要稳健的评估、监控和迭代循环，单靠一个 Prompt 模板远远不够——你需要一套系统。2. 数据驱动闭环。演化看板和知识库评估套件将 Agent 优化从「凭感觉」转变为可度量、可复现的流程，每次变更都有追踪和验证。3. 记忆是架构，不是存储。目录树 + 渐进加载模式在不丢失信息保真度的前提下解决了上下文溢出。全部记忆可寻址，上下文窗口保持轻量。",
   }
 };
 
