@@ -509,6 +509,11 @@ function applyI18n() {
     el.innerHTML = i18n[lang]?.[key] ?? i18n.en[key] ?? key;
   });
 
+  // Language-switched images
+  document.querySelectorAll('[data-i18n-img]').forEach(img => {
+    img.classList.toggle('active', img.getAttribute('data-i18n-img') === lang);
+  });
+
   const langBtn = document.getElementById('lang-switch');
   if (langBtn) {
     langBtn.textContent = lang === 'zh' ? i18n.zh['lang.switch'] : i18n.en['lang.switch'];

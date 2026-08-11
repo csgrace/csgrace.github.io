@@ -8,7 +8,7 @@
   <style>
     .project-hero {
       background: linear-gradient(135deg, #FF6B35 0%, #F7A100 100%);
-      color: #fff; padding: 64px 0 48px; text-align: center;
+      color: #fff; padding: 96px 0 72px; text-align: center;
     }
     .project-hero .tag-row { margin-bottom: 16px; }
     .project-hero .tag-row span {
@@ -19,7 +19,7 @@
     .project-hero h1 { font-size: 2rem; margin: 12px 0 6px; }
     .project-hero .sub { font-size: 0.95rem; opacity: 0.85; }
 
-    .detail { max-width: 860px; margin: 0 auto; padding: 48px 20px 80px; }
+    .detail { max-width: 1100px; margin: 0 auto; padding: 48px 28px 80px; }
     .detail h2 {
       font-size: 1.25rem; color: var(--dark); margin: 44px 0 16px;
       padding-bottom: 8px; border-bottom: 2px solid #f0f0f0;
@@ -262,26 +262,5 @@
 
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
-  <script>
-    // Language-switched images
-    (function() {
-      const saved = localStorage.getItem('grace-site-lang');
-      let lang = saved === 'en' || saved === 'zh' ? saved : (navigator.language||'').startsWith('zh') ? 'zh' : 'en';
-      document.querySelectorAll('[data-i18n-img]').forEach(function(img) {
-        img.classList.toggle('active', img.getAttribute('data-i18n-img') === lang);
-      });
-      // Re-apply on lang switch
-      const origApply = window.applyI18n;
-      if (origApply) {
-        window.applyI18n = function() {
-          origApply();
-          const l = localStorage.getItem('grace-site-lang') || 'en';
-          document.querySelectorAll('[data-i18n-img]').forEach(function(img) {
-            img.classList.toggle('active', img.getAttribute('data-i18n-img') === l);
-          });
-        };
-      }
-    })();
-  </script>
 </body>
 </html>
