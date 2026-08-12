@@ -232,22 +232,6 @@
       During my internship at Meituan, I worked on optimizing AI Agents deployed in production business workflows—including order processing, customer communication, and internal operations. I focused on three core technical challenges: <strong>Skill execution reliability</strong>, <strong>knowledge base quality</strong>, and <strong>long-term memory management</strong>. Each required diving deep into agent internals, designing evaluation frameworks, and shipping measurable improvements.
     </p>
 
-    <!-- Stats -->
-    <div class="stats-row">
-      <div class="stat-item">
-        <div class="stat-num" data-i18n="meituan.detail.stat1.num">4</div>
-        <div class="stat-label" data-i18n="meituan.detail.stat1.label">Technical Pillars</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num" data-i18n="meituan.detail.stat2.num">4</div>
-        <div class="stat-label" data-i18n="meituan.detail.stat2.label">Evaluation Dimensions</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num" data-i18n="meituan.detail.stat3.num">6</div>
-        <div class="stat-label" data-i18n="meituan.detail.stat3.label">KB Quality Metrics</div>
-      </div>
-    </div>
-
     <!-- Architecture Image (language-switched) -->
     <img data-i18n-img="zh" class="arch-img" data-src="images/meituan_ch.webp" alt="Agent Architecture" loading="lazy" width="760" height="380">
     <img data-i18n-img="en" class="arch-img" src="images/meituan_en.webp" alt="Agent Architecture" loading="lazy" width="760" height="380">
@@ -273,10 +257,32 @@
         </div>
       </div>
 
-      <!-- Module 2: Knowledge Base -->
+      <!-- Module 2: Memory (was 3) -->
       <div class="module-card m2">
         <div class="mc-header">
           <div class="mc-num">2</div>
+          <div class="mc-title" data-i18n="meituan.memory.title">Long-Term Memory Architecture</div>
+        </div>
+        <div class="mc-body">
+          <div class="mc-problem" data-i18n="meituan.memory.problem">Long-term memory grows too large for the context window, causing overflow, latency spikes, and diluted focus on the current task.</div>
+          <div class="mc-solution-label" data-i18n="meituan.solution">Solution — Two-Layer Memory Architecture</div>
+          <div class="memo-row">
+            <div class="memo-card">
+              <h3 data-i18n="meituan.memory.tree_title">📂 Directory Tree</h3>
+              <p data-i18n="meituan.memory.tree_desc"><strong>Layered Storage.</strong> A master index resides in context, recording which category maps to which partition. User preferences and historical decisions are split into separate sub-files by category. Context loads only the index, not the full memory volume.</p>
+            </div>
+            <div class="memo-card">
+              <h3 data-i18n="meituan.memory.load_title">🔄 Progressive Loading</h3>
+              <p data-i18n="meituan.memory.load_desc"><strong>On-Demand Retrieval.</strong> Read the index to locate the target partition, then fetch only what's needed. Release immediately after use — no long-term context occupation. Full memory remains addressable, while the context window stays consistently lightweight.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Module 3: Knowledge Base (was 2) -->
+      <div class="module-card m3">
+        <div class="mc-header">
+          <div class="mc-num">3</div>
           <div class="mc-title" data-i18n="meituan.kb.title">Knowledge Base Quality Engineering</div>
         </div>
         <div class="mc-body">
@@ -306,28 +312,6 @@
             <div class="metric-item"><div class="m-name" data-i18n="meituan.kb.m4_name">Recall</div><div class="m-desc" data-i18n="meituan.kb.m4">All relevant chunks retrieved</div></div>
             <div class="metric-item"><div class="m-name" data-i18n="meituan.kb.m5_name">Freshness</div><div class="m-desc" data-i18n="meituan.kb.m5">Up-to-date information</div></div>
             <div class="metric-item"><div class="m-name" data-i18n="meituan.kb.m6_name">Business Impact</div><div class="m-desc" data-i18n="meituan.kb.m6">Accuracy · compliance · adoption</div></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Module 3: Memory -->
-      <div class="module-card m3">
-        <div class="mc-header">
-          <div class="mc-num">3</div>
-          <div class="mc-title" data-i18n="meituan.memory.title">Long-Term Memory Architecture</div>
-        </div>
-        <div class="mc-body">
-          <div class="mc-problem" data-i18n="meituan.memory.problem">Long-term memory grows too large for the context window, causing overflow, latency spikes, and diluted focus on the current task.</div>
-          <div class="mc-solution-label" data-i18n="meituan.solution">Solution — Two-Layer Memory Architecture</div>
-          <div class="memo-row">
-            <div class="memo-card">
-              <h3 data-i18n="meituan.memory.tree_title">📂 Directory Tree</h3>
-              <p data-i18n="meituan.memory.tree_desc"><strong>Layered Storage.</strong> A master index resides in context, recording which category maps to which partition. User preferences and historical decisions are split into separate sub-files by category. Context loads only the index, not the full memory volume.</p>
-            </div>
-            <div class="memo-card">
-              <h3 data-i18n="meituan.memory.load_title">🔄 Progressive Loading</h3>
-              <p data-i18n="meituan.memory.load_desc"><strong>On-Demand Retrieval.</strong> Read the index to locate the target partition, then fetch only what's needed. Release immediately after use — no long-term context occupation. Full memory remains addressable, while the context window stays consistently lightweight.</p>
-            </div>
           </div>
         </div>
       </div>
