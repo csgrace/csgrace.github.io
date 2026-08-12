@@ -257,6 +257,12 @@ const i18n = {
     "meituan.kb.m4": "All relevant chunks retrieved",
     "meituan.kb.m5": "Up-to-date information",
     "meituan.kb.m6": "Accuracy · compliance · adoption",
+    "meituan.kb.m1_name": "Faithfulness",
+    "meituan.kb.m2_name": "Relevance",
+    "meituan.kb.m3_name": "Precision",
+    "meituan.kb.m4_name": "Recall",
+    "meituan.kb.m5_name": "Freshness",
+    "meituan.kb.m6_name": "Business Impact",
     "meituan.memory.title": "Long-Term Memory Architecture",
     "meituan.memory.problem": "Long-term memory grows too large for the context window, causing overflow, latency spikes, and diluted focus on the current task.",
     "meituan.memory.tree_title": "📂 Directory Tree",
@@ -532,6 +538,12 @@ const i18n = {
     "meituan.kb.m4": "全量相关召回",
     "meituan.kb.m5": "信息时效性",
     "meituan.kb.m6": "准确性 · 合规性 · 采纳率",
+    "meituan.kb.m1_name": "Faithfulness",
+    "meituan.kb.m2_name": "Relevance",
+    "meituan.kb.m3_name": "Precision",
+    "meituan.kb.m4_name": "Recall",
+    "meituan.kb.m5_name": "Freshness",
+    "meituan.kb.m6_name": "Business Impact",
     "meituan.memory.title": "长记忆架构设计",
     "meituan.memory.problem": "长期记忆增长过大超出上下文窗口，导致溢出、延迟增加和当前任务注意力分散。",
     "meituan.memory.tree_title": "📂 目录树",
@@ -585,9 +597,15 @@ function applyI18n() {
     el.innerHTML = i18n[lang]?.[key] ?? i18n.en[key] ?? key;
   });
 
-  // Language-switched images
+  // Language-switched images — lazy load only the active language
   document.querySelectorAll('[data-i18n-img]').forEach(img => {
-    img.classList.toggle('active', img.getAttribute('data-i18n-img') === lang);
+    const imgLang = img.getAttribute('data-i18n-img');
+    const isActive = imgLang === lang;
+    img.classList.toggle('active', isActive);
+    // Only set src when active (avoids downloading hidden images)
+    if (isActive && !img.src && img.dataset.src) {
+      img.src = img.dataset.src;
+    }
   });
 
   const langBtn = document.getElementById('lang-switch');

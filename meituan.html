@@ -179,7 +179,7 @@
   </nav>
 
   <div class="project-hero">
-    <img class="hero-bg" src="images/hero_meituan.png" alt="">
+    <img class="hero-bg" src="images/hero_meituan.webp" alt="" fetchpriority="high">
     <div class="hero-content">
       <h1 data-i18n="meituan.hero.title">美团</h1>
       <p class="sub" data-i18n="meituan.detail.sub">Agent Training Assistant · 2026.06 – 2026.09 · Beijing</p>
@@ -202,8 +202,8 @@
     </p>
 
     <!-- Architecture Image (language-switched) -->
-    <img data-i18n-img="zh" class="arch-img" src="images/meituan_ch.png" alt="Agent Architecture">
-    <img data-i18n-img="en" class="arch-img" src="images/meituan_en.png" alt="Agent Architecture">
+    <img data-i18n-img="zh" class="arch-img" data-src="images/meituan_ch.webp" alt="Agent Architecture" loading="lazy" width="1200" height="600">
+    <img data-i18n-img="en" class="arch-img" src="images/meituan_en.webp" alt="Agent Architecture" loading="lazy" width="1200" height="600">
 
     <!-- SECTION 1: Skill -->
     <h2><span class="num">1</span> <span data-i18n="meituan.skill.title">Skill Execution Optimization</span></h2>
@@ -237,31 +237,30 @@
           <li data-i18n="meituan.kb.s2"><strong>Ontology-Driven Knowledge Organization</strong>: An Entity–Relation–Action framework for structuring enterprise knowledge, ensuring consistent retrieval across semantically similar queries</li>
           <li data-i18n="meituan.kb.s3"><strong>Knowledge-Base Evaluation Suite</strong> — dual-benchmark architecture:</li>
         </ul>
-      </div>
-    </div>
-
-    <!-- Evaluation Suite -->
-    <div class="eval-cards">
-      <div class="eval-card fixed">
-        <div class="eval-icon">📌</div>
-        <div class="eval-label" data-i18n="meituan.kb.fixed_label">Fixed Baseline Set</div>
-        <p data-i18n="meituan.kb.fixed_desc">Lock core scenarios, ensure <strong>longitudinal comparability</strong>. High-frequency queries + document back-derivation + manually designed boundary cases.</p>
-      </div>
-      <div class="eval-card dynamic">
-        <div class="eval-icon">🔄</div>
-        <div class="eval-label" data-i18n="meituan.kb.dynamic_label">Dynamic Live Set</div>
-        <p data-i18n="meituan.kb.dynamic_desc">Cover emerging issues, ensure <strong>horizontal sensitivity</strong>. Online Bad/Good Cases + user query sampling + KB update back-derivation.</p>
+        <!-- Evaluation Suite -->
+        <div class="eval-cards">
+          <div class="eval-card fixed">
+            <div class="eval-icon">📌</div>
+            <div class="eval-label" data-i18n="meituan.kb.fixed_label">Fixed Baseline Set</div>
+            <p data-i18n="meituan.kb.fixed_desc">Lock core scenarios, ensure <strong>longitudinal comparability</strong>. High-frequency queries + document back-derivation + manually designed boundary cases.</p>
+          </div>
+          <div class="eval-card dynamic">
+            <div class="eval-icon">🔄</div>
+            <div class="eval-label" data-i18n="meituan.kb.dynamic_label">Dynamic Live Set</div>
+            <p data-i18n="meituan.kb.dynamic_desc">Cover emerging issues, ensure <strong>horizontal sensitivity</strong>. Online Bad/Good Cases + user query sampling + KB update back-derivation.</p>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- 6 metrics -->
     <div class="metrics-grid">
-      <div class="metric-item"><div class="m-name">Faithfulness</div><div class="m-desc" data-i18n="meituan.kb.m1">Response grounded in source</div></div>
-      <div class="metric-item"><div class="m-name">Relevance</div><div class="m-desc" data-i18n="meituan.kb.m2">Matches query intent</div></div>
-      <div class="metric-item"><div class="m-name">Precision</div><div class="m-desc" data-i18n="meituan.kb.m3">No irrelevant chunks</div></div>
-      <div class="metric-item"><div class="m-name">Recall</div><div class="m-desc" data-i18n="meituan.kb.m4">All relevant chunks retrieved</div></div>
-      <div class="metric-item"><div class="m-name">Freshness</div><div class="m-desc" data-i18n="meituan.kb.m5">Up-to-date information</div></div>
-      <div class="metric-item"><div class="m-name">Business Impact</div><div class="m-desc" data-i18n="meituan.kb.m6">Accuracy · compliance · adoption</div></div>
+      <div class="metric-item"><div class="m-name" data-i18n="meituan.kb.m1_name">Faithfulness</div><div class="m-desc" data-i18n="meituan.kb.m1">Response grounded in source</div></div>
+      <div class="metric-item"><div class="m-name" data-i18n="meituan.kb.m2_name">Relevance</div><div class="m-desc" data-i18n="meituan.kb.m2">Matches query intent</div></div>
+      <div class="metric-item"><div class="m-name" data-i18n="meituan.kb.m3_name">Precision</div><div class="m-desc" data-i18n="meituan.kb.m3">No irrelevant chunks</div></div>
+      <div class="metric-item"><div class="m-name" data-i18n="meituan.kb.m4_name">Recall</div><div class="m-desc" data-i18n="meituan.kb.m4">All relevant chunks retrieved</div></div>
+      <div class="metric-item"><div class="m-name" data-i18n="meituan.kb.m5_name">Freshness</div><div class="m-desc" data-i18n="meituan.kb.m5">Up-to-date information</div></div>
+      <div class="metric-item"><div class="m-name" data-i18n="meituan.kb.m6_name">Business Impact</div><div class="m-desc" data-i18n="meituan.kb.m6">Accuracy · compliance · adoption</div></div>
     </div>
 
     <!-- SECTION 3: Memory -->
