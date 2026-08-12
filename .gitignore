@@ -1,3 +1,7 @@
 # PPT extract artifacts (not needed, presentation uses Canva embed)
 _pptx_extract/
 *.pptx
+
+# Dependencies
+node_modules/
+package-lock.json
