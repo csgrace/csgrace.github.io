@@ -6,26 +6,27 @@
   <title data-i18n-title="meituan.page.title">Meituan Internship — Yuqing Wei</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    :root { --orange: #FF6B35; --orange-light: #FFF3EC; --green: #27ae60; --red: #e74c3c; }
+    :root { --orange: #FF6B35; --orange-light: #FFF3EC; --green: #27ae60; --red: #e74c3c; --blue-d: #3B64C9; }
 
-    /* Hero */
+    /* Hero — compact */
     .project-hero {
       position: relative; margin-top: var(--nav-height);
       display: flex; align-items: center; justify-content: center;
+      max-height: 320px; overflow: hidden;
     }
-    .project-hero .hero-bg { width: 100%; display: block; }
+    .project-hero .hero-bg { width: 100%; display: block; max-height: 320px; object-fit: cover; }
     .project-hero .hero-content {
       position: absolute; text-align: center; color: #2D3436;
       text-shadow: 0 1px 4px rgba(255,255,255,0.6);
     }
-    .project-hero .hero-content h1 { font-size: 2.25rem; margin: 0 0 4px; color: inherit; font-weight: 800; }
-    .project-hero .hero-content .sub { font-size: 0.95rem; opacity: 0.75; }
+    .project-hero .hero-content h1 { font-size: 2rem; margin: 0 0 4px; color: inherit; font-weight: 800; }
+    .project-hero .hero-content .sub { font-size: 0.9rem; opacity: 0.75; }
 
     /* Content area */
-    .detail { max-width: 1240px; margin: 0 auto; padding: 48px 32px 80px; }
+    .detail { max-width: 1100px; margin: 0 auto; padding: 36px 32px 60px; }
     .detail h2 {
-      font-size: 1.25rem; color: var(--dark); margin: 52px 0 18px;
-      padding-bottom: 10px; border-bottom: 2px solid #f0f0f0;
+      font-size: 1.2rem; color: var(--dark); margin: 40px 0 16px;
+      padding-bottom: 8px; border-bottom: 2px solid #f0f0f0;
       display: flex; align-items: center; gap: 10px;
     }
     .detail h2 .num {
@@ -33,119 +34,136 @@
       width: 28px; height: 28px; border-radius: 50%;
       background: var(--orange); color: #fff; font-size: 0.8rem; font-weight: 700; flex-shrink: 0;
     }
-    .detail p, .detail li { font-size: 0.92rem; line-height: 1.7; color: var(--gray); }
+    .detail p, .detail li { font-size: 0.9rem; line-height: 1.7; color: var(--gray); }
     .detail ul { padding-left: 20px; }
     .detail li { margin-bottom: 6px; }
 
-    /* Problem / Solution cards */
-    .ps-block { margin: 20px 0; display: grid; gap: 14px; }
-    .ps-card {
-      background: #fff; border-radius: 12px; padding: 22px 28px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.04); transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .ps-card.problem { border-left: 4px solid var(--red); }
-    .ps-card.solution { border-left: 4px solid var(--green); }
-    .ps-card .ps-label {
-      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 1.5px; margin-bottom: 8px;
-    }
-    .ps-card.problem .ps-label { color: var(--red); }
-    .ps-card.solution .ps-label { color: var(--green); }
-    .ps-card h3 { font-size: 1rem; color: var(--dark); margin: 4px 0 10px; }
-    .ps-card p, .ps-card li { font-size: 0.88rem; }
-
-    /* KB evaluation cards — more prominent */
-    .eval-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 0 0 20px; }
-    .eval-card {
-      background: #fff; border-radius: 12px; padding: 20px 24px;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.05); transition: transform 0.2s, box-shadow 0.2s;
-      position: relative; overflow: hidden;
-    }
-    .eval-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-    .eval-card .eval-icon { font-size: 1.4rem; margin-bottom: 6px; }
-    .eval-card.fixed { border-left: 4px solid #3B64C9; }
-    .eval-card.dynamic { border-left: 4px solid var(--green); }
-    .eval-card .eval-label {
-      font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
-      margin-bottom: 6px;
-    }
-    .eval-card.fixed .eval-label { color: #3B64C9; }
-    .eval-card.dynamic .eval-label { color: var(--green); }
-    .eval-card p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; }
-
-    /* Metrics grid — consistent height */
-    .metrics-grid {
-      display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin: 14px 0 20px;
-    }
-    .metric-item {
-      background: #fff; border-radius: 10px; padding: 16px 10px; text-align: center;
-      border-bottom: 3px solid var(--orange); min-height: 70px;
-      display: flex; flex-direction: column; justify-content: center;
-      box-shadow: 0 1px 8px rgba(0,0,0,0.03); transition: transform 0.2s;
-    }
-    .metric-item:hover { transform: translateY(-2px); }
-    .metric-item .m-name { font-size: 0.78rem; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
-    .metric-item .m-desc { font-size: 0.68rem; color: var(--gray); }
-
-    /* Highlight box */
-    .highlight-box {
-      background: linear-gradient(135deg, #FFF3EC, #FFF8F4);
-      border-radius: 12px; padding: 28px 32px; margin: 20px 0;
-      border-left: 4px solid var(--orange);
-    }
-    .highlight-box p { margin: 0; color: #8B4513; font-size: 0.9rem; line-height: 1.9; }
-
     /* Back link */
-    .back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--blue); text-decoration: none; font-size: 0.88rem; font-weight: 600; margin-bottom: 16px; }
+    .back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--blue); text-decoration: none; font-size: 0.88rem; font-weight: 600; margin-bottom: 12px; }
     .back-link:hover { text-decoration: underline; }
 
-    /* Architecture image */
+    /* Architecture image — compact, centered */
     .arch-img {
-      width: 100%; border-radius: 12px;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.06); margin: 20px 0;
+      max-width: 760px; width: 100%; margin: 20px auto; display: block;
+      border-radius: 10px; box-shadow: 0 2px 16px rgba(0,0,0,0.06);
     }
     [data-i18n-img] { display: none; }
     [data-i18n-img].active { display: block; }
 
-    /* Memo cards */
-    .memo-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 14px; }
-    .memo-card {
-      background: #FAFBFC; border-radius: 10px; padding: 16px 18px;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .memo-card:hover { transform: translateY(-2px); box-shadow: 0 3px 14px rgba(0,0,0,0.06); }
-    .memo-card h3 { font-size: 0.9rem; color: var(--dark); margin-bottom: 6px; }
-    .memo-card p { font-size: 0.82rem; color: var(--gray); line-height: 1.6; }
+    /* Stats row */
+    .stats-row { display: flex; justify-content: center; gap: 32px; margin: 20px 0 8px; }
+    .stat-item { text-align: center; }
+    .stat-item .stat-num { font-size: 1.8rem; font-weight: 800; color: var(--orange); }
+    .stat-item .stat-label { font-size: 0.78rem; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; }
 
-    /* Role cards */
-    .role-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 16px; }
-    .role-card {
-      background: #FAFBFC; border-radius: 10px; padding: 20px 22px;
-      display: flex; align-items: flex-start; gap: 14px;
+    /* 2×2 Module Grid */
+    .module-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 20px 0; }
+    .module-card {
+      background: #fff; border-radius: 12px; padding: 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05); overflow: hidden;
       transition: transform 0.2s, box-shadow 0.2s;
-      border-left: 4px solid transparent;
+      display: flex; flex-direction: column;
     }
-    .role-card:hover { transform: translateY(-3px); box-shadow: 0 4px 18px rgba(0,0,0,0.08); }
-    .role-card .r-icon {
-      width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0;
+    .module-card:hover { transform: translateY(-3px); box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
+    .module-card .mc-header {
+      padding: 16px 22px 12px; border-bottom: 1px solid #f0f0f0;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .module-card .mc-num {
+      width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem; color: #fff;
+      font-size: 0.8rem; font-weight: 700; color: #fff;
+    }
+    .module-card .mc-title { font-size: 1rem; font-weight: 700; color: var(--dark); }
+    .module-card .mc-body { padding: 14px 22px 20px; flex: 1; }
+    .module-card .mc-problem {
+      font-size: 0.82rem; color: var(--red); margin-bottom: 10px;
+      padding: 8px 12px; background: #FFF5F5; border-radius: 8px;
+      border-left: 3px solid var(--red);
+    }
+    .module-card .mc-problem::before { content: "⚠ "; font-weight: 700; }
+    .module-card .mc-solution-label {
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1.2px; color: var(--green); margin-bottom: 6px;
+    }
+    .module-card ul { padding-left: 18px; margin-bottom: 0; }
+    .module-card ul li { font-size: 0.82rem; line-height: 1.6; margin-bottom: 4px; }
+
+    /* Module colors */
+    .module-card.m1 .mc-num { background: var(--orange); }
+    .module-card.m2 .mc-num { background: var(--blue-d); }
+    .module-card.m3 .mc-num { background: var(--green); }
+    .module-card.m4 .mc-num { background: #636E72; }
+
+    /* KB eval cards inside module */
+    .eval-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px 0; }
+    .eval-card {
+      background: #FAFBFC; border-radius: 8px; padding: 12px 14px;
+      border-left: 3px solid transparent;
+    }
+    .eval-card.fixed { border-left-color: var(--blue-d); }
+    .eval-card.dynamic { border-left-color: var(--green); }
+    .eval-card .eval-icon { font-size: 1rem; margin-bottom: 2px; }
+    .eval-card .eval-label {
+      font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .eval-card.fixed .eval-label { color: var(--blue-d); }
+    .eval-card.dynamic .eval-label { color: var(--green); }
+    .eval-card p { font-size: 0.76rem; color: var(--gray); line-height: 1.5; }
+
+    /* Metrics grid inside module */
+    .metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 10px 0 0; }
+    .metric-item {
+      background: #FAFBFC; border-radius: 6px; padding: 8px 6px; text-align: center;
+      border-bottom: 2px solid var(--orange);
+    }
+    .metric-item .m-name { font-size: 0.72rem; font-weight: 700; color: var(--dark); margin-bottom: 2px; }
+    .metric-item .m-desc { font-size: 0.62rem; color: var(--gray); }
+
+    /* Memory memo cards inside module */
+    .memo-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+    .memo-card {
+      background: #FAFBFC; border-radius: 8px; padding: 12px 14px;
+    }
+    .memo-card h3 { font-size: 0.82rem; color: var(--dark); margin-bottom: 4px; }
+    .memo-card p { font-size: 0.76rem; color: var(--gray); line-height: 1.5; }
+
+    /* Role cards inside module */
+    .role-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+    .role-card {
+      background: #FAFBFC; border-radius: 8px; padding: 10px 12px;
+      display: flex; align-items: flex-start; gap: 8px;
+      border-left: 3px solid transparent;
+    }
+    .role-card .r-icon {
+      width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; color: #fff;
     }
     .role-card .r-info { flex: 1; min-width: 0; }
-    .role-card .r-name { font-size: 1.05rem; font-weight: 800; margin-bottom: 3px; }
-    .role-card .r-desc { font-size: 0.82rem; color: var(--gray); line-height: 1.5; }
+    .role-card .r-name { font-size: 0.82rem; font-weight: 700; margin-bottom: 1px; }
+    .role-card .r-desc { font-size: 0.7rem; color: var(--gray); line-height: 1.4; }
     .role-card.owner { border-left-color: var(--orange); }
     .role-card.owner .r-name { color: var(--orange); }
     .role-card.owner .r-icon { background: var(--orange); }
-    .role-card.trainer { border-left-color: #3B64C9; }
-    .role-card.trainer .r-name { color: #3B64C9; }
-    .role-card.trainer .r-icon { background: #3B64C9; }
+    .role-card.trainer { border-left-color: var(--blue-d); }
+    .role-card.trainer .r-name { color: var(--blue-d); }
+    .role-card.trainer .r-icon { background: var(--blue-d); }
     .role-card.admin { border-left-color: var(--green); }
     .role-card.admin .r-name { color: var(--green); }
     .role-card.admin .r-icon { background: var(--green); }
     .role-card.user { border-left-color: #636E72; }
     .role-card.user .r-name { color: #636E72; }
     .role-card.user .r-icon { background: #636E72; }
+
+    /* Highlight box */
+    .highlight-box {
+      background: linear-gradient(135deg, #FFF3EC, #FFF8F4);
+      border-radius: 12px; padding: 24px 28px; margin: 20px 0;
+      border-left: 4px solid var(--orange);
+    }
+    .highlight-box p { margin: 0; color: #8B4513; font-size: 0.85rem; line-height: 1.8; }
 
     /* Back to top */
     #back-top {
@@ -162,11 +180,12 @@
     html { scroll-behavior: smooth; }
 
     @media(max-width:768px) {
-      .metrics-grid { grid-template-columns: repeat(3, 1fr); }
-      .eval-cards, .memo-row { grid-template-columns: 1fr; }
-      .role-row { grid-template-columns: 1fr; }
+      .module-grid { grid-template-columns: 1fr; }
+      .eval-cards, .memo-row, .role-row { grid-template-columns: 1fr; }
+      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-row { gap: 20px; }
       .project-hero .hero-content h1 { font-size: 1.5rem; }
-      .detail { padding: 32px 18px 60px; }
+      .detail { padding: 24px 18px 50px; }
     }
   </style>
 </head>
@@ -213,130 +232,149 @@
       During my internship at Meituan, I worked on optimizing AI Agents deployed in production business workflows—including order processing, customer communication, and internal operations. I focused on three core technical challenges: <strong>Skill execution reliability</strong>, <strong>knowledge base quality</strong>, and <strong>long-term memory management</strong>. Each required diving deep into agent internals, designing evaluation frameworks, and shipping measurable improvements.
     </p>
 
+    <!-- Stats -->
+    <div class="stats-row">
+      <div class="stat-item">
+        <div class="stat-num" data-i18n="meituan.detail.stat1.num">4</div>
+        <div class="stat-label" data-i18n="meituan.detail.stat1.label">Technical Pillars</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-i18n="meituan.detail.stat2.num">4</div>
+        <div class="stat-label" data-i18n="meituan.detail.stat2.label">Evaluation Dimensions</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-i18n="meituan.detail.stat3.num">6</div>
+        <div class="stat-label" data-i18n="meituan.detail.stat3.label">KB Quality Metrics</div>
+      </div>
+    </div>
+
     <!-- Architecture Image (language-switched) -->
-    <img data-i18n-img="zh" class="arch-img" data-src="images/meituan_ch.webp" alt="Agent Architecture" loading="lazy" width="1200" height="600">
-    <img data-i18n-img="en" class="arch-img" src="images/meituan_en.webp" alt="Agent Architecture" loading="lazy" width="1200" height="600">
+    <img data-i18n-img="zh" class="arch-img" data-src="images/meituan_ch.webp" alt="Agent Architecture" loading="lazy" width="760" height="380">
+    <img data-i18n-img="en" class="arch-img" src="images/meituan_en.webp" alt="Agent Architecture" loading="lazy" width="760" height="380">
 
-    <!-- SECTION 1: Skill -->
-    <h2><span class="num">1</span> <span data-i18n="meituan.skill.title">Skill Execution Optimization</span></h2>
-    <div class="ps-block">
-      <div class="ps-card problem">
-        <div class="ps-label" data-i18n="meituan.problem">Problem</div>
-        <p data-i18n="meituan.skill.problem">Unstable skill execution with inconsistent success rates across different use cases and trigger patterns.</p>
-      </div>
-      <div class="ps-card solution">
-        <div class="ps-label" data-i18n="meituan.solution">Solution — Systematic Testing + Triaged Handling</div>
-        <ul>
-          <li data-i18n="meituan.skill.s1">Tested each Skill with trigger-based prompts covering typical use cases and edge cases</li>
-          <li data-i18n="meituan.skill.s2">Evaluated across <strong>4 dimensions</strong>: tool invocation, intent recognition, response fluency, output quality</li>
-          <li data-i18n="meituan.skill.s3">Merged / split overlapping Skills to reduce conflicts and false triggers</li>
-          <li data-i18n="meituan.skill.s4">Categorized errors (SSO / CIBA / whitelist) and reported structured feedback to the dev team</li>
-        </ul>
-      </div>
-    </div>
+    <!-- 2×2 Module Grid -->
+    <div class="module-grid">
 
-    <!-- SECTION 2: Knowledge Base -->
-    <h2><span class="num">2</span> <span data-i18n="meituan.kb.title">Knowledge Base Quality Engineering</span></h2>
-    <div class="ps-block">
-      <div class="ps-card problem">
-        <div class="ps-label" data-i18n="meituan.problem">Problem</div>
-        <p data-i18n="meituan.kb.problem">When answering internal policy questions, the agent relied on model memory instead of retrieval, leading to outdated or hallucinated responses.</p>
-      </div>
-      <div class="ps-card solution">
-        <div class="ps-label" data-i18n="meituan.solution">Solution</div>
-        <ul>
-          <li data-i18n="meituan.kb.s1"><strong>Decision Correction Skill</strong>: A meta-skill that detects retrieval-vs-memory conflicts and forces KB lookup when a policy question is detected</li>
-          <li data-i18n="meituan.kb.s2"><strong>Ontology-Driven Knowledge Organization</strong>: An Entity–Relation–Action framework for structuring enterprise knowledge, ensuring consistent retrieval across semantically similar queries</li>
-          <li data-i18n="meituan.kb.s3"><strong>Knowledge-Base Evaluation Suite</strong> — dual-benchmark architecture:</li>
-        </ul>
-        <!-- Evaluation Suite -->
-        <div class="eval-cards">
-          <div class="eval-card fixed">
-            <div class="eval-icon">📌</div>
-            <div class="eval-label" data-i18n="meituan.kb.fixed_label">Fixed Baseline Set</div>
-            <p data-i18n="meituan.kb.fixed_desc">Lock core scenarios, ensure <strong>longitudinal comparability</strong>. High-frequency queries + document back-derivation + manually designed boundary cases.</p>
-          </div>
-          <div class="eval-card dynamic">
-            <div class="eval-icon">🔄</div>
-            <div class="eval-label" data-i18n="meituan.kb.dynamic_label">Dynamic Live Set</div>
-            <p data-i18n="meituan.kb.dynamic_desc">Cover emerging issues, ensure <strong>horizontal sensitivity</strong>. Online Bad/Good Cases + user query sampling + KB update back-derivation.</p>
-          </div>
+      <!-- Module 1: Skill -->
+      <div class="module-card m1">
+        <div class="mc-header">
+          <div class="mc-num">1</div>
+          <div class="mc-title" data-i18n="meituan.skill.title">Skill Execution Optimization</div>
         </div>
-        <!-- 6 metrics -->
-        <div class="metrics-grid">
-          <div class="metric-item"><div class="m-name" data-i18n="meituan.kb.m1_name">Faithfulness</div><div class="m-desc" data-i18n="meituan.kb.m1">Response grounded in source</div></div>
-          <div class="metric-item"><div class="m-name" data-i18n="meituan.kb.m2_name">Relevance</div><div class="m-desc" data-i18n="meituan.kb.m2">Matches query intent</div></div>
-          <div class="metric-item"><div class="m-name" data-i18n="meituan.kb.m3_name">Precision</div><div class="m-desc" data-i18n="meituan.kb.m3">No irrelevant chunks</div></div>
-          <div class="metric-item"><div class="m-name" data-i18n="meituan.kb.m4_name">Recall</div><div class="m-desc" data-i18n="meituan.kb.m4">All relevant chunks retrieved</div></div>
-          <div class="metric-item"><div class="m-name" data-i18n="meituan.kb.m5_name">Freshness</div><div class="m-desc" data-i18n="meituan.kb.m5">Up-to-date information</div></div>
-          <div class="metric-item"><div class="m-name" data-i18n="meituan.kb.m6_name">Business Impact</div><div class="m-desc" data-i18n="meituan.kb.m6">Accuracy · compliance · adoption</div></div>
+        <div class="mc-body">
+          <div class="mc-problem" data-i18n="meituan.skill.problem">Unstable skill execution with inconsistent success rates across different use cases and trigger patterns.</div>
+          <div class="mc-solution-label" data-i18n="meituan.solution">Solution — Systematic Testing + Triaged Handling</div>
+          <ul>
+            <li data-i18n="meituan.skill.s1">Tested each Skill with trigger-based prompts covering typical use cases and edge cases</li>
+            <li data-i18n="meituan.skill.s2">Evaluated across <strong>4 dimensions</strong>: tool invocation, intent recognition, response fluency, output quality</li>
+            <li data-i18n="meituan.skill.s3">Merged / split overlapping Skills to reduce conflicts and false triggers</li>
+            <li data-i18n="meituan.skill.s4">Categorized errors (SSO / CIBA / whitelist) and reported structured feedback to the dev team</li>
+          </ul>
         </div>
       </div>
-    </div>
 
-    <!-- SECTION 3: Memory -->
-    <h2><span class="num">3</span> <span data-i18n="meituan.memory.title">Long-Term Memory Architecture</span></h2>
-    <div class="ps-block">
-      <div class="ps-card problem">
-        <div class="ps-label" data-i18n="meituan.problem">Problem</div>
-        <p data-i18n="meituan.memory.problem">Long-term memory grows too large for the context window, causing overflow, latency spikes, and diluted focus on the current task.</p>
-      </div>
-      <div class="ps-card solution">
-        <div class="ps-label" data-i18n="meituan.solution">Solution — Two-Layer Memory Architecture</div>
-        <div class="memo-row">
-          <div class="memo-card">
-            <h3 data-i18n="meituan.memory.tree_title">📂 Directory Tree</h3>
-            <p data-i18n="meituan.memory.tree_desc"><strong>Layered Storage.</strong> A master index resides in context, recording which category maps to which partition. User preferences and historical decisions are split into separate sub-files by category. Context loads only the index, not the full memory volume.</p>
+      <!-- Module 2: Knowledge Base -->
+      <div class="module-card m2">
+        <div class="mc-header">
+          <div class="mc-num">2</div>
+          <div class="mc-title" data-i18n="meituan.kb.title">Knowledge Base Quality Engineering</div>
+        </div>
+        <div class="mc-body">
+          <div class="mc-problem" data-i18n="meituan.kb.problem">When answering internal policy questions, the agent relied on model memory instead of retrieval, leading to outdated or hallucinated responses.</div>
+          <div class="mc-solution-label" data-i18n="meituan.solution">Solution</div>
+          <ul>
+            <li data-i18n="meituan.kb.s1"><strong>Decision Correction Skill</strong>: A meta-skill that detects retrieval-vs-memory conflicts and forces KB lookup when a policy question is detected</li>
+            <li data-i18n="meituan.kb.s2"><strong>Ontology-Driven Knowledge Organization</strong>: An Entity–Relation–Action framework for structuring enterprise knowledge, ensuring consistent retrieval across semantically similar queries</li>
+            <li data-i18n="meituan.kb.s3"><strong>Knowledge-Base Evaluation Suite</strong> — dual-benchmark architecture:</li>
+          </ul>
+          <div class="eval-cards">
+            <div class="eval-card fixed">
+              <div class="eval-icon">📌</div>
+              <div class="eval-label" data-i18n="meituan.kb.fixed_label">Fixed Baseline Set</div>
+              <p data-i18n="meituan.kb.fixed_desc">Lock core scenarios, ensure <strong>longitudinal comparability</strong>. High-frequency queries + document back-derivation + manually designed boundary cases.</p>
+            </div>
+            <div class="eval-card dynamic">
+              <div class="eval-icon">🔄</div>
+              <div class="eval-label" data-i18n="meituan.kb.dynamic_label">Dynamic Live Set</div>
+              <p data-i18n="meituan.kb.dynamic_desc">Cover emerging issues, ensure <strong>horizontal sensitivity</strong>. Online Bad/Good Cases + user query sampling + KB update back-derivation.</p>
+            </div>
           </div>
-          <div class="memo-card">
-            <h3 data-i18n="meituan.memory.load_title">🔄 Progressive Loading</h3>
-            <p data-i18n="meituan.memory.load_desc"><strong>On-Demand Retrieval.</strong> Read the index to locate the target partition, then fetch only what's needed. Release immediately after use — no long-term context occupation. Full memory remains addressable, while the context window stays consistently lightweight.</p>
+          <div class="metrics-grid">
+            <div class="metric-item"><div class="m-name" data-i18n="meituan.kb.m1_name">Faithfulness</div><div class="m-desc" data-i18n="meituan.kb.m1">Response grounded in source</div></div>
+            <div class="metric-item"><div class="m-name" data-i18n="meituan.kb.m2_name">Relevance</div><div class="m-desc" data-i18n="meituan.kb.m2">Matches query intent</div></div>
+            <div class="metric-item"><div class="m-name" data-i18n="meituan.kb.m3_name">Precision</div><div class="m-desc" data-i18n="meituan.kb.m3">No irrelevant chunks</div></div>
+            <div class="metric-item"><div class="m-name" data-i18n="meituan.kb.m4_name">Recall</div><div class="m-desc" data-i18n="meituan.kb.m4">All relevant chunks retrieved</div></div>
+            <div class="metric-item"><div class="m-name" data-i18n="meituan.kb.m5_name">Freshness</div><div class="m-desc" data-i18n="meituan.kb.m5">Up-to-date information</div></div>
+            <div class="metric-item"><div class="m-name" data-i18n="meituan.kb.m6_name">Business Impact</div><div class="m-desc" data-i18n="meituan.kb.m6">Accuracy · compliance · adoption</div></div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- SECTION 4: RBAC -->
-    <h2><span class="num">4</span> <span data-i18n="meituan.rbac.title">RBAC Permission Architecture</span></h2>
-    <div class="ps-block">
-      <div class="ps-card problem">
-        <div class="ps-label" data-i18n="meituan.problem">Problem</div>
-        <p data-i18n="meituan.rbac.problem">Without proper access control, unauthorized configuration changes to agent prompts, skills, and deployments could disrupt production workflows and introduce security risks.</p>
-      </div>
-      <div class="ps-card solution">
-        <div class="ps-label" data-i18n="meituan.solution">Solution — Four-Role RBAC Model</div>
-        <p data-i18n="meituan.rbac.solution">Collaborated across teams to define a <strong>four-role access control model</strong> for the agent platform. Each role maps to specific permissions, creating clear operational boundaries and a security baseline for the multi-tenant agent ecosystem:</p>
-        <div class="role-row">
-          <div class="role-card owner">
-            <div class="r-icon">👑</div>
-            <div class="r-info">
-              <div class="r-name" data-i18n="meituan.rbac.r1_name">Owner</div>
-              <div class="r-desc" data-i18n="meituan.rbac.r1_desc">Full platform control, system configuration, audit access</div>
+      <!-- Module 3: Memory -->
+      <div class="module-card m3">
+        <div class="mc-header">
+          <div class="mc-num">3</div>
+          <div class="mc-title" data-i18n="meituan.memory.title">Long-Term Memory Architecture</div>
+        </div>
+        <div class="mc-body">
+          <div class="mc-problem" data-i18n="meituan.memory.problem">Long-term memory grows too large for the context window, causing overflow, latency spikes, and diluted focus on the current task.</div>
+          <div class="mc-solution-label" data-i18n="meituan.solution">Solution — Two-Layer Memory Architecture</div>
+          <div class="memo-row">
+            <div class="memo-card">
+              <h3 data-i18n="meituan.memory.tree_title">📂 Directory Tree</h3>
+              <p data-i18n="meituan.memory.tree_desc"><strong>Layered Storage.</strong> A master index resides in context, recording which category maps to which partition. User preferences and historical decisions are split into separate sub-files by category. Context loads only the index, not the full memory volume.</p>
             </div>
-          </div>
-          <div class="role-card trainer">
-            <div class="r-icon">🔧</div>
-            <div class="r-info">
-              <div class="r-name" data-i18n="meituan.rbac.r2_name">Trainer</div>
-              <div class="r-desc" data-i18n="meituan.rbac.r2_desc">Prompt & skill management, knowledge base editing, agent tuning</div>
-            </div>
-          </div>
-          <div class="role-card admin">
-            <div class="r-icon">🛡️</div>
-            <div class="r-info">
-              <div class="r-name" data-i18n="meituan.rbac.r3_name">Permission Admin</div>
-              <div class="r-desc" data-i18n="meituan.rbac.r3_desc">Role assignment, access policy configuration, security audit</div>
-            </div>
-          </div>
-          <div class="role-card user">
-            <div class="r-icon">👤</div>
-            <div class="r-info">
-              <div class="r-name" data-i18n="meituan.rbac.r4_name">User</div>
-              <div class="r-desc" data-i18n="meituan.rbac.r4_desc">Agent interaction only, no configuration access</div>
+            <div class="memo-card">
+              <h3 data-i18n="meituan.memory.load_title">🔄 Progressive Loading</h3>
+              <p data-i18n="meituan.memory.load_desc"><strong>On-Demand Retrieval.</strong> Read the index to locate the target partition, then fetch only what's needed. Release immediately after use — no long-term context occupation. Full memory remains addressable, while the context window stays consistently lightweight.</p>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Module 4: RBAC -->
+      <div class="module-card m4">
+        <div class="mc-header">
+          <div class="mc-num">4</div>
+          <div class="mc-title" data-i18n="meituan.rbac.title">RBAC Permission Architecture</div>
+        </div>
+        <div class="mc-body">
+          <div class="mc-problem" data-i18n="meituan.rbac.problem">Without proper access control, unauthorized configuration changes to agent prompts, skills, and deployments could disrupt production workflows and introduce security risks.</div>
+          <div class="mc-solution-label" data-i18n="meituan.solution">Solution — Four-Role RBAC Model</div>
+          <p style="font-size:0.8rem;margin-bottom:6px;" data-i18n="meituan.rbac.solution">Collaborated across teams to define a <strong>four-role access control model</strong> for the agent platform. Each role maps to specific permissions, creating clear operational boundaries and a security baseline for the multi-tenant agent ecosystem:</p>
+          <div class="role-row">
+            <div class="role-card owner">
+              <div class="r-icon">👑</div>
+              <div class="r-info">
+                <div class="r-name" data-i18n="meituan.rbac.r1_name">Owner</div>
+                <div class="r-desc" data-i18n="meituan.rbac.r1_desc">Full platform control, system configuration, audit access</div>
+              </div>
+            </div>
+            <div class="role-card trainer">
+              <div class="r-icon">🔧</div>
+              <div class="r-info">
+                <div class="r-name" data-i18n="meituan.rbac.r2_name">Trainer</div>
+                <div class="r-desc" data-i18n="meituan.rbac.r2_desc">Prompt & skill management, knowledge base editing, agent tuning</div>
+              </div>
+            </div>
+            <div class="role-card admin">
+              <div class="r-icon">🛡️</div>
+              <div class="r-info">
+                <div class="r-name" data-i18n="meituan.rbac.r3_name">Permission Admin</div>
+                <div class="r-desc" data-i18n="meituan.rbac.r3_desc">Role assignment, access policy configuration, security audit</div>
+              </div>
+            </div>
+            <div class="role-card user">
+              <div class="r-icon">👤</div>
+              <div class="r-info">
+                <div class="r-name" data-i18n="meituan.rbac.r4_name">User</div>
+                <div class="r-desc" data-i18n="meituan.rbac.r4_desc">Agent interaction only, no configuration access</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <!-- Takeaway -->
@@ -364,7 +402,7 @@
     // Back to top button
     const backTop = document.getElementById('back-top');
     window.addEventListener('scroll', () => {
-      backTop.classList.toggle('show', window.scrollY > 600);
+      backTop.classList.toggle('show', window.scrollY > 400);
     });
     backTop.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
