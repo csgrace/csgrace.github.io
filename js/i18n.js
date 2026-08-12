@@ -12,9 +12,10 @@ const i18n = {
     "nav.contact": "Contact",
 
     // Index - Hero
-    "hero.greeting": "Hi, I'm Yuqing Wei!",
+    "hero.greeting": "Turning real-world problems into AI systems that actually work",
+    "hero.eyebrow": "Agent Engineering · Data-Driven AI · Knowledge Systems",
     "hero.subtitle": "Computer Science & Technology Undergraduate @ SUSTech",
-    "hero.tagline": "AI · Systems · Research · Building things that matter",
+    "hero.desc": "I'm Yuqing Wei — I bridge the gap between AI capability and real-world reliability. My work spans agent skill optimization, knowledge base engineering, and evaluation frameworks, ensuring the systems I build are not just smart, but trustworthy, measurable, and genuinely useful to the people who depend on them.",
 
     // Index - Quick Nav
     "quick.about": "About Me",
@@ -293,9 +294,10 @@ const i18n = {
     "nav.contact": "联系我",
 
     // Index - Hero
-    "hero.greeting": "你好，我是魏宇晴！",
+    "hero.greeting": "把现实世界的问题变成真正可靠的 AI 系统",
+    "hero.eyebrow": "Agent 工程 · 数据驱动 AI · 知识系统",
     "hero.subtitle": "南方科技大学 · 计算机科学与技术 · 本科在读",
-    "hero.tagline": "人工智能 · 系统工程 · 学术研究 · 创造有价值的东西",
+    "hero.desc": "我是魏宇晴——我致力于在 AI 能力与真实世界可靠性之间架起桥梁。我的工作涵盖 Agent 技能优化、知识库工程和评估框架，确保构建的系统不仅智能，而且值得信赖、可度量，并真正帮助到依赖它们的人。",
 
     // Index - Quick Nav
     "quick.about": "关于我",

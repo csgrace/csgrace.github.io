@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n-title="nav.home">Yuqing Wei — Personal Website</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -36,14 +39,19 @@
 
     <div class="container">
       <div class="hero fade-in">
-        <div class="hero-avatar">👩</div>
-        <div class="hero-badge" data-i18n="hero.tagline">AI · Systems · Research · Building things that matter</div>
-        <h1 data-i18n="hero.greeting">Hi, I'm Yuqing Wei!</h1>
-        <p class="subtitle" data-i18n="hero.subtitle">Computer Science & Technology Undergraduate @ SUSTech</p>
-      </div>
-
-      <div class="presentation-banner fade-in">
-        <a href="presentation.html" id="ppt-link" data-i18n="presentation.banner">📽️ View my Interview Presentation →</a>
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="hero-eyebrow" data-i18n="hero.eyebrow">Agent Engineering · Data-Driven AI · Knowledge Systems</div>
+            <h1 data-i18n="hero.greeting">Turning real-world problems into AI systems that actually work</h1>
+            <p class="hero-desc" data-i18n="hero.desc">I'm Yuqing Wei — I bridge the gap between AI capability and real-world reliability. My work spans agent skill optimization, knowledge base engineering, and evaluation frameworks, ensuring the systems I build are not just smart, but trustworthy, measurable, and genuinely useful to the people who depend on them.</p>
+            <p class="subtitle" data-i18n="hero.subtitle">Computer Science & Technology Undergraduate @ SUSTech</p>
+          </div>
+          <div class="hero-photo-wrap">
+            <div class="hero-photo">
+              <img src="images/weiyuqing.jpg" alt="Yuqing Wei">
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Password modal for presentation -->
@@ -80,6 +88,11 @@
           <p data-i18n="quick.experience.desc">Awards, leadership roles & community service</p>
           <span class="quick-card-arrow">→</span>
         </a>
+      </div>
+
+      <!-- Presentation CTA — after quick nav -->
+      <div class="presentation-banner fade-in">
+        <a href="presentation.html" id="ppt-link" data-i18n="presentation.banner">📽️ View my Interview Presentation →</a>
       </div>
 
     </div>

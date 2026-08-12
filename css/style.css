@@ -47,10 +47,11 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family: 'Plus Jakarta Sans', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.7;
+  word-spacing: 1.5px;
   min-height: 100vh;
 }
 
@@ -270,58 +271,71 @@ img {
   position: relative;
 }
 
-.hero-avatar {
-  width: 128px;
-  height: 128px;
-  border-radius: 50%;
-  margin: 0 auto 24px;
-  background: linear-gradient(135deg, var(--coral), var(--purple), var(--teal));
-  background-size: 200% 200%;
+.hero-content {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 3.2rem;
-  color: white;
-  box-shadow: 0 8px 32px rgba(108,92,231,0.25);
-  animation: float 3s ease-in-out infinite, gradientShift 8s ease-in-out infinite;
-  position: relative;
+  justify-content: space-between;
+  gap: 48px;
+  margin-bottom: 28px;
 }
 
-/* Orbiting dots around avatar */
-.hero-avatar::before {
-  content: '';
-  position: absolute;
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  top: -16px;
-  left: -16px;
-  background: 
-    radial-gradient(circle at 50% 0%, var(--coral) 3px, transparent 4px),
-    radial-gradient(circle at 100% 50%, var(--teal) 3px, transparent 4px),
-    radial-gradient(circle at 50% 100%, var(--purple) 3px, transparent 4px),
-    radial-gradient(circle at 0% 50%, var(--yellow) 3px, transparent 4px);
-  animation: orbit 12s linear infinite;
-  pointer-events: none;
+.hero-text {
+  text-align: left;
+  flex: 1;
 }
+
+.hero-text .hero-badge {
+  margin-bottom: 14px;
+}
+
+.hero-text h1 {
+  margin-bottom: 8px;
+}
+
+/* Photo with animated gradient border */
+.hero-photo-wrap {
+  position: relative;
+  width: 220px;
+  height: 268px;
+  flex-shrink: 0;
+  border-radius: 22px;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--coral), var(--purple), var(--teal), var(--yellow), var(--coral));
+  background-size: 300% 300%;
+  animation: borderFlow 6s ease-in-out infinite;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.12);
+}
+
+@keyframes borderFlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 17px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hero avatar removed — now using photo with orbiting dots */
 
 @keyframes orbit {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 @keyframes gradientShift {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
-}
-
-.hero-avatar::after {
-  content: '';
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  border: 2px solid rgba(255,107,107,0.2);
-  animation: ringPulse 3s ease-in-out infinite;
 }
 
 @keyframes ringPulse {
@@ -331,7 +345,7 @@ img {
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-6px); }
 }
 
 .hero-badge {
@@ -350,20 +364,33 @@ img {
 
 @keyframes badgeBounce {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
+  50% { transform: translateY(-2px); }
 }
 
 .hero h1 {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   font-weight: 800;
-  margin-bottom: 10px;
-  background: linear-gradient(135deg, var(--coral), var(--purple), var(--teal), var(--purple), var(--coral));
-  background-size: 300% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1.2;
-  animation: textGradient 8s ease-in-out infinite;
+  margin-bottom: 14px;
+  line-height: 1.3;
+  color: var(--text);
+  letter-spacing: -0.5px;
+  word-spacing: 2px;
+}
+
+.hero-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-light);
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  text-transform: none;
+}
+
+.hero-desc {
+  font-size: 1.02rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-bottom: 12px;
 }
 
 .hero .subtitle {
@@ -984,30 +1011,6 @@ img {
   overflow: hidden;
 }
 
-/* Animated gradient strip on left border */
-.research-entry::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 5px;
-  background: linear-gradient(180deg, var(--coral), var(--purple), var(--teal), var(--coral));
-  background-size: 100% 300%;
-  animation: stripFlow 4s linear infinite;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.research-entry:hover::before {
-  opacity: 1;
-}
-
-@keyframes stripFlow {
-  from { background-position: 0% 0%; }
-  to { background-position: 0% 300%; }
-}
-
 .research-entry:nth-child(2) { border-left-color: var(--purple); }
 .research-entry:nth-child(3) { border-left-color: var(--teal); }
 .research-entry:nth-child(4) { border-left-color: var(--pink); }
@@ -1017,23 +1020,6 @@ img {
 .research-entry:hover {
   transform: translateX(3px);
   box-shadow: var(--card-shadow-hover);
-}
-
-/* Gradient shine on research entries */
-.research-entry::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-  transition: left 0.6s ease;
-  pointer-events: none;
-}
-
-.research-entry:hover::after {
-  left: 120%;
 }
 
 .research-entry {
@@ -1351,7 +1337,7 @@ img {
 }
 
 a.footer-info-item:hover {
-  color: var(--coral);
+  color: var(--blue);
 }
 
 a.footer-info-item:hover svg {
@@ -1568,6 +1554,20 @@ a.footer-info-item:hover svg {
 
   .hero-badge {
     font-size: 0.75rem;
+  }
+
+  .hero-content {
+    flex-direction: column-reverse;
+    gap: 24px;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-photo-wrap {
+    width: 140px;
+    height: 170px;
   }
 
   .quick-nav {
