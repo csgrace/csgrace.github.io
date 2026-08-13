@@ -179,15 +179,15 @@
           <h2>🐙 <span data-i18n="gh.title">GitHub Projects</span></h2>
           <div class="projects-grid">
 
-            <a href="https://github.com/csgrace/2048-game" target="_blank" class="project-card">
+            <div class="project-card" onclick="document.getElementById('modal-2048').classList.add('active'); document.body.style.overflow='hidden';">
               <div class="project-card-banner" style="background: linear-gradient(135deg, var(--purple-light), var(--purple));">🎮</div>
               <div class="project-card-body">
                 <h3 data-i18n="gh.game2048">CS109 — 2048 Game</h3>
-                <p data-i18n="gh.game2048.desc">Java implementation of the classic 2048 game.</p>
-                <div class="project-tags"><span class="project-tag">Java</span><span class="project-tag">Game</span></div>
-                <span class="project-link" style="background:#E8E4FF;color:var(--purple-dark);">🔗 View on GitHub</span>
+                <p data-i18n="gh.game2048.desc">Play the classic 2048 game right here!</p>
+                <div class="project-tags"><span class="project-tag">Java</span><span class="project-tag">Game</span><span class="project-tag">Playable</span></div>
+                <span class="project-link" style="background:#E8E4FF;color:var(--purple-dark);">▶ Play Now</span>
               </div>
-            </a>
+            </div>
 
             <a href="https://github.com/csgrace/CS209A" target="_blank" class="project-card">
               <div class="project-card-banner" style="background: linear-gradient(135deg, var(--yellow), #F0B62D);">☕</div>
@@ -307,6 +307,41 @@
     </div>
     <p data-i18n="footer.text">Made by Yuqing Wei · 2026</p>
   </footer>
+
+  <!-- 2048 Game Modal -->
+  <div id="modal-2048" style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:2000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;">
+    <div style="background:var(--white);border-radius:16px;padding:16px;max-width:500px;width:92vw;max-height:92vh;position:relative;transform:translateY(20px) scale(.96);transition:transform .3s;box-shadow:0 20px 60px rgba(0,0,0,.3);" id="modal-2048-inner">
+      <button onclick="closeM();" style="position:absolute;top:10px;right:14px;width:36px;height:36px;border:none;background:#FFF5EE;border-radius:50%;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text);font-weight:700;z-index:1;transition:all .2s;" onmouseover="this.style.background='var(--coral)';this.style.color='#fff'" onmouseout="this.style.background='#FFF5EE';this.style.color='var(--text)'">&times;</button>
+      <iframe src="https://csgrace.github.io/2048-game/" style="width:100%;height:85vh;border:none;border-radius:12px;" title="2048 Game"></iframe>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      var modal = document.getElementById('modal-2048');
+      var inner = document.getElementById('modal-2048-inner');
+      function openM() {
+        modal.style.pointerEvents = 'auto';
+        modal.style.opacity = '1';
+        if(inner) inner.style.transform = 'translateY(0) scale(1)';
+      }
+      function closeM() {
+        modal.style.opacity = '0';
+        modal.style.pointerEvents = 'none';
+        if(inner) inner.style.transform = 'translateY(20px) scale(.96)';
+        document.body.style.overflow = '';
+      }
+      // Override the inline onclick to use smooth opening
+      var card = document.querySelector('[onclick*="modal-2048"]');
+      if(card) {
+        card.onclick = function() { openM(); document.body.style.overflow = 'hidden'; };
+      }
+      modal.addEventListener('click', function(e){ if(e.target===modal) closeM(); });
+      document.addEventListener('keydown', function(e){
+        if(e.key==='Escape' && modal.style.opacity==='1') closeM();
+      });
+    })();
+  </script>
 
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
