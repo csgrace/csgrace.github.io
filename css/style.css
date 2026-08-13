@@ -922,64 +922,54 @@ img {
 /* --- Tabs --- */
 .tab-nav {
   display: flex;
-  gap: 8px;
+  gap: 0;
   margin-bottom: 28px;
-  flex-wrap: wrap;
   justify-content: center;
+  position: relative;
+  border-bottom: 1.5px solid #e1e4e8;
+}
+
+.tab-indicator {
+  position: absolute;
+  bottom: -1.5px;
+  left: 0;
+  height: 2px;
+  background: var(--purple);
+  border-radius: 1px;
+  pointer-events: none;
+  transition: left 0.3s cubic-bezier(.4,0,.2,1), width 0.3s cubic-bezier(.4,0,.2,1);
 }
 
 .tab-btn {
-  padding: 10px 24px;
-  border-radius: 24px;
-  border: 2px solid #e0e0e0;
-  background: var(--white);
+  padding: 12px 28px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1.5px;
+  border-radius: 6px 6px 0 0;
+  background: transparent;
   color: var(--text-light);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: all 0.25s;
+  transition: color 0.2s;
   font-family: inherit;
   position: relative;
 }
 
-.tab-btn::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--coral), var(--purple));
-  transition: width 0.3s ease, left 0.3s ease;
-  border-radius: 1px;
-}
-
-.tab-btn:hover::after {
-  width: 60%;
-  left: 20%;
-}
-
-.tab-btn.active::after {
-  width: 0;
-}
-
 .tab-btn:hover {
-  border-color: var(--purple-light);
-  color: var(--purple);
+  color: var(--text);
 }
 
 .tab-btn.active {
-  background: var(--purple);
-  color: var(--white);
-  border-color: var(--purple);
-  box-shadow: 0 4px 12px rgba(108,92,231,0.3);
+  color: var(--text);
+  font-weight: 600;
 }
 
-.tab-panel {
+.tab-panel, .tab-content {
   display: none;
 }
 
-.tab-panel.active {
+.tab-panel.active, .tab-content.active {
   display: block;
 }
 

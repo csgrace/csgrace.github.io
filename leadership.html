@@ -259,18 +259,6 @@
 <script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 <script>
-  // Tab switching
-  document.querySelectorAll('.tab-nav .tab-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var tab = btn.getAttribute('data-tab');
-      document.querySelectorAll('.tab-nav .tab-btn').forEach(function(b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      document.querySelectorAll('.tab-content').forEach(function(p) {
-        p.classList.toggle('active', p.getAttribute('data-tab') === tab);
-      });
-    });
-  });
-
   // Sidebar category switching
   (function() {
     var sidebar = document.getElementById('awards-sidebar');

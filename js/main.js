@@ -27,17 +27,74 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Tab switching ---
+  // --- Tab switching with sliding indicator ---
   const tabButtons = document.querySelectorAll('.tab-btn');
   const tabPanels = document.querySelectorAll('.tab-panel');
-  tabButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const tab = btn.getAttribute('data-tab');
-      tabButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      tabPanels.forEach(p => {
-        p.classList.toggle('active', p.getAttribute('data-tab') === tab);
+  const tabNavs = document.querySelectorAll('.tab-nav');
+
+  // Create and manage sliding indicators for each tab-nav
+  const indicators = [];
+  tabNavs.forEach(nav => {
+    const indicator = document.createElement('div');
+    indicator.className = 'tab-indicator';
+    nav.appendChild(indicator);
+    indicators.push({ nav, indicator });
+
+    function moveIndicator(btn, instant) {
+      const navRect = nav.getBoundingClientRect();
+      const btnRect = btn.getBoundingClientRect();
+      const left = btnRect.left - navRect.left;
+      const width = btnRect.width;
+      if (instant) {
+        indicator.style.transition = 'none';
+        // Force reflow to apply the 'none' transition
+        void indicator.offsetWidth;
+        indicator.style.transition = '';
+      }
+      indicator.style.left = left + 'px';
+      indicator.style.width = width + 'px';
+    }
+
+    // Find initially active button
+    const activeBtn = nav.querySelector('.tab-btn.active');
+    if (activeBtn) {
+      // Position indicator after fonts load to ensure correct sizing
+      moveIndicator(activeBtn, true);
+      if (document.readyState === 'complete') {
+        moveIndicator(activeBtn, true);
+      } else {
+        window.addEventListener('load', () => moveIndicator(activeBtn, true));
+      }
+    }
+
+    // Click handlers
+    nav.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.getAttribute('data-tab');
+        nav.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        moveIndicator(btn);
+        // Sync panels — support both .tab-panel (research) and .tab-content (leadership)
+        document.querySelectorAll('.tab-panel, .tab-content').forEach(p => {
+          p.classList.toggle('active', p.getAttribute('data-tab') === tab);
+        });
       });
+    });
+  });
+
+  // Recalculate indicator on resize
+  window.addEventListener('resize', () => {
+    indicators.forEach(({ nav, indicator }) => {
+      const activeBtn = nav.querySelector('.tab-btn.active');
+      if (activeBtn) {
+        const navRect = nav.getBoundingClientRect();
+        const btnRect = activeBtn.getBoundingClientRect();
+        indicator.style.transition = 'none';
+        void indicator.offsetWidth;
+        indicator.style.transition = '';
+        indicator.style.left = (btnRect.left - navRect.left) + 'px';
+        indicator.style.width = btnRect.width + 'px';
+      }
     });
   });
 
