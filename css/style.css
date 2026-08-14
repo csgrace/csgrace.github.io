@@ -786,13 +786,14 @@ display: inline-flex;
 align-items: center;
 justify-content: center;
 gap: 4px;
-padding: 8px 20px;
+padding: 10px 24px;
 border-radius: 16px;
 font-weight: 600;
-font-size: 0.78rem;
+font-size: 0.82rem;
 transition: all 0.25s;
-align-self: flex-start;
-min-width: 140px;
+align-self: stretch;
+width: 100%;
+min-width: 0;
 }
 
 .project-card:nth-child(1) .project-link { background: #FFE0E0; color: var(--coral-dark); }
