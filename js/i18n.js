@@ -297,11 +297,10 @@ const i18n = {
     "hl.volunteer.date": "2018 – Present",
     "hl.volunteer_total_title": "Total Volunteer Hours",
     "hl.volunteer_total_desc": "As of 2026, total accumulated volunteer service time is 273.86 hours over 8 years.",
-    "hl.volunteer.d1_title": "Outstanding Volunteer Recognition",
-    "hl.volunteer.d1_item1": "Volunteer Service Certificate, 5th Cross-Strait Student Baseball League Finals",
-    "hl.volunteer.d1_item2": "Outstanding Volunteer, 2024 GLDC Ballroom Dancing Competition",
-    "hl.volunteer.d1_item3": "Outstanding Young Docent (Excellent Volunteer Instructor), Shenzhen Museum — 162.5 hours",
-    "hl.volunteer.d1": "Served as a young guide for visitors at The Shenzhen Museum (2018–2023).",
+    "hl.volunteer.d1_title": "Shenzhen Museum Docent",
+"hl.volunteer.d1_item1": "Volunteer Service Certificate, 5th Cross-Strait Student Baseball League Finals (2024)",
+"hl.volunteer.d1_item2": "Outstanding Volunteer, 2024 GLDC Ballroom Dancing Competition",
+"hl.volunteer.d1": "Awarded the \"Outstanding Docent\" title by the Shenzhen Museum in 2021 and 2023 (162.5 volunteer hours).",
     "hl.volunteer.d2": "Usher or Greeter at major events: 15th National Games of the People's Republic of China (2025), 5th Cross-Strait Student Baseball League Finals (2024), and GLDC Ballroom Dancing Competition (2024).",
 
     // Contact
@@ -688,11 +687,10 @@ const i18n = {
     "hl.volunteer.date": "2018 年 – 至今",
     "hl.volunteer_total_title": "总志愿服务时长",
     "hl.volunteer_total_desc": "截至 2026 年，累计志愿服务时长 273.86 小时，累计志愿服务 8 年。",
-    "hl.volunteer.d1_title": "优秀志愿者表彰",
-    "hl.volunteer.d1_item1": "第五届海峡两岸学生棒球联赛总决赛志愿者服务证书",
-    "hl.volunteer.d1_item2": "2024年度GLDC国标舞比赛 优秀志愿者",
-    "hl.volunteer.d1_item3": "深圳市博物馆「优秀小讲解员」—— 志愿时长162.5小时",
-    "hl.volunteer.d1": "在深圳博物馆担任小小讲解员（2018–2023 年）。",
+"hl.volunteer.d1_title": "深圳市博物馆讲解员",
+"hl.volunteer.d1_item1": "第五届海峡两岸学生棒球联赛总决赛 志愿者服务证书（2024 年）",
+"hl.volunteer.d1_item2": "2024 年度 GLDC 国标舞比赛 优秀志愿者",
+"hl.volunteer.d1": "2021 年和 2023 年获得深圳市博物馆「优秀讲解员」称号（志愿时长 162.5 小时）。",
     "hl.volunteer.d2": "在多项大型活动中担任接待或引导志愿者：第十五届全国运动会（2025 年）、第五届海峡两岸学生棒球联赛总决赛（2024 年）、GLDC 国际标准舞锦标赛（2024 年）。",
 
     // Contact
