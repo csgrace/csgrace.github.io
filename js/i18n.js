@@ -301,7 +301,7 @@ const i18n = {
 "hl.volunteer.d1": "Awarded the \"Outstanding Docent\" title by the Shenzhen Museum in 2021 and 2023 (162.5 volunteer hours).",
 "hl.volunteer_event1": "Volunteer, 15th National Games of the People's Republic of China (2025)",
 "hl.volunteer_event2": "Volunteer Service Certificate, 5th Cross-Strait Student Baseball League Finals (2024)",
-"hl.volunteer_event3": "Outstanding Volunteer, 2024 GLDC Ballroom Dancing Competition",
+"hl.volunteer_event3": "Outstanding Volunteer, 2024 GLDC Ballroom Dancing Competition (2024)",
 
     // Contact
     "contact.title": "Let's Connect!",
