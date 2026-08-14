@@ -795,13 +795,6 @@ transition: all 0.25s;
 align-self: flex-start;
 }
 
-/* Single repository buttons fill the card width without changing paired button layouts. */
-.project-card-body > .project-link {
-justify-content: center;
-width: 100%;
-box-sizing: border-box;
-}
-
 .project-card:nth-child(1) .project-link { background: #FFE0E0; color: var(--coral-dark); }
 .project-card:nth-child(2) .project-link { background: #E8E4FF; color: var(--purple-dark); }
 .project-card:nth-child(3) .project-link { background: #D4F7EE; color: #00A381; }
