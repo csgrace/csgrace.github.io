@@ -114,7 +114,7 @@ const i18n = {
 
     // Projects page
     "projects.2048.title": "2048 Game — CS109",
-    "projects.2048.desc": "Complete 2048 implementation in Java (Swing) with PostgreSQL backend, plus an HTML5 web version featuring an AI player powered by reinforcement learning and multiple cheat modes.",
+    "projects.2048.desc": "Complete 2048 implementation in Java (Swing) with PostgreSQL backend. Web version features AI auto-play and multiple cheat modes.",
 
     // GitHub Projects
     "gh.title": "GitHub Projects",
@@ -135,7 +135,7 @@ const i18n = {
     "gh.digital": "CS207 — Digital Logic",
     "gh.digital.desc": "FPGA range hood controller: FSM-driven, 10+ sub-modules, cross-clock-domain, multi-device I/O on EGO1 board.",
     "gh.game2048": "CS109 — 2048 Game",
-    "gh.game2048.desc": "Java implementation of the classic 2048 game. HTML5 version features AI Training Lab with Expectimax search and NN reinforcement learning.",
+    "gh.game2048.desc": "Java implementation of the classic 2048 game. Web version features AI auto-play and multiple cheat modes.",
     "gh.play": "▶ Play Now",
     "gh.view_demo": "🌐 View Demo",
     "gh.motion": "EE205 — Motion Detection via Communication Signals",
@@ -534,7 +534,7 @@ const i18n = {
     "gh.digital": "CS207 — 数字逻辑",
     "gh.digital.desc": "FPGA 抽油烟机控制器：FSM 状态机调度、10+ 子模块、跨时钟域设计、多设备 I/O。",
     "gh.game2048": "CS109 — 2048 游戏",
-    "gh.game2048.desc": "经典 2048 游戏的 Java 实现。HTML5 版本包含 AI 训练实验室：Expectimax 搜索 + 神经网络强化学习。",
+    "gh.game2048.desc": "经典 2048 游戏的 Java 实现。网页版包含 AI 帮玩、作弊工具等功能。",
     "gh.play": "▶ 在线试玩",
     "gh.view_demo": "🌐 查看演示",
     "gh.motion": "EE205 — 基于通信信号的运动检测",
