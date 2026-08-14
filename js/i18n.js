@@ -138,8 +138,8 @@ const i18n = {
     "gh.motion.desc": "Passive motion detection using ambient mmWave signals -- DDC, FIR filtering, cross-correlation, Doppler spectrum analysis.",
     "gh.ncatbot": "NcatBot — QQ Bot SDK (Open Source Contributor)",
     "gh.ncatbot.desc": "Contributed to NapCat Python SDK: bug fixes in message event handling, plugin lifecycle improvements, and cross-platform compatibility fixes.",
-    "gh.cs340": "CS340 — Computational Ethics",
-    "gh.cs340.desc": "Computational Ethics course project.",
+    "gh.cs340": "CS340 — Bias Mitigation",
+    "gh.cs340.desc": "Multi-strategy bias mitigation on 646K-record employment data -- adversarial debiasing, MinDiff, 13-metric fairness evaluation.",
     "repo.view": "View Repository",
     "rw.detail_link": "View Details →",
 
@@ -424,8 +424,8 @@ const i18n = {
     "gh.motion.desc": "利用 ambient mmWave 信号进行被动运动检测：数字下变频、FIR 滤波、互相关、多普勒频谱分析。",
     "gh.ncatbot": "NcatBot — QQ 机器人 SDK（开源贡献者）",
     "gh.ncatbot.desc": "为 NapCat Python SDK 贡献代码：修复消息事件处理 Bug、改进插件生命周期管理、修复跨平台兼容性问题。",
-    "gh.cs340": "CS340 — 计算机伦理学",
-    "gh.cs340.desc": "计算机伦理学课程项目。",
+    "gh.cs340": "CS340 — 偏差缓解",
+    "gh.cs340.desc": "基于 64.6 万条就业数据的多策略偏差缓解：对抗去偏、MinDiff 惩罚、13 指标公平性评估。",
     "repo.view": "查看仓库",
     "rw.detail_link": "查看详情 →",
 
