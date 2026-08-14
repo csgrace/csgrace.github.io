@@ -43,7 +43,7 @@ I lead both the **SUSTech Rowing Team** and the **Shuli College Table Tennis Tea
   JavaFX "QQ Farm" demo, data analysis dashboard, quizzes & lab exercises.
   
 - **CPU Design** | [CPU_design](https://github.com/csgrace/CPU_design)  
-  Built a CPU from scratch using VHDL & Verilog — computer architecture exploration.
+  Badge: ![Verilog](https://img.shields.io/badge/Verilog-HDL-blue) ![VHDL](https://img.shields.io/badge/VHDL-HDL-blue) ![FPGA](https://img.shields.io/badge/FPGA-Xilinx-orange) — Built a CPU from scratch using VHDL & Verilog, a computer architecture exploration.
 
 - **Digital Logic** | [Digital-Logic](https://github.com/csgrace/Digital-Logic)  
   Digital logic circuits with VHDL, Verilog, and formal proof tools.
