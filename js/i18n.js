@@ -114,7 +114,7 @@ const i18n = {
 
     // Projects page
     "projects.2048.title": "2048 Game — CS109",
-    "projects.2048.desc": "Complete 2048 implementation in Java (Swing) with PostgreSQL backend, plus an HTML5 web version featuring an AI player powered by reinforcement learning.",
+    "projects.2048.desc": "Complete 2048 implementation in Java (Swing) with PostgreSQL backend, plus an HTML5 web version featuring an AI player powered by reinforcement learning and multiple cheat modes.",
 
     // GitHub Projects
     "gh.title": "GitHub Projects",
@@ -513,7 +513,7 @@ const i18n = {
 
     // Projects page
     "projects.2048.title": "2048 游戏 — CS109",
-    "projects.2048.desc": "Java (Swing) 实现的完整 2048 游戏，支持 PostgreSQL 后端。HTML5 网页版本配备基于强化学习的 AI 玩家，以及多种作弊玩法。",
+    "projects.2048.desc": "Java (Swing) 实现的完整 2048 游戏，支持 PostgreSQL 后端。配备基于强化学习的 AI 玩家，以及多种作弊玩法。",
 
     // GitHub Projects
     "gh.title": "GitHub 项目",
