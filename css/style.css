@@ -784,16 +784,20 @@ img {
 .project-link {
 display: inline-flex;
 align-items: center;
-justify-content: center;
 gap: 4px;
-padding: 10px 24px;
+padding: 6px 12px;
 border-radius: 16px;
 font-weight: 600;
-font-size: 0.82rem;
+font-size: 0.78rem;
 transition: all 0.25s;
-align-self: stretch;
+align-self: flex-start;
+}
+
+/* Single repository buttons fill the card width without changing paired button layouts. */
+.project-card-body > .project-link {
+justify-content: center;
 width: 100%;
-min-width: 0;
+box-sizing: border-box;
 }
 
 .project-card:nth-child(1) .project-link { background: #FFE0E0; color: var(--coral-dark); }
