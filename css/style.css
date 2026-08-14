@@ -782,15 +782,17 @@ img {
 }
 
 .project-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 6px 12px;
-  border-radius: 16px;
-  font-weight: 600;
-  font-size: 0.78rem;
-  transition: all 0.25s;
-  align-self: flex-start;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 4px;
+padding: 8px 20px;
+border-radius: 16px;
+font-weight: 600;
+font-size: 0.78rem;
+transition: all 0.25s;
+align-self: flex-start;
+min-width: 140px;
 }
 
 .project-card:nth-child(1) .project-link { background: #FFE0E0; color: var(--coral-dark); }
