@@ -809,6 +809,130 @@ box-sizing: border-box;
   transform: scale(1.04);
 }
 
+/* --- Project showcase modal --- */
+.showcase-trigger {
+  cursor: context-menu;
+}
+
+.showcase-trigger:focus-visible {
+  outline: 3px solid var(--purple);
+  outline-offset: 4px;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+.showcase-modal {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.24s ease;
+  z-index: 2000;
+}
+
+.showcase-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.showcase-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 12, 34, 0.68);
+  backdrop-filter: blur(8px);
+}
+
+.showcase-modal__dialog {
+  position: relative;
+  width: min(1080px, 100%);
+  max-height: min(86vh, 900px);
+  overflow-y: auto;
+  background: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  border-radius: 24px;
+  box-shadow: 0 28px 80px rgba(10, 8, 28, 0.4);
+  transform: translateY(18px) scale(0.98);
+  transition: transform 0.24s ease;
+}
+
+.showcase-modal.is-open .showcase-modal__dialog {
+  transform: translateY(0) scale(1);
+}
+
+.showcase-modal__content {
+  padding: 44px clamp(22px, 5vw, 56px) 56px;
+}
+
+.showcase-modal__eyebrow {
+  margin: 0 0 8px;
+  color: var(--purple);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.showcase-modal h2 {
+  margin: 0;
+  font-size: clamp(1.55rem, 3vw, 2.35rem);
+}
+
+.showcase-modal__description {
+  max-width: 780px;
+  margin: 14px 0 30px;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.showcase-modal__gallery {
+  display: grid;
+  gap: 28px;
+}
+
+.showcase-modal__gallery figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(108, 92, 231, 0.13);
+  border-radius: 16px;
+  background: #f8f8fc;
+  box-shadow: 0 10px 28px rgba(22, 18, 55, 0.1);
+}
+
+.showcase-modal__gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.showcase-modal__close {
+  position: sticky;
+  top: 16px;
+  float: right;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  margin: 16px 16px 0 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.93);
+  box-shadow: 0 4px 14px rgba(28, 23, 62, 0.14);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1.85rem;
+  line-height: 1;
+}
+
+.showcase-modal__close:hover,
+.showcase-modal__close:focus-visible {
+  background: var(--purple);
+  color: var(--white);
+  outline: none;
+}
+
 /* --- Leadership Page --- */
 .leadership-list {
   display: flex;
@@ -1589,6 +1713,19 @@ a.footer-info-item:hover svg {
   .project-card.featured {
     grid-column: 1;
     grid-template-columns: 1fr;
+  }
+
+  .showcase-modal {
+    padding: 14px;
+  }
+
+  .showcase-modal__dialog {
+    max-height: 90vh;
+    border-radius: 18px;
+  }
+
+  .showcase-modal__content {
+    padding: 36px 20px 32px;
   }
 
   @media (max-width: 480px) {

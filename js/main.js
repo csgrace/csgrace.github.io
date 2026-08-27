@@ -133,6 +133,92 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  // --- Project showcase modal (right-click or keyboard) ---
+  const showcaseConfigs = {
+    parrotao: {
+      title: 'ParroTAO Training Analysis Platform',
+      description: 'A visual overview of the ParroTAO training platform, bringing together team management, training coordination, wearable data, and AI-assisted performance analytics.',
+      images: [
+        { src: 'images/project-showcases/parrotao-training-platform.png', alt: 'ParroTAO training platform overview' }
+      ]
+    },
+    campus: {
+      title: 'AI Agent Smart Campus Assistant',
+      description: 'The offline RAG workflow used by the Smart Campus Assistant to transform trusted campus documents into a searchable knowledge base for grounded answers and personalized course planning.',
+      images: [
+        { src: 'images/project-showcases/rag-offline-pipeline-en.png', alt: 'RAG offline pipeline in English' },
+        { src: 'images/project-showcases/rag-offline-pipeline-zh.png', alt: 'RAG offline pipeline in Chinese' }
+      ]
+    }
+  };
+
+  let showcaseModal;
+  let showcasePreviousFocus;
+
+  function closeShowcaseModal() {
+    if (!showcaseModal) return;
+    showcaseModal.classList.remove('is-open');
+    showcaseModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+    if (showcasePreviousFocus) showcasePreviousFocus.focus();
+  }
+
+  function openShowcaseModal(showcaseId, trigger) {
+    const config = showcaseConfigs[showcaseId];
+    if (!config) return;
+
+    showcasePreviousFocus = trigger;
+    if (!showcaseModal) {
+      showcaseModal = document.createElement('div');
+      showcaseModal.className = 'showcase-modal';
+      showcaseModal.setAttribute('role', 'dialog');
+      showcaseModal.setAttribute('aria-modal', 'true');
+      showcaseModal.setAttribute('aria-hidden', 'true');
+      showcaseModal.innerHTML = `
+        <div class="showcase-modal__backdrop" data-showcase-close></div>
+        <section class="showcase-modal__dialog" aria-labelledby="showcase-modal-title">
+          <button type="button" class="showcase-modal__close" data-showcase-close aria-label="Close showcase">×</button>
+          <div class="showcase-modal__content">
+            <p class="showcase-modal__eyebrow">PROJECT SHOWCASE</p>
+            <h2 id="showcase-modal-title"></h2>
+            <p class="showcase-modal__description"></p>
+            <div class="showcase-modal__gallery"></div>
+          </div>
+        </section>`;
+      document.body.appendChild(showcaseModal);
+      showcaseModal.addEventListener('click', (event) => {
+        if (event.target.closest('[data-showcase-close]')) closeShowcaseModal();
+      });
+    }
+
+    showcaseModal.querySelector('#showcase-modal-title').textContent = config.title;
+    showcaseModal.querySelector('.showcase-modal__description').textContent = config.description;
+    showcaseModal.querySelector('.showcase-modal__gallery').innerHTML = config.images
+      .map(image => `<figure><img src="${image.src}" alt="${image.alt}" loading="lazy"></figure>`)
+      .join('');
+    showcaseModal.classList.add('is-open');
+    showcaseModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+    showcaseModal.querySelector('.showcase-modal__close').focus();
+  }
+
+  document.querySelectorAll('[data-showcase]').forEach(trigger => {
+    trigger.addEventListener('contextmenu', (event) => {
+      event.preventDefault();
+      openShowcaseModal(trigger.dataset.showcase, trigger);
+    });
+    trigger.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openShowcaseModal(trigger.dataset.showcase, trigger);
+      }
+    });
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && showcaseModal?.classList.contains('is-open')) closeShowcaseModal();
+  });
+
   // --- Quick card 3D tilt + mouse-follow glare ---
   document.querySelectorAll('.quick-card').forEach(card => {
     card.addEventListener('mousemove', (e) => {
