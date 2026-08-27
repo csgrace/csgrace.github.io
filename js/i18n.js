@@ -837,6 +837,8 @@ function applyI18n() {
     const key = titleEl.getAttribute('data-i18n-title');
     document.title = (i18n[lang]?.[key] ?? i18n.en[key]) || document.title;
   }
+
+  document.dispatchEvent(new CustomEvent('languagechange'));
 }
 
 function toggleLang() {

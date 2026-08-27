@@ -136,24 +136,47 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Project showcase modal (right-click or keyboard) ---
   const showcaseConfigs = {
     parrotao: {
-      title: 'ParroTAO Training Analysis Platform',
-      description: 'A visual overview of the ParroTAO training platform, bringing together team management, training coordination, wearable data, and AI-assisted performance analytics.',
-      images: [
-        { src: 'images/project-showcases/parrotao-training-platform.png', alt: 'ParroTAO training platform overview' }
-      ]
+      en: {
+        title: 'ParroTAO Training Analysis Platform',
+        description: 'A visual overview of the ParroTAO training platform, bringing together team management, training coordination, wearable data, and AI-assisted performance analytics.',
+        eyebrow: 'PROJECT SHOWCASE',
+        closeLabel: 'Close showcase',
+        image: { src: 'images/project-showcases/parrotao-training-platform.webp', alt: 'ParroTAO training platform overview' }
+      },
+      zh: {
+        title: 'ParroTAO 训练分析平台',
+        description: 'ParroTAO 训练平台的可视化概览，整合团队管理、训练协同、可穿戴设备数据与 AI 辅助运动表现分析。',
+        eyebrow: '项目展示',
+        closeLabel: '关闭展示弹窗',
+        image: { src: 'images/project-showcases/parrotao-training-platform.webp', alt: 'ParroTAO 训练平台概览' }
+      }
     },
     campus: {
-      title: 'AI Agent Smart Campus Assistant',
-      description: 'The offline RAG workflow used by the Smart Campus Assistant to transform trusted campus documents into a searchable knowledge base for grounded answers and personalized course planning.',
-      images: [
-        { src: 'images/project-showcases/rag-offline-pipeline-en.png', alt: 'RAG offline pipeline in English' },
-        { src: 'images/project-showcases/rag-offline-pipeline-zh.png', alt: 'RAG offline pipeline in Chinese' }
-      ]
+      en: {
+        title: 'AI Agent Smart Campus Assistant',
+        description: 'The offline RAG workflow used by the Smart Campus Assistant to transform trusted campus documents into a searchable knowledge base for grounded answers and personalized course planning.',
+        eyebrow: 'PROJECT SHOWCASE',
+        closeLabel: 'Close showcase',
+        image: { src: 'images/project-showcases/rag-offline-pipeline-en.webp', alt: 'RAG offline pipeline in English' }
+      },
+      zh: {
+        title: 'AI Agent 智慧校园助手',
+        description: '智慧校园助手的离线 RAG 流程：将可信校园文档处理为可检索知识库，为有依据的问答和个性化选课规划提供支持。',
+        eyebrow: '项目展示',
+        closeLabel: '关闭展示弹窗',
+        image: { src: 'images/project-showcases/rag-offline-pipeline-zh.webp', alt: 'RAG 离线处理流程图' }
+      }
     }
   };
 
   let showcaseModal;
   let showcasePreviousFocus;
+  let activeShowcaseId;
+
+  function getShowcaseContent(showcaseId) {
+    const language = document.documentElement.lang.startsWith('zh') ? 'zh' : 'en';
+    return showcaseConfigs[showcaseId]?.[language];
+  }
 
   function closeShowcaseModal() {
     if (!showcaseModal) return;
@@ -163,10 +186,22 @@ document.addEventListener('DOMContentLoaded', () => {
     if (showcasePreviousFocus) showcasePreviousFocus.focus();
   }
 
+  function renderShowcaseContent(showcaseId) {
+    const config = getShowcaseContent(showcaseId);
+    if (!config || !showcaseModal) return;
+
+    showcaseModal.querySelector('#showcase-modal-title').textContent = config.title;
+    showcaseModal.querySelector('.showcase-modal__eyebrow').textContent = config.eyebrow;
+    showcaseModal.querySelector('.showcase-modal__description').textContent = config.description;
+    showcaseModal.querySelector('.showcase-modal__close').setAttribute('aria-label', config.closeLabel);
+    showcaseModal.querySelector('.showcase-modal__gallery').innerHTML = `<figure><img src="${config.image.src}" alt="${config.image.alt}"></figure>`;
+  }
+
   function openShowcaseModal(showcaseId, trigger) {
-    const config = showcaseConfigs[showcaseId];
+    const config = getShowcaseContent(showcaseId);
     if (!config) return;
 
+    activeShowcaseId = showcaseId;
     showcasePreviousFocus = trigger;
     if (!showcaseModal) {
       showcaseModal = document.createElement('div');
@@ -177,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
       showcaseModal.innerHTML = `
         <div class="showcase-modal__backdrop" data-showcase-close></div>
         <section class="showcase-modal__dialog" aria-labelledby="showcase-modal-title">
-          <button type="button" class="showcase-modal__close" data-showcase-close aria-label="Close showcase">×</button>
+          <button type="button" class="showcase-modal__close" data-showcase-close>×</button>
           <div class="showcase-modal__content">
             <p class="showcase-modal__eyebrow">PROJECT SHOWCASE</p>
             <h2 id="showcase-modal-title"></h2>
@@ -191,11 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    showcaseModal.querySelector('#showcase-modal-title').textContent = config.title;
-    showcaseModal.querySelector('.showcase-modal__description').textContent = config.description;
-    showcaseModal.querySelector('.showcase-modal__gallery').innerHTML = config.images
-      .map(image => `<figure><img src="${image.src}" alt="${image.alt}" loading="lazy"></figure>`)
-      .join('');
+    renderShowcaseContent(showcaseId);
     showcaseModal.classList.add('is-open');
     showcaseModal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('modal-open');
@@ -217,6 +248,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && showcaseModal?.classList.contains('is-open')) closeShowcaseModal();
+  });
+
+  document.addEventListener('languagechange', () => {
+    if (showcaseModal?.classList.contains('is-open')) renderShowcaseContent(activeShowcaseId);
   });
 
   // --- Quick card 3D tilt + mouse-follow glare ---
