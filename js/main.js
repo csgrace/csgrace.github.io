@@ -154,17 +154,39 @@ document.addEventListener('DOMContentLoaded', () => {
     campus: {
       en: {
         title: 'AI Agent Smart Campus Assistant',
-        description: 'The offline RAG workflow used by the Smart Campus Assistant to transform trusted campus documents into a searchable knowledge base for grounded answers and personalized course planning.',
-        eyebrow: 'PROJECT SHOWCASE',
+        description: 'An end-to-end RAG system: offline indexing transforms campus sources into a persistent knowledge base, while the online pipeline retrieves, evaluates, and delivers citation-backed answers.',
+        eyebrow: 'RAG PIPELINES',
         closeLabel: 'Close showcase',
-        image: { src: 'images/project-showcases/rag-offline-pipeline-en.webp', alt: 'RAG offline pipeline in English' }
+        images: [
+          {
+            label: 'Offline Index Building Pipeline',
+            src: 'images/project-showcases/rag-offline-pipeline-en.webp',
+            alt: 'Offline RAG index building pipeline in English'
+          },
+          {
+            label: 'Online RAG Q&A Pipeline',
+            src: 'images/project-showcases/rag-online-pipeline-en.webp',
+            alt: 'Online RAG question answering pipeline in English'
+          }
+        ]
       },
       zh: {
         title: 'AI Agent 智慧校园助手',
-        description: '智慧校园助手的离线 RAG 流程：将可信校园文档处理为可检索知识库，为有依据的问答和个性化选课规划提供支持。',
-        eyebrow: '项目展示',
+        description: '端到端 RAG 系统：离线索引将校园资料构建为持久化知识库，在线链路完成检索、证据评估与带引用回答交付。',
+        eyebrow: 'RAG 流水线',
         closeLabel: '关闭展示弹窗',
-        image: { src: 'images/project-showcases/rag-offline-pipeline-zh.webp', alt: 'RAG 离线处理流程图' }
+        images: [
+          {
+            label: '离线索引构建流水线',
+            src: 'images/project-showcases/rag-offline-pipeline-zh.webp',
+            alt: 'RAG 离线索引构建流程图'
+          },
+          {
+            label: '在线 RAG 问答链路',
+            src: 'images/project-showcases/rag-online-pipeline-zh.webp',
+            alt: 'RAG 在线问答流程图'
+          }
+        ]
       }
     }
   };
@@ -194,7 +216,10 @@ document.addEventListener('DOMContentLoaded', () => {
     showcaseModal.querySelector('.showcase-modal__eyebrow').textContent = config.eyebrow;
     showcaseModal.querySelector('.showcase-modal__description').textContent = config.description;
     showcaseModal.querySelector('.showcase-modal__close').setAttribute('aria-label', config.closeLabel);
-    showcaseModal.querySelector('.showcase-modal__gallery').innerHTML = `<figure><img src="${config.image.src}" alt="${config.image.alt}"></figure>`;
+    const images = config.images || (config.image ? [config.image] : []);
+    showcaseModal.querySelector('.showcase-modal__gallery').innerHTML = images
+      .map(image => `<figure>${image.label ? `<figcaption>${image.label}</figcaption>` : ''}<img src="${image.src}" alt="${image.alt}"></figure>`)
+      .join('');
   }
 
   function openShowcaseModal(showcaseId, trigger) {
